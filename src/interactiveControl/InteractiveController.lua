@@ -124,6 +124,7 @@ function InteractiveController.new(modName, modDirectory, customMt)
     self.allowsSaving = true
     self.externallyBlocked = false
     self.hoverTimeOut = 0
+    self.lastChangeTime = 0
 
     self.interactiveActors = {}
     self.interactiveActions = {}

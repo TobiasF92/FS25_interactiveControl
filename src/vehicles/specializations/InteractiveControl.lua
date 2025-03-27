@@ -12,7 +12,8 @@ InteractiveControl = {}
 InteractiveControl.NUM_BITS = 8
 InteractiveControl.NUM_MAX_CONTROLS = 2 ^ InteractiveControl.NUM_BITS - 1
 
-InteractiveControl.PLAYER_UPDATE_TIME_OFFSET = 1500 -- ms
+InteractiveControl.PLAYER_UPDATE_TIME_OFFSET = 1500  -- ms
+InteractiveControl.CONTROLLER_TEXT_DIRTY_TIME = 1000 -- ms
 InteractiveControl.SOUND_FALLBACK = 1.0
 
 InteractiveControl.INTERACTIVE_CONTROLS_CONFIG_XML_KEY = "vehicle.interactiveControl.interactiveControlConfigurations.interactiveControlConfiguration(?)"
@@ -383,16 +384,20 @@ function InteractiveControl:setMissionActiveController(activeController)
 
     if activeController ~= nil then
         if missionActiveController == nil or (missionActiveController.target == self and missionActiveController ~= activeController) then
-            --set active controller to mission controller
+            --Set active controller to mission controller
             g_currentMission.interactiveControl:setActiveInteractiveController(activeController)
 
+            local actionText = activeController:getActionText()
+            g_currentMission.interactiveControl:setActionText(actionText, true)
+        elseif missionActiveController == activeController and math.abs(activeController.lastChangeTime - g_currentMission.time) < InteractiveControl.CONTROLLER_TEXT_DIRTY_TIME then
+            --Refresh text
             local actionText = activeController:getActionText()
             g_currentMission.interactiveControl:setActionText(actionText, true)
         end
     else
         if missionActiveController ~= nil then
             if missionActiveController.target == self then
-                --reset mission controller
+                --Reset mission controller
                 g_currentMission.interactiveControl:setActiveInteractiveController(nil)
             end
         end
@@ -698,7 +703,7 @@ function InteractiveControl:onRegisterActionEvents(isActiveForInput, isActiveFor
         self:clearActionEventsTable(spec.actionEvents)
 
         local settingState = g_currentMission.interactiveControl.settings:getSetting("IC_STATE")
-        if isActiveForInputIgnoreSelection and #spec.interactiveControllers > 0 and self.spec_enterable ~= nil and settingState ~= InteractiveControlManager.SETTING_STATE_OFF then
+        if isActiveForInputIgnoreSelection and #spec.interactiveControllers > 0 and self.spec_enterable ~= nil and settingState == InteractiveControlManager.SETTING_STATE_TOGGLE then
             local _, actionEventId = self:addActionEvent(spec.actionEvents, InputAction.IC_TOGGLE_STATE, self, InteractiveControl.actionEventToggleState, false, true, false, true, nil)
             g_inputBinding:setActionEventTextPriority(actionEventId, GS_PRIO_NORMAL)
 
