@@ -1,0 +1,131 @@
+<data>
+    <vehicle xmlFilename="data/vehicles/masseyFerguson/series9S/series9S.xml">
+        <xml key="vehicle">
+            <xml key=".animations">
+                <!-- doorLeftAnimation -->
+                <xml key=".animation(2)">
+                    <entry type="string" key="#name" value="doorLeftAnimation"/>
+
+                    <xml key=".part(0)">
+                        <entry type="string" key="#node" value="doorLeft"/>
+                        <entry type="float" key="#startTime" value="0.0"/>
+                        <entry type="float" key="#endTime" value="1.2"/>
+                        <entry type="string" key="#startRot" value="7.921 0 11.288"/>
+                        <entry type="string" key="#endRot" value="9.526 33.623 16.597"/>
+                    </xml>
+                </xml>
+
+                <!-- backWindowAnimation -->
+                <xml key=".animation(3)">
+                    <entry type="string" key="#name" value="backWindowAnimation"/>
+
+                    <xml key=".part(0)">
+                        <entry type="string" key="#node" value="backWindow"/>
+                        <entry type="float" key="#startTime" value="0.0"/>
+                        <entry type="float" key="#endTime" value="2.0"/>
+                        <entry type="string" key="#startRot" value="0 0 0"/>
+                        <entry type="string" key="#endRot" value="60 0 0"/>
+                    </xml>
+                </xml>
+
+                <!-- roofAnimation -->
+                <xml key=".animation(4)">
+                    <entry type="string" key="#name" value="roofAnimation"/>
+
+                    <xml key=".part(0)">
+                        <entry type="string" key="#node" value="0>0|5|6|3"/>
+                        <entry type="float" key="#startTime" value="0.0"/>
+                        <entry type="float" key="#endTime" value="1.2"/>
+                        <entry type="string" key="#startRot" value="0 0 0"/>
+                        <entry type="string" key="#endRot" value="-25 0 0"/>
+                    </xml>
+                </xml>
+            </xml>
+
+            <xml key=".interactiveControl.interactiveControlConfigurations.interactiveControlConfiguration(0).interactiveControls">
+                <!-- outdoorTrigger -->
+                <xml key=".outdoorTrigger">
+                    <entry type="string" key="#linkNode" value="0>"/>
+                    <entry type="string" key="#filename" value="SHARED_INTERACTIVE_TRIGGER"/>
+                </xml>
+
+                <!-- left door -->
+                <xml key=".interactiveControl(0)">
+                    <entry type="string" key="#posText" value="$l10n_actionIC_closeDoor"/>
+                    <entry type="string" key="#negText" value="$l10n_actionIC_openDoor"/>
+
+                    <xml key=".clickPoint(0)">
+                        <entry type="string" key="#linkNode" value="doorLeft"/>
+                        <entry type="string" key="#translation" value="-0.107 -0.095 1.237"/>
+                        <entry type="string" key="#rotation" value="0 0 0"/>
+                        <entry type="float" key="#size" value="0.06"/>
+                        <entry type="string" key="#type" value="INDOOR"/>
+                    </xml>
+
+                    <xml key=".clickPoint(1)">
+                        <entry type="string" key="#linkNode" value="doorLeft"/>
+                        <entry type="string" key="#translation" value="-0.038 -0.637 1.347"/>
+                        <entry type="string" key="#rotation" value="0 0 0"/>
+                        <entry type="float" key="#size" value="0.05"/>
+                        <entry type="string" key="#type" value="OUTDOOR"/>
+                    </xml>
+
+                    <xml key=".animation(0)">
+                        <entry type="string" key="#name" value="doorLeftAnimation"/>
+                        <entry type="float" key="#speedScale" value="1.0"/>
+                        <entry type="float" key="#initTime" value="0.0"/>
+                    </xml>
+
+                    <entry type="float" key=".soundModifier#indoorFactor" value="2.0"/>
+                    <entry type="float" key=".soundModifier#delayedSoundAnimationTime" value="0.1"/>
+                </xml>
+
+                <!-- back window -->
+                <xml key=".interactiveControl(1)">
+                    <entry type="string" key="#posText" value="$l10n_actionIC_closeWindow"/>
+                    <entry type="string" key="#negText" value="$l10n_actionIC_openWindow"/>
+
+                    <xml key=".clickPoint(0)">
+                        <entry type="string" key="#linkNode" value="backWindow"/>
+                        <entry type="string" key="#translation" value="-0.459 -0.445 0.154"/>
+                        <entry type="string" key="#rotation" value="0 0 0"/>
+                        <entry type="float" key="#size" value="0.04"/>
+                        <entry type="string" key="#type" value="INDOOR"/>
+                    </xml>
+
+                    <xml key=".animation(0)">
+                        <entry type="string" key="#name" value="backWindowAnimation"/>
+                        <entry type="float" key="#speedScale" value="1.0"/>
+                        <entry type="float" key="#initTime" value="0.0"/>
+                    </xml>
+
+                    <entry type="float" key=".soundModifier#indoorFactor" value="2.0"/>
+                    <entry type="float" key=".soundModifier#delayedSoundAnimationTime" value="0.1"/>
+                </xml>
+
+                <!-- roof -->
+                <xml key=".interactiveControl(2)">
+                    <entry type="string" key="#posText" value="$l10n_actionIC_closeRoof"/>
+                    <entry type="string" key="#negText" value="$l10n_actionIC_openRoof"/>
+
+                    <xml key=".clickPoint(0)">
+                        <entry type="string" key="#linkNode" value="cabin"/>
+                        <entry type="string" key="#translation" value="0 1.605 -1.305"/>
+                        <entry type="string" key="#rotation" value="0 0 0"/>
+                        <entry type="float" key="#size" value="0.04"/>
+                        <entry type="string" key="#type" value="INDOOR"/>
+                    </xml>
+
+                    <xml key=".animation(0)">
+                        <entry type="string" key="#name" value="roofAnimation"/>
+                        <entry type="float" key="#speedScale" value="1.0"/>
+                        <entry type="float" key="#initTime" value="0.0"/>
+                    </xml>
+
+                    <entry type="float" key=".soundModifier#indoorFactor" value="1.2"/>
+                    <entry type="float" key=".soundModifier#delayedSoundAnimationTime" value="0.1"/>
+                </xml>
+            </xml>
+        </xml>
+    </vehicle>
+</data>

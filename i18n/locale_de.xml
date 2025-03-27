@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <texts>
+        <!-- actions -->
+        <text name="action_activateIC" text="Interactive Control aktivieren"/>
+        <text name="action_deactivateIC" text="Interactive Control deaktivieren"/>
+
+        <!-- interactive control actions -->
+        <text name="actionIC_activate" text="IC: Aktivieren"/>
+        <text name="actionIC_deactivate" text="IC: Deaktivieren"/>
+
+        <text name="actionIC_startMotor" text="IC: Motor starten"/>
+        <text name="actionIC_stopMotor" text="IC: Motor stoppen"/>
+
+        <text name="actionIC_liftImplement" text="IC: Anbaugerät heben"/>
+        <text name="actionIC_lowerImplement" text="IC: Anbaugerät senken"/>
+
+        <text name="actionIC_turnOnImplement" text="IC: Anbaugerät anschalten"/>
+        <text name="actionIC_turnOffImplement" text="IC: Anbaugerät abschalten"/>
+
+        <text name="actionIC_foldImplement" text="IC: Anbaugerät einklappen"/>
+        <text name="actionIC_unfoldImplement" text="IC: Anbaugerät ausklappen"/>
+
+        <text name="actionIC_foldVehicle" text="IC: Fahrzeug zuklappen" />
+        <text name="actionIC_unfoldVehicle" text="IC: Fahrzeug ausklappen" />
+
+        <text name="actionIC_foldPipe" text="IC: Rohr einklappen" />
+        <text name="actionIC_unfoldPipe" text="IC: Rohr ausklappen" />
+
+        <text name="actionIC_openRoof" text="IC: Dach öffnen"/>
+        <text name="actionIC_closeRoof" text="IC: Dach schließen"/>
+
+        <text name="actionIC_openDoor" text="IC: Tür öffnen"/>
+        <text name="actionIC_closeDoor" text="IC: Tür schließen"/>
+
+        <text name="actionIC_openWindow" text="IC: Fenster öffnen"/>
+        <text name="actionIC_closeWindow" text="IC: Fenster schließen"/>
+
+        <text name="actionIC_lightsOn" text="IC: Licht anschalten"/>
+        <text name="actionIC_lightsOff" text="IC: Licht ausschalten"/>
+
+        <text name="actionIC_highbeamlightsOn" text="IC: Fernlicht anschalten"/>
+        <text name="actionIC_highbeamlightsOff" text="IC: Fernlicht ausschalten"/>
+
+        <text name="actionIC_workLightsFrontOn" text="IC: Arbeitslicht vorne anschalten"/>
+        <text name="actionIC_workLightsFrontOff" text="IC: Arbeitslicht vorne ausschalten"/>
+
+        <text name="actionIC_workLightsBackOn" text="IC: Arbeitslicht hinten anschalten"/>
+        <text name="actionIC_workLightsBackOff" text="IC: Arbeitslicht hinten ausschalten"/>
+
+        <text name="actionIC_turnLightsLeftOn" text="IC: Blinker links anschalten"/>
+        <text name="actionIC_turnLightsLeftOff" text="IC: Blinker links ausschalten"/>
+
+        <text name="actionIC_turnLightsRightOn" text="IC: Blinker rechts anschalten"/>
+        <text name="actionIC_turnLightsRightOff" text="IC: Blinker rechts ausschalten"/>
+
+        <text name="actionIC_hazardLightsOn" text="IC: Warnblinker anschalten"/>
+        <text name="actionIC_hazardLightsOff" text="IC: Warnblinker ausschalten"/>
+
+        <text name="actionIC_pipeLightsOn" text="IC: Rohrbeleuchtung anschalten"/>
+        <text name="actionIC_pipeLightsOff" text="IC: Rohrbeleuchtung ausschalten"/>
+
+        <text name="actionIC_gs_activate" text="IC: GPS aktivieren"/>
+        <text name="actionIC_gs_deactivate" text="IC: GPS deaktivieren"/>
+
+        <text name="actionIC_cruiseControl_toggle" text="IC: Tempomat wechseln"/>
+
+        <text name="actionIC_openCover" text="IC: Abdeckung öffnen"/>
+        <text name="actionIC_closeCover" text="IC: Abdeckung schließen"/>
+
+        <text name="actionIC_discharge" text="IC: Abladen"/>
+        <text name="actionIC_stop_discharge" text="IC: Abladen beenden"/>
+
+        <text name="actionIC_radioOn" text="IC: Radio anschalten"/>
+        <text name="actionIC_radioOff" text="IC: Radio ausschalten"/>
+
+        <text name="actionIC_crabSteering_toggle" text="IC: Lenkmodus wechseln"/>
+
+        <text name="actionIC_reverseDriving_toggle" text="IC: Fahrtrichtung wechseln"/>
+
+        <text name="actionIC_parkingbrakeOn" text="IC: Handbremse anziehen" />
+        <text name="actionIC_parkingbrakeOff" text="IC: Handbremse lösen" />
+
+        <text name="actionIC_diffLockFrontOn" text="IC: Diffsperre vorne ein" />
+        <text name="actionIC_diffLockFrontOff" text="IC: Diffsperre vorne aus" />
+
+        <text name="actionIC_allWheelDriveOn" text="IC: Allrad ein" />
+        <text name="actionIC_allWheelDriveOff" text="IC: Allrad aus" />
+
+        <text name="actionIC_diffLockBackOn" text="IC: Diffsperre hinten ein" />
+        <text name="actionIC_diffLockBackOff" text="IC: Diffsperre hinten aus" />
+
+        <text name="actionIC_turnPumpOn" text="IC: Pumpe einschalten" />
+        <text name="actionIC_turnPumpOff" text="IC: Pumpe ausschalten" />
+
+        <text name="actionIC_pumpDirectionDrain" text="IC: Pumprichtung wechseln zu: Entleeren" />
+        <text name="actionIC_pumpDirectionFill" text="IC: Pumprichtung wechseln zu: Befüllen" />
+
+        <!-- inputs -->
+        <text name="input_IC_CLICK" text="IC: Interactive Control ClickPoint"/>
+        <text name="input_IC_TOGGLE_STATE" text="IC: Interactive Control umschalten"/>
+
+        <!-- settings -->
+        <text name="settingsIC_title" text="Interactive Control"/>
+        <text name="settingsIC_state_title" text="IC Status"/>
+        <text name="settingsIC_state_tooltip" text="Schaltet InteractiveControl ein, aus, oder schaltbar."/>
+        <text name="settingsIC_state_option01" text="Schaltbar"/>
+        <text name="settingsIC_state_option02" text="Immer aktiv"/>
+        <text name="settingsIC_state_option03" text="Aus"/>
+        <text name="settingsIC_keepAlive_title" text="IC Aktiviert lassen"/>
+        <text name="settingsIC_keepAlive_tooltip" text="InteractiveControl bleibt beim verlassen des Fahrzeugs aktiv."/>
+
+        <text name="settingsIC_clickPointHover_title" text="IC Hover Aktivierung"/>
+        <text name="settingsIC_clickPointHover_tooltip" text="InteractiveControl schalten, wenn man eine gewisse Zeit auf dem Clickpoint hovert"/>
+        <text name="settingsIC_clickPointHover_optionTimeOff" text="Aus"/>
+        <text name="settingsIC_clickPointHover_optionTime" text="%.1f s" tag="format"/>
+    </texts>
+</l10n>

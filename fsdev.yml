@@ -1,0 +1,17 @@
+version: v1
+
+mod:
+  name: Interactive Control
+  author: Vertex Dezign
+
+build:
+  ignore:
+    - .git
+    - .idea
+  outputName: FS25_interactiveControl
+  cleanOutput: true
+  code: src/
+  outputTextures:
+    type: dds
+    overwrites:
+        store:

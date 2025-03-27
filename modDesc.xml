@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<modDesc descVersion="96" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs25/modDesc.xsd">
+    <author>Vertex Dezign</author>
+    <version>1.0.0.beta2</version>
+
+    <title>
+        <en>Interactive Control</en>
+    </title>
+
+    <description>
+        <en><![CDATA['Interactive Control' is a global script mod for Farming Simulator 25. While this mod is active, you are able to use many other mods that support Interactive Control. With IC you get the possibility to control many parts of several (prepared) vehicles interacitvly.
+
+'IC' provides different possibilities to interact with your vehicles. You can use click icons that appear when you turn on IC or when you are nearby. Another way for interactive handling is a key binding event. The controls are able to be used as switch or to force a state. All interactions are generally possible to use from the inside and the outside of a vehicle.
+
+Using the controls you can steer different things:
+
+- Play animations (e.g. to open/close windows, fold/unfold warning signs, ...)
+- Call specific functions (e.g. Start/Stop Motor, TurnOn/Off tool, Lift/Lower attacher joints, ...)
+- ObjectChanges (to change translation/rotation/visibility/...)
+
+A few vehicles are already equipped with IC
+
+For further informations: <a href="https://github.com/TobiasF92/FS25_interactiveControl/blob/main/README.md">README</a> on Github.
+
+        ]]>        </en>
+        <de><![CDATA['Interactive Control' ist ein globaler Skript-Mod für den Landwirtschafts-Simulator 25. Während dieser Mod aktiv ist, sind Sie in der Lage, viele andere Mods zu verwenden, die Interactive Control unterstützen. Mit IC erhalten Sie die Möglichkeit, viele Teile von mehreren (vorbereiteten) Fahrzeugen interaktiv zu steuern.
+
+'IC' bietet verschiedene Möglichkeiten, mit Ihren Fahrzeugen zu interagieren. Sie können Klicksymbole verwenden, die erscheinen, wenn Sie IC einschalten oder wenn Sie in der Nähe sind. Eine weitere Möglichkeit zur interaktiven Bedienung ist über einen Tastendruck möglich. Die Steuerelemente können als Schalter oder zum Erzwingen eines Zustands verwendet werden. Alle Interaktionen sind generell sowohl innherhalb als auch außerhalb eines Fahrzeugs möglich.
+
+Mit den Bedienelementen können Sie verschiedene Dinge steuern:
+
+- Animationen abspielen (z.B. Fenster öffnen/schließen, Warntafeln ein-/ausklappen, ...)
+- Aufrufen bestimmter Funktionen (z.B. Motor starten/stoppen, Gerät ein-/ausschalten, Gerät heben/senken, ...)
+- ObjectChanges (zum Ändern von Translation/Rotation/Sichtbarkeit/...)
+
+Einige wenige Fahrzeuge sind bereits mit IC ausgestattet.
+
+Für mehr Informationen: <a href="https://github.com/TobiasF92/FS25_interactiveControl/blob/main/README.md">README</a> auf Github.
+
+        ]]>        </de>
+    </description>
+
+    <iconFilename>icon_interactiveControl.png</iconFilename>
+    <multiplayer supported="true"/>
+
+    <l10n filenamePrefix="i18n/locale"/>
+
+    <extraSourceFiles>
+        <sourceFile filename="src/main.lua"/>
+    </extraSourceFiles>
+
+    <actions>
+        <action name="IC_CLICK" category="ONFOOT VEHICLE" axisType="HALF"/>
+        <action name="IC_TOGGLE_STATE" category="VEHICLE" axisType="HALF"/>
+    </actions>
+
+    <inputBinding>
+        <actionBinding action="IC_CLICK">
+            <binding device="KB_MOUSE_DEFAULT" input="MOUSE_BUTTON_LEFT"/>
+        </actionBinding>
+        <actionBinding action="IC_TOGGLE_STATE">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_less"/>
+        </actionBinding>
+    </inputBinding>
+</modDesc>

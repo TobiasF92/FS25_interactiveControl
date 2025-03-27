@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <texts>
+        <!-- actions -->
+        <text name="action_activateIC" text="Activer le contrôle interactif"/>
+        <text name="action_deactivateIC" text="Désactiver le contrôle interactif"/>
+
+        <!-- interactive control actions -->
+        <text name="actionIC_activate" text="IC : Activer"/>
+        <text name="actionIC_deactivate" text="IC : Désactiver"/>
+
+        <text name="actionIC_startMotor" text="IC : Démarrer le moteur"/>
+        <text name="actionIC_stopMotor" text="IC : Arrêter le moteur"/>
+
+        <text name="actionIC_liftImplement" text="IC : Outil de levage"/>
+        <text name="actionIC_lowerImplement" text="IC : outil inférieur"/>
+
+        <text name="actionIC_turnOnImplement" text="IC : Activer l'outil"/>
+        <text name="actionIC_turnOffImplement" text="IC : Désactiver l'outil"/>
+
+        <text name="actionIC_foldImplement" text="IC : plier l'outil"/>
+        <text name="actionIC_unfoldImplement" text="IC : Déplier l'outil"/>
+
+        <text name="actionIC_foldVehicle" text="IC : Plier le véhicule" />
+        <text name="actionIC_unfoldVehicle" text="IC : Déplier le véhicule" />
+
+        <text name="actionIC_foldPipe" text="IC : Plier le tuyau" />
+        <text name="actionIC_unfoldPipe" text="IC : Déplier le tuyau" />
+
+        <text name="actionIC_openRoof" text="IC : Toit ouvert"/>
+        <text name="actionIC_closeRoof" text="IC : Fermer le toit"/>
+
+        <text name="actionIC_openDoor" text="IC : porte ouverte"/>
+        <text name="actionIC_closeDoor" text="IC : Fermer la porte"/>
+
+        <text name="actionIC_openWindow" text="IC : Ouvrir la fenêtre"/>
+        <text name="actionIC_closeWindow" text="IC : Fermer la fenêtre"/>
+
+        <text name="actionIC_lightsOn" text="IC : Allumer les lumières"/>
+        <text name="actionIC_lightsOff" text="IC : éteindre les lumières"/>
+
+        <text name="actionIC_highbeamlightsOn" text="IC : allume les feux de route"/>
+        <text name="actionIC_highbeamlightsOff" text="IC : éteindre les feux de route"/>
+
+        <text name="actionIC_workLightsFrontOn" text="IC : Allumer les phares de travail avant"/>
+        <text name="actionIC_workLightsFrontOff" text="IC : éteindre les phares de travail avant"/>
+
+        <text name="actionIC_workLightsBackOn" text="IC : Rallumez les projecteurs de travail"/>
+        <text name="actionIC_workLightsBackOff" text="IC : Éteignez les projecteurs de travail"/>
+
+        <text name="actionIC_turnLightsLeftOn" text="IC : Allumer les clignotants à gauche"/>
+        <text name="actionIC_turnLightsLeftOff" text="IC : éteindre les clignotants à gauche"/>
+
+        <text name="actionIC_turnLightsRightOn" text="IC : Allumer les clignotants à droite"/>
+        <text name="actionIC_turnLightsRightOff" text="IC : éteindre les clignotants à droite"/>
+
+        <text name="actionIC_hazardLightsOn" text="IC : Allumer les feux de détresse"/>
+        <text name="actionIC_hazardLightsOff" text="IC : éteindre les feux de détresse"/>
+
+        <text name="actionIC_pipeLightsOn" text="IC : Activer l'éclairage du tuyau"/>
+        <text name="actionIC_pipeLightsOff" text="IC : éteindre l'éclairage du tuyau"/>
+
+        <text name="actionIC_gs_activate" text="IC : activation GS"/>
+        <text name="actionIC_gs_deactivate" text="IC : GS désactiver"/>
+
+        <text name="actionIC_cruiseControl_toggle" text="IC : Activer le régulateur de vitesse"/>
+
+        <text name="actionIC_openCover" text="IC : Ouvrir la couverture"/>
+        <text name="actionIC_closeCover" text="IC : Fermer la couverture"/>
+
+        <text name="actionIC_radioOn" text="IC : Radio allumée"/>
+        <text name="actionIC_radioOff" text="IC : Radio désactivée"/>
+
+        <text name="actionIC_crabSteering_toggle" text="IC : basculer le mode de pilotage"/>
+
+        <text name="actionIC_parkingbrakeOn" text="IC : frein de stationnement activé" />
+        <text name="actionIC_parkingbrakeOff" text="IC : Frein de stationnement désactivé" />
+
+        <text name="actionIC_diffLockFrontOn" text="IC : Blocage de différentiel avant activé" />
+        <text name="actionIC_diffLockFrontOff" text="IC : Blocage de différentiel avant désactivé" />
+
+        <text name="actionIC_allWheelDriveOn" text="IC : Mode toutes roues activé" />
+        <text name="actionIC_allWheelDriveOff" text="IC : Mode toutes roues motrices désactivé" />
+
+        <text name="actionIC_diffLockBackOn" text="IC : verrouillage du différentiel réactivé" />
+        <text name="actionIC_diffLockBackOff" text="IC : Blocage de différentiel désactivé" />
+
+        <text name="actionIC_turnPumpOn" text="IC: Mettre la pompe en marche" />
+        <text name="actionIC_turnPumpOff" text="IC: Arrêter la pompe" />
+
+        <text name="actionIC_pumpDirectionDrain" text="IC: Commuter le sens de rotation de la pompe sur : Vidange" />
+        <text name="actionIC_pumpDirectionFill" text="IC: Commuter le sens de rotation de la pompe sur : Remplir" />
+
+        <!-- inputs -->
+        <text name="input_IC_CLICK" text="IC : Point de clic de contrôle interactif"/>
+        <text name="input_IC_TOGGLE_STATE" text="IC : Basculer le contrôle interactif"/>
+
+        <!-- settings -->
+        <text name="settingsIC_title" text="Contrôle interactif"/>
+        <text name="settingsIC_state_title" text="État IC"/>
+        <text name="settingsIC_state_tooltip" text="Active, désactive ou commute InteractiveControl."/>
+        <text name="settingsIC_state_option01" text="Switchable"/>
+        <text name="settingsIC_state_option02" text="Toujours actif"/>
+        <text name="settingsIC_state_option03" text="Désactivé"/>
+        <text name="settingsIC_keepAlive_title" text="Garder IC activé"/>
+        <text name="settingsIC_keepAlive_tooltip" text="InteractiveControl reste actif lorsque vous quittez le véhicule."/>
+    </texts>
+</l10n>

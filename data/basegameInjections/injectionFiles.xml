@@ -1,0 +1,8 @@
+<files>
+    <file path="data/basegameInjections/vehicles/caseIH.xml"/>
+    <file path="data/basegameInjections/vehicles/deutzFahr.xml"/>
+    <file path="data/basegameInjections/vehicles/fendt.xml"/>
+    <file path="data/basegameInjections/vehicles/johnDeere.xml"/>
+    <file path="data/basegameInjections/vehicles/masseyFerguson.xml"/>
+    <file path="data/basegameInjections/vehicles/valtra.xml"/>
+</files>

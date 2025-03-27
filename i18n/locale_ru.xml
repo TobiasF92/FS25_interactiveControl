@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <texts>
+        <!-- actions -->
+        <text name="action_activateIC" text="Показать Интерактивный Контроль"/>
+        <text name="action_deactivateIC" text="Скрыть Интерактивный Контроль"/>
+
+        <!-- interactive control actions -->
+        <text name="actionIC_activate" text="IC: Включить"/>
+        <text name="actionIC_deactivate" text="IC: Выключить"/>
+
+        <text name="actionIC_startMotor" text="IC: Запустить двигатель"/>
+        <text name="actionIC_stopMotor" text="IC: Заглушить двигатель"/>
+
+        <text name="actionIC_liftImplement" text="IC: Поднять оборудование"/>
+        <text name="actionIC_lowerImplement" text="IC: Опустить оборудование"/>
+
+        <text name="actionIC_turnOnImplement" text="IC: Включить оборудование"/>
+        <text name="actionIC_turnOffImplement" text="IC: Выключить оборудование"/>
+
+        <text name="actionIC_foldImplement" text="IC: Сложить оборудование"/>
+        <text name="actionIC_unfoldImplement" text="IC: Развернуть оборудование"/>
+
+        <text name="actionIC_foldVehicle" text="IC: Сложить ТС" />
+        <text name="actionIC_unfoldVehicle" text="IC: Развернуть ТС" />
+
+        <text name="actionIC_foldPipe" text="IC: Сложить трубу" />
+
+        <text name="actionIC_unfoldPipe" text="IC: Развернуть трубу" />
+
+        <text name="actionIC_openRoof" text="IC: Открыть крышу"/>
+        <text name="actionIC_closeRoof" text="IC: Закрыть крышу"/>
+
+        <text name="actionIC_openDoor" text="IC: Открыть дверь"/>
+        <text name="actionIC_closeDoor" text="IC: Закрыть дверь"/>
+
+        <text name="actionIC_openWindow" text="IC: Открыть окно"/>
+        <text name="actionIC_closeWindow" text="IC: Закрыть окно"/>
+
+        <text name="actionIC_lightsOn" text="IC: Включить свет"/>
+        <text name="actionIC_lightsOff" text="IC: Выключить свет"/>
+
+        <text name="actionIC_highbeamlightsOn" text="IC: Включить дальний свет"/>
+        <text name="actionIC_highbeamlightsOff" text="IC: Выключить дальний свет"/>
+
+        <text name="actionIC_workLightsFrontOn" text="IC: Включить передние рабочие фары"/>
+        <text name="actionIC_workLightsFrontOff" text="IC: Выключить передние рабочие фары"/>
+
+        <text name="actionIC_workLightsBackOn" text="IC: Включить задние рабочие фары"/>
+        <text name="actionIC_workLightsBackOff" text="IC: Выключить задние рабочие фары"/>
+
+        <text name="actionIC_turnLightsLeftOn" text="IC: Включить левый поворотник"/>
+        <text name="actionIC_turnLightsLeftOff" text="IC: Выключить левый поворотник"/>
+
+        <text name="actionIC_turnLightsRightOn" text="IC: Включить правый поворотник"/>
+        <text name="actionIC_turnLightsRightOff" text="IC: Выключить правый поворотник"/>
+
+        <text name="actionIC_hazardLightsOn" text="IC: Включить аварийную сигнализацию"/>
+        <text name="actionIC_hazardLightsOff" text="IC: Выключить аварийную сигнализацию"/>
+
+        <text name="actionIC_pipeLightsOn" text="IC: Включить огни на трубе"/>
+        <text name="actionIC_pipeLightsOff" text="IC: Выключите огни на трубе"/>
+
+        <text name="actionIC_gs_activate" text="IC: Включить GPS"/>
+        <text name="actionIC_gs_deactivate" text="IC: Выключить GPS"/>
+
+        <text name="actionIC_cruiseControl_toggle" text="IC: Включить круиз-контроль"/>
+
+        <text name="actionIC_openCover" text="IC: Открыть крышку"/>
+        <text name="actionIC_closeCover" text="IC: Закрыть крышку"/>
+
+        <text name="actionIC_discharge" text="IC: Разгрузка"/>
+        <text name="actionIC_stop_discharge" text="IC: Остановить разгрузку"/>
+
+        <text name="actionIC_radioOn" text="IC: Включить радио"/>
+        <text name="actionIC_radioOff" text="IC: Выключить радио"/>
+
+        <text name="actionIC_crabSteering_toggle" text="IC: Смена режима рулевого управления"/>
+
+        <text name="actionIC_reverseDriving_toggle" text="IC: Изменение направления движения"/>
+
+        <text name="actionIC_parkingbrakeOn" text="IC: Задействовать ручной тормоз" />
+        <text name="actionIC_parkingbrakeOff" text="IC: Отпустить ручной тормоз" />
+
+        <text name="actionIC_diffLockFrontOn" text="IC: Включить блокировку переднего дифференциала" />
+        <text name="actionIC_diffLockFrontOff" text="IC: Выключить блокировку переднего дифференциала" />
+
+        <text name="actionIC_allWheelDriveOn" text="IC: Включить полный привод" />
+        <text name="actionIC_allWheelDriveOff" text="IC: Выключить полный привод" />
+
+        <text name="actionIC_diffLockBackOn" text="IC: Включить блокировку заднего дифференциала" />
+        <text name="actionIC_diffLockBackOff" text="IC: Выключить блокировку заднего дифференциала" />
+
+        <text name="actionIC_turnPumpOn" text="IC: Включить насос" />
+        <text name="actionIC_turnPumpOff" text="IC: Выключить насос" />
+
+        <text name="actionIC_pumpDirectionDrain" text="IC: Изменить направление перекачивания на: Опорожнение" />
+        <text name="actionIC_pumpDirectionFill" text="IC: Изменить направление перекачивания на: Заполнение" />
+
+        <!-- inputs -->
+        <text name="input_IC_CLICK" text="IC: Кнопка действия Интерактивного Контроля"/>
+        <text name="input_IC_TOGGLE_STATE" text="IC: Показать/скрыть Интерактивный Контроль"/>
+
+        <!-- settings -->
+        <text name="settingsIC_title" text="Интерактивный контроль"/>
+        <text name="settingsIC_state_title" text="IC Статус"/>
+        <text name="settingsIC_state_tooltip" text="Включает, выключает или переключает Интерактивный контроль."/>
+        <text name="settingsIC_state_option01" text="Переключаемый"/>
+        <text name="settingsIC_state_option02" text="Всегда активен"/>
+        <text name="settingsIC_state_option03" text="Выключен"/>
+        <text name="settingsIC_keepAlive_title" text="Держать IC активированным"/>
+        <text name="settingsIC_keepAlive_tooltip" text="Интерактивный контроль остаётся активным при выходе из транспорта."/>
+    </texts>
+</l10n>

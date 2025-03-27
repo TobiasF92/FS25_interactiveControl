@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+    <texts>
+        <!-- actions -->
+        <text name="action_activateIC" text="Activate Interactive Control"/>
+        <text name="action_deactivateIC" text="Dectivate Interactive Control"/>
+
+        <!-- interactive control actions -->
+        <text name="actionIC_activate" text="IC: Activate"/>
+        <text name="actionIC_deactivate" text="IC: Deactivate"/>
+
+        <text name="actionIC_startMotor" text="IC: Start motor"/>
+        <text name="actionIC_stopMotor" text="IC: Stop motor"/>
+
+        <text name="actionIC_liftImplement" text="IC: Lift implement"/>
+        <text name="actionIC_lowerImplement" text="IC: Lower implement"/>
+
+        <text name="actionIC_turnOnImplement" text="IC: Turn on implement"/>
+        <text name="actionIC_turnOffImplement" text="IC: Turn off implement"/>
+
+        <text name="actionIC_foldImplement" text="IC: Fold implement"/>
+        <text name="actionIC_unfoldImplement" text="IC: Unfold implement"/>
+
+        <text name="actionIC_foldVehicle" text="IC: Fold vehicle" />
+        <text name="actionIC_unfoldVehicle" text="IC: Unfold vehicle" />
+
+        <text name="actionIC_foldPipe" text="IC: Fold pipe" />
+        <text name="actionIC_unfoldPipe" text="IC: Unfold pipe" />
+
+        <text name="actionIC_openRoof" text="IC: Open roof"/>
+        <text name="actionIC_closeRoof" text="IC: Close roof"/>
+
+        <text name="actionIC_openDoor" text="IC: Open door"/>
+        <text name="actionIC_closeDoor" text="IC: Close door"/>
+
+        <text name="actionIC_openWindow" text="IC: Open window"/>
+        <text name="actionIC_closeWindow" text="IC: Close window"/>
+
+        <text name="actionIC_lightsOn" text="IC: Turn lights on"/>
+        <text name="actionIC_lightsOff" text="IC: Turn lights off"/>
+
+        <text name="actionIC_highbeamlightsOn" text="IC: Turn highbeamlights lights on"/>
+        <text name="actionIC_highbeamlightsOff" text="IC: Turn highbeamlights lights off"/>
+
+        <text name="actionIC_workLightsFrontOn" text="IC: Turn front worklights on"/>
+        <text name="actionIC_workLightsFrontOff" text="IC: Turn front worklights off"/>
+
+        <text name="actionIC_workLightsBackOn" text="IC: Turn back worklights on"/>
+        <text name="actionIC_workLightsBackOff" text="IC: Turn back worklights off"/>
+
+        <text name="actionIC_turnLightsLeftOn" text="IC: Turn left turnlights on"/>
+        <text name="actionIC_turnLightsLeftOff" text="IC: Turn left turnlights off"/>
+
+        <text name="actionIC_turnLightsRightOn" text="IC: Turn right turnlights on"/>
+        <text name="actionIC_turnLightsRightOff" text="IC: Turn right turnlights off"/>
+
+        <text name="actionIC_hazardLightsOn" text="IC: Turn hazardlights on"/>
+        <text name="actionIC_hazardLightsOff" text="IC: Turn hazardlights off"/>
+
+        <text name="actionIC_pipeLightsOn" text="IC: Turn pipelight on"/>
+        <text name="actionIC_pipeLightsOff" text="IC: Turn pipelight off"/>
+
+        <text name="actionIC_gs_activate" text="IC: GS activate"/>
+        <text name="actionIC_gs_deactivate" text="IC: GS deactivate"/>
+
+        <text name="actionIC_cruiseControl_toggle" text="IC: Toggle cruise control"/>
+
+        <text name="actionIC_openCover" text="IC: Open cover"/>
+        <text name="actionIC_closeCover" text="IC: Close cover"/>
+
+        <text name="actionIC_discharge" text="IC: Discharge"/>
+        <text name="actionIC_stop_discharge" text="IC: Stop discharging"/>
+
+        <text name="actionIC_radioOn" text="IC: Radio on"/>
+        <text name="actionIC_radioOff" text="IC: Radio off"/>
+
+        <text name="actionIC_crabSteering_toggle" text="IC: toggle steering mode"/>
+
+        <text name="actionIC_reverseDriving_toggle" text="IC: Toggle reverse driving"/>
+
+        <text name="actionIC_parkingbrakeOn" text="IC: Parkingbrake on" />
+        <text name="actionIC_parkingbrakeOff" text="IC: Parkingbrake off" />
+
+        <text name="actionIC_diffLockFrontOn" text="IC: Differential lock front on" />
+        <text name="actionIC_diffLockFrontOff" text="IC: Differential lock front off" />
+
+        <text name="actionIC_allWheelDriveOn" text="IC: All-wheel mode on" />
+        <text name="actionIC_allWheelDriveOff" text="IC: All-wheel mode off" />
+
+        <text name="actionIC_diffLockBackOn" text="IC: Differential lock back on" />
+        <text name="actionIC_diffLockBackOff" text="IC: Differential lock back off" />
+
+        <text name="actionIC_turnPumpOn" text="IC: Turn on pump" />
+        <text name="actionIC_turnPumpOff" text="IC: Turn off pump" />
+
+        <text name="actionIC_pumpDirectionDrain" text="IC: Switch pump direction to: Drain" />
+        <text name="actionIC_pumpDirectionFill" text="IC: Switch pump direction to: Fill" />
+
+        <!-- inputs -->
+        <text name="input_IC_CLICK" text="IC: Interactive Control ClickPoint"/>
+        <text name="input_IC_TOGGLE_STATE" text="IC: Toggle Interactive Control"/>
+
+        <!-- settings -->
+        <text name="settingsIC_title" text="Interactive Control"/>
+        <text name="settingsIC_state_title" text="IC State"/>
+        <text name="settingsIC_state_tooltip" text="Switches InteractiveControl on, off, or switchable."/>
+        <text name="settingsIC_state_option01" text="Switchable"/>
+        <text name="settingsIC_state_option02" text="Always active"/>
+        <text name="settingsIC_state_option03" text="Off"/>
+        <text name="settingsIC_keepAlive_title" text="Keep IC Activated"/>
+        <text name="settingsIC_keepAlive_tooltip" text="InteractiveControl remains active when leaving the vehicle."/>
+    </texts>
+</l10n>

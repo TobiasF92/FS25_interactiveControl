@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="interactiveTrigger" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+
+  <Files>
+  </Files>
+
+  <Materials>
+    <Material name="standardSurface1" materialId="1" diffuseColor="0.4 0.4 0.4 1">
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="interactiveTrigger.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <Shape name="interactiveTrigger" scale="5 3 8" shapeId="1" kinematic="true" compound="true" trigger="true" collisionFilterGroup="0x20000000" collisionFilterMask="0x100000" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="1" nodeId="1"/>
+  </Scene>
+
+  <UserAttributes>
+  </UserAttributes>
+</i3D>
