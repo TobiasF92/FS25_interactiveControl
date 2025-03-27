@@ -239,12 +239,23 @@ function AdditionalSettingsManager.createGuiElement(settingsFrame, setting, targ
     settingElement.id = setting.name
     settingElement.target = setting.callbackTarget or target
     settingElement:setCallback("onClickCallback", setting.callback)
+    settingElement:setDisabled(false)
 
     if setting.type == AdditionalSettingsManager.TYPE_BINARY then
         settingElement:setIsChecked(setting.value)
+
+        if setting.options == nil then
+            setting.options = {
+                g_i18n:getText("ui_off"),
+                g_i18n:getText("ui_on"),
+            }
+        end
     elseif setting.type == AdditionalSettingsManager.TYPE_MULTIBOX then
-        settingElement:setTexts(setting.options)
         settingElement:setState(setting.value, false)
+    end
+
+    if setting.options ~= nil then
+        settingElement:setTexts(setting.options)
     end
 
     element:reloadFocusHandling(true)
