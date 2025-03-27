@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
-<i3D name="ic_clickIcons.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
-  <Asset>
-    <Export program="GIANTS Editor 64bit" version="10.0.3"/>
-  </Asset>
+<i3D name="ic_clickIcons" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
 
   <Files>
-    <File fileId="1" filename="ic_clickIcons_emissive.png"/>
-    <File fileId="3" filename="$data/shaders/glowShader.xml"/>
+    <File fileId="1" filename="ic_clickIcons_emissive.png" />
+    <File fileId="2" filename="$data/shaders/glowShader.xml" />
   </Files>
 
-
   <Materials>
-    <Material name="clickPoint_mat" materialId="5" specularColor="0.501961 1 0.501961" alphaBlending="true" customShaderId="3" customShaderVariation="additive_colorScale">
+    <Material name="ic_mat" materialId="1" specularColor="0.5 0.5 0.5" alphaBlending="true" customShaderId="2" customShaderVariation="additive_colorScale">
+      <CustomParameter name="lightControl" value="1.0"/>
+      <CustomParameter name="pulseSpeed" value="3"/>
       <Texture fileId="1"/>
     </Material>
   </Materials>
@@ -22,21 +20,22 @@
   </Shapes>
 
   <Scene>
-    <Shape name="CROSS" shapeId="1" clipDistance="15" nodeId="22" castsShadows="true" receiveShadows="true" materialIds="5"/>
-    <Shape name="IGNITIONKEY" shapeId="2" clipDistance="15" nodeId="23" castsShadows="true" receiveShadows="true" materialIds="5"/>
-    <Shape name="CRUISE_CONTROL" shapeId="3" clipDistance="15" nodeId="24" castsShadows="true" receiveShadows="true" materialIds="5"/>
-    <Shape name="GPS" shapeId="4" clipDistance="15" nodeId="25" castsShadows="true" receiveShadows="true" materialIds="5"/>
-    <Shape name="TURN_ON" shapeId="5" clipDistance="15" nodeId="26" castsShadows="true" receiveShadows="true" materialIds="5"/>
-    <Shape name="ATTACHERJOINT_LOWER" shapeId="6" clipDistance="15" nodeId="27" castsShadows="true" receiveShadows="true" materialIds="5"/>
-    <Shape name="ATTACHERJOINT_LIFT" shapeId="7" clipDistance="15" nodeId="28" castsShadows="true" receiveShadows="true" materialIds="5"/>
-    <Shape name="ATTACHERJOINT" shapeId="8" clipDistance="15" nodeId="29" castsShadows="true" receiveShadows="true" materialIds="5"/>
-    <Shape name="LIGHT_HIGH" shapeId="9" clipDistance="15" nodeId="30" castsShadows="true" receiveShadows="true" materialIds="5"/>
-    <Shape name="LIGHT" shapeId="10" clipDistance="15" nodeId="31" castsShadows="true" receiveShadows="true" materialIds="5"/>
-    <Shape name="TURNLIGHT_LEFT" shapeId="11" clipDistance="15" nodeId="32" castsShadows="true" receiveShadows="true" materialIds="5"/>
-    <Shape name="TURNLIGHT_RIGHT" shapeId="12" clipDistance="15" nodeId="33" castsShadows="true" receiveShadows="true" materialIds="5"/>
-    <Shape name="BEACON_LIGHT" shapeId="13" clipDistance="15" nodeId="34" castsShadows="true" receiveShadows="true" materialIds="5"/>
-    <Shape name="ARROW" shapeId="14" clipDistance="15" nodeId="35" castsShadows="true" receiveShadows="true" materialIds="5"/>
-    <Shape name="PIPE_UNFOLD" shapeId="15" clipDistance="15" nodeId="36" castsShadows="true" receiveShadows="true" materialIds="5"/>
+    <Shape name="CROSS" shapeId="1" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="1" clipDistance="15" nodeId="1"/>
+    <Shape name="IGNITIONKEY" shapeId="2" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="1" clipDistance="15" nodeId="2"/>
+    <Shape name="CRUISE_CONTROL" shapeId="3" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="1" clipDistance="15" nodeId="3"/>
+    <Shape name="GPS" shapeId="4" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="1" clipDistance="15" nodeId="4"/>
+    <Shape name="TURN_ON" shapeId="5" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="1" clipDistance="15" nodeId="5"/>
+    <Shape name="ATTACHERJOINT_LOWER" shapeId="6" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="1" clipDistance="15" nodeId="6"/>
+    <Shape name="ATTACHERJOINT_LIFT" shapeId="7" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="1" clipDistance="15" nodeId="7"/>
+    <Shape name="ATTACHERJOINT" shapeId="8" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="1" clipDistance="15" nodeId="8"/>
+    <Shape name="LIGHT_HIGH" shapeId="9" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="1" clipDistance="15" nodeId="9"/>
+    <Shape name="LIGHT" shapeId="10" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="1" clipDistance="15" nodeId="10"/>
+    <Shape name="TURNLIGHT_LEFT" shapeId="11" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="1" clipDistance="15" nodeId="11"/>
+    <Shape name="TURNLIGHT_RIGHT" shapeId="12" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="1" clipDistance="15" nodeId="12"/>
+    <Shape name="BEACON_LIGHT" shapeId="13" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="1" clipDistance="15" nodeId="13"/>
+    <Shape name="ARROW" shapeId="14" castsShadows="false" receiveShadows="true" decalLayer="3" materialIds="1" clipDistance="15" nodeId="14"/>
   </Scene>
 
+  <UserAttributes>
+  </UserAttributes>
 </i3D>
