@@ -129,6 +129,8 @@ LIGHTS_TURNLIGHT_LEFT_TOGGLE | Toggle turnlight left on and off
 LIGHTS_TURNLIGHT_RIGHT_TOGGLE | Toggle turnlight right on and off
 LIGHTS_BEACON_TOGGLE | Toggle beaconlight on and off
 LIGHTS_PIPE_TOGGLE | Toggle pipelight on and off |
+AUTOMATIC_STEERING_TOGGLE | Toggle automatic steering on and off
+AUTOMATIC_STEERING_LINES_TOGGLE | Show/hide automatic steering lines
 CRUISE_CONTROL_TOGGLE | Toggle cruise control on and off
 DRIVE_DIRECTION_TOGGLE | Toggle vehicle drive direction
 COVER_TOGGLE | Toggle cover state

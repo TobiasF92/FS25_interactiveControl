@@ -60,8 +60,11 @@
         <text name="actionIC_pipeLightsOn" text="IC: Turn pipelight on"/>
         <text name="actionIC_pipeLightsOff" text="IC: Turn pipelight off"/>
 
-        <text name="actionIC_gs_activate" text="IC: GS activate"/>
-        <text name="actionIC_gs_deactivate" text="IC: GS deactivate"/>
+        <text name="actionIC_sa_activate" text="IC: Activate steering assist"/>
+        <text name="actionIC_sa_deactivate" text="IC: Deactivate steering assist"/>
+
+        <text name="actionIC_sa_lines_activate" text="IC: Show steering assist lines"/>
+        <text name="actionIC_sa_lines_deactivate" text="IC: Hide steering assist lines"/>
 
         <text name="actionIC_cruiseControl_toggle" text="IC: Toggle cruise control"/>
 

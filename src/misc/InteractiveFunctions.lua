@@ -393,6 +393,63 @@ InteractiveFunctions.addFunction("LIGHTS_PIPE_TOGGLE", {
     end
 })
 
+
+---FUNCTION_AUTOMATIC_STEERING_TOGGLE
+InteractiveFunctions.addFunction("AUTOMATIC_STEERING_TOGGLE", {
+    posFunc = function(target, data, noEventSend)
+        if noEventSend then
+            return
+        end
+        if target:getIsAutomaticSteeringAllowed() then
+            AIAutomaticSteering.actionEventSteering(target)
+        end
+    end,
+    updateFunc = function(target, data)
+        local state = target:getAIAutomaticSteeringState()
+        if state ~= nil then 
+            if state == AIAutomaticSteering.STATE.ACTIVE then 
+                return true
+            else
+                return false
+            end
+        end
+        return nil
+    end,
+    isBlockedFunc = function(target, data)
+        local state = target:getAIAutomaticSteeringState()
+        if state ~= nil then 
+            if state == AIAutomaticSteering.STATE.ACTIVE or state == AIAutomaticSteering.STATE.AVAILABLE then 
+                return true
+            end
+        end
+        return false
+    end
+})
+
+---FUNCTION_AUTOMATIC_STEERING_LINES_TOGGLE
+InteractiveFunctions.addFunction("AUTOMATIC_STEERING_LINES_TOGGLE", {
+    posFunc = function(target, data, noEventSend)
+        if noEventSend then
+            return
+        end
+        if target:getIsAutomaticSteeringAllowed() then
+            AIAutomaticSteering.actionEventSteeringLines(target)
+        end
+    end,
+    updateFunc = function(target, data)
+        return g_gameSettings:getValue(GameSettings.SETTING.STEERING_ASSIST_LINES)
+    end,
+    isBlockedFunc = function(target, data)
+        local state = target:getAIAutomaticSteeringState()
+        if state ~= nil then 
+            if state == AIAutomaticSteering.STATE.ACTIVE or state == AIAutomaticSteering.STATE.AVAILABLE then 
+                return true
+            end
+        end
+        return false
+    end
+})
+
 ---FUNCTION_CRUISE_CONTROL_TOGGLE
 InteractiveFunctions.addFunction("CRUISE_CONTROL_TOGGLE", {
     posFunc = function(target, data, noEventSend)

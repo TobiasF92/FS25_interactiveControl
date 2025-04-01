@@ -60,8 +60,11 @@
         <text name="actionIC_pipeLightsOn" text="IC : Activer l'éclairage du tuyau"/>
         <text name="actionIC_pipeLightsOff" text="IC : éteindre l'éclairage du tuyau"/>
 
-        <text name="actionIC_gs_activate" text="IC : activation GS"/>
-        <text name="actionIC_gs_deactivate" text="IC : GS désactiver"/>
+        <text name="actionIC_sa_activate" text="IC : Activer le guidage sur voie"/>
+        <text name="actionIC_sa_deactivate" text="IC : Désactiver le guidage sur voie"/>
+        
+        <text name="actionIC_sa_lines_activate" text="IC: Afficher les lignes d'assistance à la direction"/>
+        <text name="actionIC_sa_lines_deactivate" text="IC: Masquer les lignes d'assistance à la direction"/>
 
         <text name="actionIC_cruiseControl_toggle" text="IC : Activer le régulateur de vitesse"/>
 

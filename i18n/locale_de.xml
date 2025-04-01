@@ -60,8 +60,11 @@
         <text name="actionIC_pipeLightsOn" text="IC: Rohrbeleuchtung anschalten"/>
         <text name="actionIC_pipeLightsOff" text="IC: Rohrbeleuchtung ausschalten"/>
 
-        <text name="actionIC_gs_activate" text="IC: GPS aktivieren"/>
-        <text name="actionIC_gs_deactivate" text="IC: GPS deaktivieren"/>
+        <text name="actionIC_sa_activate" text="IC: Spurführung aktivieren"/>
+        <text name="actionIC_sa_deactivate" text="IC: Spurführung deaktivieren"/>
+
+        <text name="actionIC_sa_lines_activate" text="IC: Spurführungslinien anzeigen"/>
+        <text name="actionIC_sa_lines_deactivate" text="IC: Spurführungslinien ausblenden"/>
 
         <text name="actionIC_cruiseControl_toggle" text="IC: Tempomat wechseln"/>
 
