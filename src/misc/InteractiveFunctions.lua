@@ -406,23 +406,11 @@ InteractiveFunctions.addFunction("AUTOMATIC_STEERING_TOGGLE", {
     end,
     updateFunc = function(target, data)
         local state = target:getAIAutomaticSteeringState()
-        if state ~= nil then 
-            if state == AIAutomaticSteering.STATE.ACTIVE then 
-                return true
-            else
-                return false
-            end
-        end
-        return nil
+        return state == AIAutomaticSteering.STATE.ACTIVE
     end,
     isBlockedFunc = function(target, data)
         local state = target:getAIAutomaticSteeringState()
-        if state ~= nil then 
-            if state == AIAutomaticSteering.STATE.ACTIVE or state == AIAutomaticSteering.STATE.AVAILABLE then 
-                return true
-            end
-        end
-        return false
+        return state == AIAutomaticSteering.STATE.ACTIVE or state == AIAutomaticSteering.STATE.AVAILABLE
     end
 })
 
@@ -441,12 +429,7 @@ InteractiveFunctions.addFunction("AUTOMATIC_STEERING_LINES_TOGGLE", {
     end,
     isBlockedFunc = function(target, data)
         local state = target:getAIAutomaticSteeringState()
-        if state ~= nil then 
-            if state == AIAutomaticSteering.STATE.ACTIVE or state == AIAutomaticSteering.STATE.AVAILABLE then 
-                return true
-            end
-        end
-        return false
+        return state == AIAutomaticSteering.STATE.ACTIVE or state == AIAutomaticSteering.STATE.AVAILABLE
     end
 })
 
