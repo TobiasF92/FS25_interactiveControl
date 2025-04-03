@@ -112,14 +112,14 @@ end
 ---Returns true if manager has active control, false otherwise
 ---@return boolean hasActiveController
 function InteractiveControlManager:isInteractiveControlActivated()
-    local controlledVehicle = self.mission.controlledVehicle
+    local controlledVehicle = g_localPlayer:getCurrentVehicle()
 
     if controlledVehicle == nil then
         return self.playerInRange
     end
 
     if controlledVehicle.isInteractiveControlActivated ~= nil then
-        return controlledVehicle:isInteractiveControlActivated()
+        return controlledVehicle:isInteractiveControlActivated() and self.playerInRange
     end
 
     return false
