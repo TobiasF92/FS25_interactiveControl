@@ -582,6 +582,16 @@ end
 ---Returns action text by controller state
 ---@return string actionText
 function InteractiveController:getActionText()
+    for _, actor in ipairs(self.interactiveActors) do
+        if actor['getForcedActionText'] ~= nil then
+            local forcedText = actor['getForcedActionText'](actor)
+
+            if forcedText ~= nil and forcedText ~= "" then
+                return forcedText
+            end
+        end
+    end
+
     if self:isAnalog() then
         return self:getActiveActionDirection() >= 0 and self.posText or self.negText
     end

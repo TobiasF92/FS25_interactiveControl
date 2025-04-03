@@ -383,15 +383,15 @@ function InteractiveControl:setMissionActiveController(activeController)
     local missionActiveController = g_currentMission.interactiveControl:getActiveInteractiveController()
 
     if activeController ~= nil then
+        local actionText = activeController:getActionText()
+
         if missionActiveController == nil or (missionActiveController.target == self and missionActiveController ~= activeController) then
             --Set active controller to mission controller
             g_currentMission.interactiveControl:setActiveInteractiveController(activeController)
 
-            local actionText = activeController:getActionText()
             g_currentMission.interactiveControl:setActionText(actionText, true)
         elseif missionActiveController == activeController and math.abs(activeController.lastChangeTime - g_currentMission.time) < InteractiveControl.CONTROLLER_TEXT_DIRTY_TIME then
             --Refresh text
-            local actionText = activeController:getActionText()
             g_currentMission.interactiveControl:setActionText(actionText, true)
         end
     else

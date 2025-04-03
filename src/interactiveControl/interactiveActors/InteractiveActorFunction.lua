@@ -148,3 +148,13 @@ function InteractiveActorFunction:isBlocked()
 
     return false
 end
+
+---Returns forced action text if is defined
+---@return string|nil forcedText
+function InteractiveActorFunction:getForcedActionText()
+    if self.data ~= nil and self.data.forcedActionText ~= nil then
+        return self.data.forcedActionText(self.target, self.loadData)
+    end
+
+    return nil
+end

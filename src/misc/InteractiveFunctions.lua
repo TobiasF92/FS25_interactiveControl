@@ -53,6 +53,7 @@ function InteractiveFunctions.addFunction(functionIdStr, functionArgs)
     entry.schemaFunc = functionArgs.schemaFunc
     entry.loadFunc = functionArgs.loadFunc
     entry.isBlockedFunc = functionArgs.isBlockedFunc
+    entry.forcedActionText = functionArgs.forcedActionText
 
     InteractiveFunctions.FUNCTIONS[entry.functionId] = entry
 
