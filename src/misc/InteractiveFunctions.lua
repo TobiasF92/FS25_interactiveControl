@@ -393,7 +393,6 @@ InteractiveFunctions.addFunction("LIGHTS_PIPE_TOGGLE", {
     end
 })
 
-
 ---FUNCTION_AUTOMATIC_STEERING_TOGGLE
 InteractiveFunctions.addFunction("AUTOMATIC_STEERING_TOGGLE", {
     posFunc = function(target, data, noEventSend)
@@ -406,11 +405,17 @@ InteractiveFunctions.addFunction("AUTOMATIC_STEERING_TOGGLE", {
     end,
     updateFunc = function(target, data)
         local state = target:getAIAutomaticSteeringState()
-        return state == AIAutomaticSteering.STATE.ACTIVE
+        if state ~= nil then
+            return state == AIAutomaticSteering.STATE.ACTIVE
+        end
+        return nil
     end,
     isBlockedFunc = function(target, data)
         local state = target:getAIAutomaticSteeringState()
-        return state == AIAutomaticSteering.STATE.ACTIVE or state == AIAutomaticSteering.STATE.AVAILABLE
+        if state ~= nil then
+            return state == AIAutomaticSteering.STATE.ACTIVE or state == AIAutomaticSteering.STATE.AVAILABLE
+        end
+        return false
     end
 })
 
@@ -429,7 +434,10 @@ InteractiveFunctions.addFunction("AUTOMATIC_STEERING_LINES_TOGGLE", {
     end,
     isBlockedFunc = function(target, data)
         local state = target:getAIAutomaticSteeringState()
-        return state == AIAutomaticSteering.STATE.ACTIVE or state == AIAutomaticSteering.STATE.AVAILABLE
+        if state ~= nil then
+            return state ~= nil and state == AIAutomaticSteering.STATE.ACTIVE or state == AIAutomaticSteering.STATE.AVAILABLE
+        end
+        return false
     end
 })
 
