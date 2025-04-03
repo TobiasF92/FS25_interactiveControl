@@ -489,11 +489,24 @@ InteractiveFunctions.addFunction("COVER_TOGGLE", {
     end
 })
 
+---Returns true if target is equal to controlled player vehicle, false otherwise
+---@param target Vehicle
+---@return boolean isEqual
+local function controlledIsEqualTarget(target)
+    local controlledVehicle = g_localPlayer:getCurrentVehicle()
+
+    if controlledVehicle == nil then
+        return false
+    end
+
+    return controlledVehicle == target
+end
+
 ---FUNCTION_RADIO_TOGGLE
 InteractiveFunctions.addFunction("RADIO_TOGGLE", {
     posFunc = function(target, data, noEventSend)
-        if g_soundPlayer ~= nil and g_currentMission ~= nil and g_currentMission.onToggleRadio ~= nil and g_currentMission.controlledVehicle == target then
-            g_currentMission:onToggleRadio()
+        if g_soundPlayer ~= nil and controlledIsEqualTarget(target) then
+            PlayerInputComponent.onInputToggleRadio()
         end
     end,
     updateFunc = function(target, data)
@@ -515,7 +528,7 @@ InteractiveFunctions.addFunction("RADIO_TOGGLE", {
 ---FUNCTION_RADIO_CHANNEL_NEXT
 InteractiveFunctions.addFunction("RADIO_CHANNEL_NEXT", {
     posFunc = function(target, data, noEventSend)
-        if g_soundPlayer ~= nil and g_currentMission ~= nil and g_currentMission.controlledVehicle == target then
+        if g_soundPlayer ~= nil and controlledIsEqualTarget(target) then
             g_soundPlayer:nextChannel()
         end
     end,
@@ -532,7 +545,7 @@ InteractiveFunctions.addFunction("RADIO_CHANNEL_NEXT", {
 ---FUNCTION_RADIO_CHANNEL_PREVIOUS
 InteractiveFunctions.addFunction("RADIO_CHANNEL_PREVIOUS", {
     posFunc = function(target, data, noEventSend)
-        if g_soundPlayer ~= nil and g_currentMission ~= nil and g_currentMission.controlledVehicle == target then
+        if g_soundPlayer ~= nil and controlledIsEqualTarget(target) then
             g_soundPlayer:previousChannel()
         end
     end,
@@ -549,7 +562,7 @@ InteractiveFunctions.addFunction("RADIO_CHANNEL_PREVIOUS", {
 ---FUNCTION_RADIO_ITEM_NEXT
 InteractiveFunctions.addFunction("RADIO_ITEM_NEXT", {
     posFunc = function(target, data, noEventSend)
-        if g_soundPlayer ~= nil and g_currentMission ~= nil and g_currentMission.controlledVehicle == target then
+        if g_soundPlayer ~= nil and controlledIsEqualTarget(target) then
             g_soundPlayer:nextItem()
         end
     end,
@@ -566,7 +579,7 @@ InteractiveFunctions.addFunction("RADIO_ITEM_NEXT", {
 ---FUNCTION_RADIO_ITEM_PREVIOUS
 InteractiveFunctions.addFunction("RADIO_ITEM_PREVIOUS", {
     posFunc = function(target, data, noEventSend)
-        if g_soundPlayer ~= nil and g_currentMission ~= nil and g_currentMission.controlledVehicle == target then
+        if g_soundPlayer ~= nil and controlledIsEqualTarget(target) then
             g_soundPlayer:previousItem()
         end
     end,
