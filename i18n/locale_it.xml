@@ -60,8 +60,11 @@
         <text name="actionIC_pipeLightsOn" text="IC: Accendere la luce del tubo"/>
         <text name="actionIC_pipeLightsOff" text="IC: Spegnere la luce del tubo"/>
 
-        <text name="actionIC_gs_activate" text="IC: GS attiva"/>
-        <text name="actionIC_gs_deactivate" text="IC: GS diasttiva"/>
+        <text name="actionIC_sa_activate" text="IC: Attivare la guida di corsia"/>
+        <text name="actionIC_sa_deactivate" text="IC: Disattivare la guida di corsia"/>
+        
+        <text name="actionIC_sa_lines_activate" text="IC: Mostra le linee di assistenza allo sterzo"/>
+        <text name="actionIC_sa_lines_deactivate" text="IC: Nascondi le linee di assistenza allo sterzo"/>
 
         <text name="actionIC_cruiseControl_toggle" text="IC: Alterna il cruise control"/>
 
