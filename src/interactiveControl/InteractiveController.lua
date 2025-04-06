@@ -580,14 +580,17 @@ function InteractiveController:getActiveActionDirection()
 end
 
 ---Returns action text by controller state
+---@param getForced boolean
 ---@return string actionText
-function InteractiveController:getActionText()
-    for _, actor in ipairs(self.interactiveActors) do
-        if actor['getForcedActionText'] ~= nil then
-            local forcedText = actor['getForcedActionText'](actor)
+function InteractiveController:getActionText(getForced)
+    if getForced == nil or getForced then
+        for _, actor in ipairs(self.interactiveActors) do
+            if actor['getForcedActionText'] ~= nil then
+                local forcedText = actor['getForcedActionText'](actor)
 
-            if forcedText ~= nil and forcedText ~= "" then
-                return forcedText
+                if forcedText ~= nil and forcedText ~= "" then
+                    return forcedText
+                end
             end
         end
     end

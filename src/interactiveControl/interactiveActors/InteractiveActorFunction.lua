@@ -153,7 +153,7 @@ end
 ---@return string|nil forcedText
 function InteractiveActorFunction:getForcedActionText()
     if self.data ~= nil and self.data.forcedActionText ~= nil then
-        return self.data.forcedActionText(self.target, self.loadData)
+        return self.data.forcedActionText(self.target, self.loadData, self)
     end
 
     return nil
