@@ -1306,3 +1306,163 @@ InteractiveFunctions.addFunction("ATTACHERJOINTS_ATTACH_DETACH", {
         return false
     end
 })
+
+---FUNCTION_BALER_TOGGLE_SIZE
+InteractiveFunctions.addFunction("BALER_TOGGLE_SIZE", {
+    posFunc = function(target, data, noEventSend)
+        if noEventSend then
+            return
+        end
+        local spec_baler = target.spec_baler
+
+        if spec_baler ~= nil then 
+            Baler.actionEventToggleSize(target)
+            local baleTypeDef = spec_baler.baleTypes[spec_baler.preSelectedBaleTypeIndex]
+        end
+    end,
+    forcedActionText = function(target, data, interactiveActor)
+        local spec_baler = target.spec_baler
+        local actionText = interactiveActor.interactiveController:getActionText(false)
+        
+        if spec_baler ~= nil then
+            local baleTypeDef = spec_baler.baleTypes[spec_baler.preSelectedBaleTypeIndex]
+            local baleSize = 0
+
+            if baleTypeDef ~= nil then
+                if baleTypeDef.isRoundBale == true then
+                    baleSize = baleTypeDef.diameter
+                else
+                    baleSize = baleTypeDef.length
+                end
+            end
+            return string.format(actionText, baleSize * 100)
+        end
+        return actionText
+    end,
+    isBlockedFunc = function(target, data)
+        local spec_baler = target.spec_baler
+        local spec_foldableSteps = target.spec_foldableSteps
+        if #spec_baler.baleTypes > 1 then
+            if spec_foldableSteps ~= nil then
+                return spec_foldableSteps.stateIndex == spec_foldableSteps.maxState
+            end
+            return true
+        end
+        return false
+    end
+})
+
+---FUNCTION_BALER_DROP_BALE
+InteractiveFunctions.addFunction("BALER_DROP_BALE", {
+    posFunc = function(target, data, noEventSend)
+        if noEventSend then
+            return
+        end
+        local spec_baler = target.spec_baler
+
+        if spec_baler ~= nil and Baler.isUnloadingAllowed(target) then
+            Baler.actionEventUnloading(target)
+        end
+    end,
+    isBlockedFunc = function(target, data)
+        local spec_baler = target.spec_baler
+        local spec_foldableSteps = target.spec_foldableSteps
+
+        if spec_baler ~= nil then
+            local canUnload = (Baler.isUnloadingAllowed(target) and #spec_baler.bales > 0) or (spec_baler.unloadingState == Baler.UNLOADING_OPEN)
+
+            if spec_foldableSteps ~= nil then
+                local isFullyUnfolded = spec_foldableSteps.stateIndex == spec_foldableSteps.maxState
+                return isFullyUnfolded and canUnload
+            end
+            return canUnload
+        end
+        return true
+    end
+})
+
+---FUNCTION_BALER_TOGGLE_AUTOMATIC_DROP
+InteractiveFunctions.addFunction("BALER_TOGGLE_AUTOMATIC_DROP", {
+    posFunc = function(target, data, noEventSend)
+        if noEventSend then
+            return
+        end
+        local spec_baler = target.spec_baler
+
+        if spec_baler ~= nil then 
+            Baler.setBalerAutomaticDrop(target, not spec_baler.automaticDrop)
+        end
+    end,
+    updateFunc = function(target, data)
+        local spec_baler = target.spec_baler
+        if spec_baler ~= nil then
+            return spec_baler.automaticDrop
+        end
+        return nil
+    end,
+    isBlockedFunc = function(target, data)
+        local spec_foldableSteps = target.spec_foldableSteps
+        if spec_foldableSteps ~= nil then
+            return spec_foldableSteps.stateIndex == spec_foldableSteps.maxState
+        end
+        return true
+    end
+})
+
+---FUNCTION_BALEWRAPPER_DROP_BALE
+InteractiveFunctions.addFunction("BALEWRAPPER_DROP_BALE", {
+    posFunc = function(target, data, noEventSend)
+        if noEventSend then
+            return
+        end
+        local spec_baleWrapper = target.spec_baleWrapper
+
+        if spec_baleWrapper ~= nil and BaleWrapper.getIsBaleDropAllowed(target) then
+            BaleWrapper.actionEventDrop(target)
+        end
+    end,
+    isBlockedFunc = function(target, data)
+        local spec_baleWrapper = target.spec_baleWrapper
+        local spec_foldableSteps = target.spec_foldableSteps
+        local wrapperFinished = spec_baleWrapper.baleWrapperState == BaleWrapper.STATE_WRAPPER_FINSIHED
+
+        if spec_baleWrapper ~= nil then
+            local wrapperCanUnload = wrapperFinished and BaleWrapper.getIsBaleDropAllowed(target)
+
+            if spec_foldableSteps ~= nil then
+                local isFullyUnfolded = spec_foldableSteps.stateIndex == spec_foldableSteps.maxState
+                return isFullyUnfolded and wrapperCanUnload
+            end
+            return wrapperCanUnload
+        end
+        return true
+    end
+})
+
+---FUNCTION_BALEWRAPPER_TOGGLE_AUTOMATIC_DROP
+InteractiveFunctions.addFunction("BALEWRAPPER_TOGGLE_AUTOMATIC_DROP", {
+    posFunc = function(target, data, noEventSend)
+        if noEventSend then
+            return
+        end
+        local spec_baleWrapper = target.spec_baleWrapper
+
+        if spec_baleWrapper ~= nil then 
+            BaleWrapper.setBaleWrapperAutomaticDrop(target, not spec_baleWrapper.automaticDrop)
+        end
+    end,
+    updateFunc = function(target, data)
+        local spec_baleWrapper = target.spec_baleWrapper
+        if spec_baleWrapper ~= nil then
+            return spec_baleWrapper.automaticDrop
+        end
+        return nil
+    end,
+    isBlockedFunc = function(target, data)
+        local spec_foldableSteps = target.spec_foldableSteps
+        if spec_foldableSteps ~= nil then
+            return spec_foldableSteps.stateIndex == spec_foldableSteps.maxState
+        end
+        return true
+    end
+})

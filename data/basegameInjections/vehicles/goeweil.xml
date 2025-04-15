@@ -1,0 +1,89 @@
+<data>
+    <vehicle xmlFilename="data/vehicles/goeweil/varioMaster/varioMaster.xml">
+        <xml key="vehicle">
+            <xml key=".interactiveControl.interactiveControlConfigurations.interactiveControlConfiguration(0).interactiveControls">
+                <!-- outdoorTrigger -->
+                <xml key=".outdoorTrigger">
+                    <entry type="string" key="#linkNode" value="controlPanel_vis"/>
+                    <entry type="string" key="#filename" value="SHARED_INTERACTIVE_TRIGGER"/>
+                    <entry type="string" key="#translation" value="2 -1.192 0"/>
+                </xml>
+                <!-- drop bale from bale wrapper -->
+                <xml key=".interactiveControl(0)">
+                    <entry type="string" key="#posText" value="$l10n_actionIC_balerwrapper_dropBale"/>
+                    <entry type="string" key="#negText" value="$l10n_actionIC_balerwrapper_dropBale"/>
+                    <xml key=".clickPoint(0)">
+                        <entry type="string" key="#linkNode" value="controlPanel_vis"/>
+                        <entry type="string" key="#translation" value="0.15 -0.26 -0.027"/>
+                        <entry type="string" key="#rotation" value="0 0 0"/>
+                        <entry type="float" key="#size" value="0.05"/>
+                        <entry type="string" key="#type" value="OUTDOOR"/>
+                    </xml>
+                    <xml key=".function(0)">
+                        <entry type="string" key="#name" value="BALEWRAPPER_DROP_BALE"/>
+                    </xml>
+                </xml>
+                <!-- drop bale from baler -->
+                <xml key=".interactiveControl(1)">
+                    <entry type="string" key="#posText" value="$l10n_actionIC_baler_dropBale"/>
+                    <entry type="string" key="#negText" value="$l10n_actionIC_baler_dropBale"/>
+                    <xml key=".clickPoint(0)">
+                        <entry type="string" key="#linkNode" value="controlPanel_vis"/>
+                        <entry type="string" key="#translation" value="0.15 -0.26 -0.375"/>
+                        <entry type="string" key="#rotation" value="0 0 0"/>
+                        <entry type="float" key="#size" value="0.05"/>
+                        <entry type="string" key="#type" value="OUTDOOR"/>
+                    </xml>
+                    <xml key=".function(0)">
+                        <entry type="string" key="#name" value="BALER_DROP_BALE"/>
+                    </xml>
+                </xml>
+                <!-- change bale size -->
+                <xml key=".interactiveControl(2)">
+                    <entry type="string" key="#posText" value="$l10n_actionIC_baler_toggleSize"/>
+                    <entry type="string" key="#negText" value="$l10n_actionIC_baler_toggleSize"/>
+                    <xml key=".clickPoint(0)">
+                        <entry type="string" key="#linkNode" value="controlPanel_vis"/>
+                        <entry type="string" key="#translation" value="0.15 -0.26 -0.165"/>
+                        <entry type="string" key="#rotation" value="0 0 0"/>
+                        <entry type="float" key="#size" value="0.05"/>
+                        <entry type="string" key="#type" value="OUTDOOR"/>
+                    </xml>
+                    <xml key=".function(0)">
+                        <entry type="string" key="#name" value="BALER_TOGGLE_SIZE"/>
+                    </xml>
+                </xml>
+                <!-- toggle automatic bale drop from bale wrapper -->
+                <xml key=".interactiveControl(3)">
+                    <entry type="string" key="#posText" value="$l10n_actionIC_balerwrapper_automaticDropOff"/>
+                    <entry type="string" key="#negText" value="$l10n_actionIC_balerwrapper_automaticDropOn"/>
+                    <xml key=".clickPoint(0)">
+                        <entry type="string" key="#linkNode" value="controlPanel_vis"/>
+                        <entry type="string" key="#translation" value="0.15 0.02 -0.027"/>
+                        <entry type="string" key="#rotation" value="0 0 0"/>
+                        <entry type="float" key="#size" value="0.05"/>
+                        <entry type="string" key="#type" value="OUTDOOR"/>
+                    </xml>
+                    <xml key=".function(0)">
+                        <entry type="string" key="#name" value="BALEWRAPPER_TOGGLE_AUTOMATIC_DROP"/>
+                    </xml>
+                </xml>
+                <!-- toggle automatic bale drop from baler -->
+                <xml key=".interactiveControl(4)">
+                    <entry type="string" key="#posText" value="$l10n_actionIC_baler_automaticDropOff"/>
+                    <entry type="string" key="#negText" value="$l10n_actionIC_baler_automaticDropOn"/>
+                    <xml key=".clickPoint(0)">
+                        <entry type="string" key="#linkNode" value="controlPanel_vis"/>
+                        <entry type="string" key="#translation" value="0.15 0.02 -0.375"/>
+                        <entry type="string" key="#rotation" value="0 0 0"/>
+                        <entry type="float" key="#size" value="0.05"/>
+                        <entry type="string" key="#type" value="OUTDOOR"/>
+                    </xml>
+                    <xml key=".function(0)">
+                        <entry type="string" key="#name" value="BALER_TOGGLE_AUTOMATIC_DROP"/>
+                    </xml>
+                </xml>
+            </xml>
+        </xml>
+    </vehicle>
+</data>

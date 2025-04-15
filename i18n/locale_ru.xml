@@ -81,6 +81,15 @@
         <text name="actionIC_crabSteering_toggle" text="IC: Смена режима рулевого управления"/>
 
         <text name="actionIC_reverseDriving_toggle" text="IC: Изменение направления движения"/>
+        
+        <text name="actionIC_baler_toggleSize" text="IC: Изменение размера рулона (%dcm)"/>
+        <text name="actionIC_baler_dropBale" text="IC: Пресс-подборщик: Выгрузить тюк"/>
+        <text name="actionIC_baler_automaticDropOn" text="IC: Пресс-подборщик: Включить автоматический сброс рулона"/>
+        <text name="actionIC_baler_automaticDropOff" text="IC: Пресс-подборщик: Отключить автоматический сброс рулона"/>
+        
+        <text name="actionIC_balerwrapper_dropBale" text="IC: Обмотчик тюков: Выгрузить тюк"/>
+        <text name="actionIC_balerwrapper_automaticDropOn" text="IC: Обмотчик тюков: Включить автоматический сброс тюка"/>
+        <text name="actionIC_balerwrapper_automaticDropOff" text="IC: Обмотчик тюков: Отключить автоматическое сбрасывание тюка"/>
 
         <text name="actionIC_parkingbrakeOn" text="IC: Задействовать ручной тормоз" />
         <text name="actionIC_parkingbrakeOff" text="IC: Отпустить ручной тормоз" />

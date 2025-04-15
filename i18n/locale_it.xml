@@ -80,6 +80,15 @@
         <text name="actionIC_crabSteering_toggle" text="IC: modalità di sterzata"/>
 
         <text name="actionIC_reverseDriving_toggle" text="IC: Cambiare la direzione di marcia"/>
+        
+        <text name="actionIC_baler_toggleSize" text="IC: Cambiare la dimensione della balla (%dcm)"/>
+        <text name="actionIC_baler_dropBale" text="IC: Pressa: Scaricare la balla"/>
+        <text name="actionIC_baler_automaticDropOn" text="IC: Pressa: Abilitare la caduta automatica della balla"/>
+        <text name="actionIC_baler_automaticDropOff" text="IC: Pressa: Disabilitare la caduta automatica della balla"/>
+        
+        <text name="actionIC_balerwrapper_dropBale" text="IC: Fasciatore: Scaricare la balla"/>
+        <text name="actionIC_balerwrapper_automaticDropOn" text="IC: Fasciatore: Abilitare la caduta automatica della balla"/>
+        <text name="actionIC_balerwrapper_automaticDropOff" text="IC: Fasciatore: Disabilitare la caduta automatica della balla"/>
 
         <text name="actionIC_parkingbrakeOn" text="IC: tirare il freno a mano" />
         <text name="actionIC_parkingbrakeOff" text="IC: Rilasciare il freno a mano" />
