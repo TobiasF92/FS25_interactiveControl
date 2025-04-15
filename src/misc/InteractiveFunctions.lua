@@ -1317,7 +1317,6 @@ InteractiveFunctions.addFunction("BALER_TOGGLE_SIZE", {
 
         if spec_baler ~= nil then 
             Baler.actionEventToggleSize(target)
-            local baleTypeDef = spec_baler.baleTypes[spec_baler.preSelectedBaleTypeIndex]
         end
     end,
     forcedActionText = function(target, data, interactiveActor)
