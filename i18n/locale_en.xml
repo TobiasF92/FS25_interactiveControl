@@ -80,6 +80,15 @@
         <text name="actionIC_crabSteering_toggle" text="IC: toggle steering mode"/>
 
         <text name="actionIC_reverseDriving_toggle" text="IC: Toggle reverse driving"/>
+        
+        <text name="actionIC_baler_toggleSize" text="IC: Change bale size (%dcm)"/>
+        <text name="actionIC_baler_dropBale" text="IC: Baler: Unload Bale"/>
+        <text name="actionIC_baler_automaticDropOn" text="IC: Baler: Enable automatic bale drop"/>
+        <text name="actionIC_baler_automaticDropOff" text="IC: Baler: Disable automatic bale drop"/>
+        
+        <text name="actionIC_balerwrapper_dropBale" text="IC: Bale Wrapper: Unload bale"/>
+        <text name="actionIC_balerwrapper_automaticDropOn" text="IC: Bale Wrapper: Enable automatic bale drop"/>
+        <text name="actionIC_balerwrapper_automaticDropOff" text="IC: Bale Wrapper: Disable automatic bale drop"/>
 
         <text name="actionIC_parkingbrakeOn" text="IC: Parkingbrake on" />
         <text name="actionIC_parkingbrakeOff" text="IC: Parkingbrake off" />

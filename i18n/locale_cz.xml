@@ -80,6 +80,15 @@
         <text name="actionIC_crabSteering_toggle" text="IC: Přepnout režim řízení"/>
 
         <text name="actionIC_reverseDriving_toggle" text="IC: Změna směru jízdy"/>
+        
+        <text name="actionIC_baler_toggleSize" text="IC: Změna velikosti balíku (%dcm)"/>
+        <text name="actionIC_baler_dropBale" text="IC: Lis: Vyložení balíku"/>
+        <text name="actionIC_baler_automaticDropOn" text="IC: Lis: Povolení automatického shozu balíku"/>
+        <text name="actionIC_baler_automaticDropOff" text="IC: Lis: Vypnutí automatického shozu balíku"/>
+        
+        <text name="actionIC_balerwrapper_dropBale" text="IC: balička balíků: Vyložení balíku"/>
+        <text name="actionIC_balerwrapper_automaticDropOn" text="IC: balička balíků: Povolení automatického shozu balíku"/>
+        <text name="actionIC_balerwrapper_automaticDropOff" text="IC: balička balíků: Vypnutí automatického shozu balíku"/>
 
         <text name="actionIC_parkingbrakeOn" text="IC: Zatáhnout parkovací brzdu" />
         <text name="actionIC_parkingbrakeOff" text="IC: Uvolnit parkovací brzdu" />

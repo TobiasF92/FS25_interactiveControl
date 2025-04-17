@@ -80,6 +80,15 @@
         <text name="actionIC_crabSteering_toggle" text="IC: Przełączanie trybu sterowania"/>
 
         <text name="actionIC_reverseDriving_toggle" text="IC: Zmiana kierunku jazdy"/>
+        
+        <text name="actionIC_baler_toggleSize" text="IC: Zmień rozmiar beli (%dcm)"/>
+        <text name="actionIC_baler_dropBale" text="IC: Prasa: Rozładuj belę"/>
+        <text name="actionIC_baler_automaticDropOn" text="IC: Prasa: Włącz automatyczne zrzucanie beli"/>
+        <text name="actionIC_baler_automaticDropOff" text="IC: Prasa: Wyłącz automatyczne zrzucanie beli"/>
+        
+        <text name="actionIC_balerwrapper_dropBale" text="IC: Owijarka: Rozładuj belę"/>
+        <text name="actionIC_balerwrapper_automaticDropOn" text="IC: Owijarka: Włącz automatyczne zrzucanie beli"/>
+        <text name="actionIC_balerwrapper_automaticDropOff" text="IC: Owijarka: Wyłącz automatyczne zrzucanie beli"/>
 
         <text name="actionIC_parkingbrakeOn" text="IC: Zaciągnięcie hamulca ręcznego" />
         <text name="actionIC_parkingbrakeOff" text="IC: Zwolnij hamulec ręczny" />

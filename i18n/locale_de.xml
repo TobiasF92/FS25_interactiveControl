@@ -81,6 +81,15 @@
 
         <text name="actionIC_reverseDriving_toggle" text="IC: Fahrtrichtung wechseln"/>
 
+        <text name="actionIC_baler_toggleSize" text="IC: Ballengröße ändern (%dcm)"/>
+        <text name="actionIC_baler_dropBale" text="IC: Ballenpresse: Ballen entladen"/>
+        <text name="actionIC_baler_automaticDropOn" text="IC: Ballenpresse: Autom. Ablage ein"/>
+        <text name="actionIC_baler_automaticDropOff" text="IC: Ballenpresse: Autom. Ablage aus"/>
+
+        <text name="actionIC_balerwrapper_dropBale" text="IC: Ballenwickler: Ballen entladen"/>
+        <text name="actionIC_balerwrapper_automaticDropOn" text="IC: Ballenwickler: Autom. Ablage ein"/>
+        <text name="actionIC_balerwrapper_automaticDropOff" text="IC: Ballenwickler: Autom. Ablage aus"/>
+
         <text name="actionIC_parkingbrakeOn" text="IC: Handbremse anziehen" />
         <text name="actionIC_parkingbrakeOff" text="IC: Handbremse lösen" />
 

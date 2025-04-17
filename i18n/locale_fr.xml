@@ -76,6 +76,17 @@
 
         <text name="actionIC_crabSteering_toggle" text="IC : basculer le mode de pilotage"/>
 
+        <text name="actionIC_reverseDriving_toggle" text="IC: Changer le sens de la marche"/>
+        
+        <text name="actionIC_baler_toggleSize" text="IC: Modifier la taille de la balle (%dcm)"/>
+        <text name="actionIC_baler_dropBale" text="IC: Presse: Décharger la balle"/>
+        <text name="actionIC_baler_automaticDropOn" text="IC: Presse: Activer la chute automatique de la balle"/>
+        <text name="actionIC_baler_automaticDropOff" text="IC: Presse: Désactiver la chute automatique de la balle"/>
+        
+        <text name="actionIC_balerwrapper_dropBale" text="IC: Enrouleur: Décharger la balle"/>
+        <text name="actionIC_balerwrapper_automaticDropOn" text="IC: Enrouleur: Activer la chute automatique de la balle"/>
+        <text name="actionIC_balerwrapper_automaticDropOff" text="IC: Enrouleur: Désactiver la chute automatique de la balle"/>
+
         <text name="actionIC_parkingbrakeOn" text="IC : frein de stationnement activé" />
         <text name="actionIC_parkingbrakeOff" text="IC : Frein de stationnement désactivé" />
 

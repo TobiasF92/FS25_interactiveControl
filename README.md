@@ -160,6 +160,11 @@ ATTACHERJOINTS_VARIABLE_WORK_WIDTH_RIGHT_DECREASE | Decrease work width right on
 VARIABLE_WORK_WIDTH_TOGGLE | Toggle work width |
 ATTACHERJOINTS_VARIABLE_WORK_WIDTH_TOGGLE | Toggle work width on selected attacherJoint if in 'indices' | ".attacherJoint#indices"
 ATTACHERJOINTS_ATTACH_DETACH | Attach or detach vehicle on attacherJoint if in 'indices' | ".attacherJoint#indices"
+BALER_TOGGLE_SIZE | Toggle bale size |
+BALER_DROP_BALE | Drop bale from baler
+BALER_TOGGLE_AUTOMATIC_DROP | Toggle automatic bale drop from baler
+BALEWRAPPER_DROP_BALE | Drop bale from bale wrapper
+BALEWRAPPER_TOGGLE_AUTOMATIC_DROP | Toggle automatic bale drop from bale wrapper
 **External Mods**:
 -/-|-/-|
 

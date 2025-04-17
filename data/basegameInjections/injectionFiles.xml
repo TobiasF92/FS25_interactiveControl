@@ -5,4 +5,5 @@
     <file path="data/basegameInjections/vehicles/johnDeere.xml"/>
     <file path="data/basegameInjections/vehicles/masseyFerguson.xml"/>
     <file path="data/basegameInjections/vehicles/valtra.xml"/>
+    <file path="data/basegameInjections/vehicles/goeweil.xml"/>
 </files>

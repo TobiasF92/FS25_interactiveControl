@@ -77,6 +77,15 @@
         <text name="actionIC_crabSteering_toggle" text="IC: Alternar modo de direção"/>
 
         <text name="actionIC_reverseDriving_toggle" text="IC: Alternar a marcha-atrás"/>
+        
+        <text name="actionIC_baler_toggleSize" text="IC: Alterar o tamanho do fardo (%dcm)"/>
+        <text name="actionIC_baler_dropBale" text="IC: Enfardadeira: Descarregar fardo "/>
+        <text name="actionIC_baler_automaticDropOn" text="IC: Enfardadeira: Habilitar queda automática do fardo"/>
+        <text name="actionIC_baler_automaticDropOff" text="IC: Enfardadeira: Desativar queda automática do fardo"/>
+        
+        <text name="actionIC_balerwrapper_dropBale" text="IC: Envolvedor de fardos: Descarregar fardo"/>
+        <text name="actionIC_balerwrapper_automaticDropOn" text="IC: Envolvedor de fardos: Ativar queda automática do fardo"/>
+        <text name="actionIC_balerwrapper_automaticDropOff" text="IC: Envolvedor de fardos: Desativar queda automática do fardo"/>
 
         <text name="actionIC_parkingbrakeOn" text="IC: Freio de mão ligado" />
         <text name="actionIC_parkingbrakeOff" text="IC: Freio de mão desligado" />
