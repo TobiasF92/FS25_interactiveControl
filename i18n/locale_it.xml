@@ -1,125 +1,93 @@
-<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <l10n>
-    <texts>
-        <!-- actions -->
-        <text name="action_activateIC" text="Attiva Interactive Control"/>
-        <text name="action_deactivateIC" text="Disattiva Interactive Control"/>
+    <translationContributors></translationContributors>
+    <locale>it</locale>
 
-        <!-- interactive control actions -->
-        <text name="actionIC_activate" text="IC: Attivo"/>
-        <text name="actionIC_deactivate" text="IC: Disattiva"/>
-
-        <text name="actionIC_startMotor" text="IC: Start motore"/>
-        <text name="actionIC_stopMotor" text="IC: Stop motore"/>
-
-        <text name="actionIC_liftImplement" text="IC: Solleva attrezzo"/>
-        <text name="actionIC_lowerImplement" text="IC: Abbassa attrezzo"/>
-
-        <text name="actionIC_turnOnImplement" text="IC: Attiva attrezzo"/>
-        <text name="actionIC_turnOffImplement" text="IC: Ferma attrezzo"/>
-
-        <text name="actionIC_foldImplement" text="IC: Piega attrezzo"/>
-        <text name="actionIC_unfoldImplement" text="IC: Dispiega attrezzo"/>
-
-        <text name="actionIC_foldVehicle" text="IC: Ripiegare veicolo" />
-        <text name="actionIC_unfoldVehicle" text="IC: Dispiegare veicolo" />
-
-        <text name="actionIC_foldPipe" text="IC: Piegare tubo" />
-        <text name="actionIC_unfoldPipe" text="IC: Dispiegare tubo" />
-
-        <text name="actionIC_openRoof" text="IC: Apri tetto"/>
-        <text name="actionIC_closeRoof" text="IC: Chiudi tetto"/>
-
-        <text name="actionIC_openDoor" text="IC: Apri porta"/>
-        <text name="actionIC_closeDoor" text="IC: Chiudi porta"/>
-
-        <text name="actionIC_openWindow" text="IC: Apri finestra"/>
-        <text name="actionIC_closeWindow" text="IC: Chiudi finestra"/>
-
-        <text name="actionIC_lightsOn" text="IC: Attiva luci di svolta"/>
-        <text name="actionIC_lightsOff" text="IC: Disattive luci di svolta"/>
-
-        <text name="actionIC_highbeamlightsOn" text="IC: Accendere le luci abbaglianti"/>
-        <text name="actionIC_highbeamlightsOff" text="IC: Spegnere le luci abbaglianti"/>
-
-        <text name="actionIC_workLightsFrontOn" text="IC: Accendere i fari da lavoro anteriori"/>
-        <text name="actionIC_workLightsFrontOff" text="IC: Spegnere i fari da lavoro anteriori"/>
-
-        <text name="actionIC_workLightsBackOn" text="IC: Accendere i fari di lavoro posteriori"/>
-        <text name="actionIC_workLightsBackOff" text="IC: Spegnere i fari di lavoro posteriori"/>
-
-        <text name="actionIC_turnLightsLeftOn" text="IC: Accendere le luci di svolta a sinistra"/>
-        <text name="actionIC_turnLightsLeftOff" text="IC: Spegnere le luci di svolta a sinistra"/>
-
-        <text name="actionIC_turnLightsRightOn" text="IC: Accendere le luci di svolta a destra"/>
-        <text name="actionIC_turnLightsRightOff" text="IC: Spegnere le luci di svolta a destra"/>
-
-        <text name="actionIC_hazardLightsOn" text="IC: Accendere le luci di emergenza"/>
-        <text name="actionIC_hazardLightsOff" text="IC: Spegnere le luci di emergenza"/>
-
-        <text name="actionIC_pipeLightsOn" text="IC: Accendere la luce del tubo"/>
-        <text name="actionIC_pipeLightsOff" text="IC: Spegnere la luce del tubo"/>
-
-        <text name="actionIC_sa_activate" text="IC: Attivare la guida di corsia"/>
-        <text name="actionIC_sa_deactivate" text="IC: Disattivare la guida di corsia"/>
-        
-        <text name="actionIC_sa_lines_activate" text="IC: Mostra le linee di assistenza allo sterzo"/>
-        <text name="actionIC_sa_lines_deactivate" text="IC: Nascondi le linee di assistenza allo sterzo"/>
-
-        <text name="actionIC_cruiseControl_toggle" text="IC: Alterna il cruise control"/>
-
-        <text name="actionIC_openCover" text="IC: Apri copertuna"/>
-        <text name="actionIC_closeCover" text="IC: Chiudi copertina"/>
-
-        <text name="actionIC_discharge" text="IC: Scarico"/>
-        <text name="actionIC_stop_discharge" text="IC: Interrompere lo scarico"/>
-
-        <text name="actionIC_radioOn" text="IC: Radio on"/>
-        <text name="actionIC_radioOff" text="IC: Radio off"/>
-
-        <text name="actionIC_crabSteering_toggle" text="IC: modalità di sterzata"/>
-
-        <text name="actionIC_reverseDriving_toggle" text="IC: Cambiare la direzione di marcia"/>
-        
-        <text name="actionIC_baler_toggleSize" text="IC: Cambiare la dimensione della balla (%dcm)"/>
-        <text name="actionIC_baler_dropBale" text="IC: Pressa: Scaricare la balla"/>
-        <text name="actionIC_baler_automaticDropOn" text="IC: Pressa: Abilitare la caduta automatica della balla"/>
-        <text name="actionIC_baler_automaticDropOff" text="IC: Pressa: Disabilitare la caduta automatica della balla"/>
-        
-        <text name="actionIC_balerwrapper_dropBale" text="IC: Fasciatore: Scaricare la balla"/>
-        <text name="actionIC_balerwrapper_automaticDropOn" text="IC: Fasciatore: Abilitare la caduta automatica della balla"/>
-        <text name="actionIC_balerwrapper_automaticDropOff" text="IC: Fasciatore: Disabilitare la caduta automatica della balla"/>
-
-        <text name="actionIC_parkingbrakeOn" text="IC: tirare il freno a mano" />
-        <text name="actionIC_parkingbrakeOff" text="IC: Rilasciare il freno a mano" />
-
-        <text name="actionIC_diffLockFrontOn" text="IC: Blocco del differenziale anteriore inserito" />
-        <text name="actionIC_diffLockFrontOff" text="IC: blocco del differenziale anteriore disattivato" />
-
-        <text name="actionIC_allWheelDriveOn" text="IC: Tutte le ruote inserite" />
-        <text name="actionIC_allWheelDriveOff" text="IC: Tutte le ruote disattivate" />
-
-        <text name="actionIC_diffLockBackOn" text="IC: blocco differenziale posteriore on" />
-        <text name="actionIC_diffLockBackOff" text="IC: Blocco differenziale posteriore disattivato" />
-
-        <text name="actionIC_turnPumpOn" text="IC: Accendere la pompa" />
-        <text name="actionIC_turnPumpOff" text="IC: Spegnere la pompa" />
-
-        <text name="actionIC_pumpDirectionDrain" text="IC: Cambiare la direzione della pompa in: Vuoto" />
-        <text name="actionIC_pumpDirectionFill" text="IC: Cambiare la direzione della pompa in: Riempimento" />
-
-        <!-- inputs -->
-        <text name="input_IC_CLICK" text="IC: Controllo interattivo ClickPoint"/>
-        <text name="input_IC_TOGGLE_STATE" text="IC: Alterna il controllo interattivo"/>
-
-        <!-- settings -->
-        <text name="settingsIC_title" text="Interactive Control"/>
-        <text name="settingsIC_state_title" text="Stato del CI"/>
-        <text name="settingsIC_state_tooltip" text="Attiva, disattiva o commuta InteractiveControl."/>
-        <text name="settingsIC_state_option01" text="Commutabile"/>
-        <text name="settingsIC_state_option02" text="Sempre attivo"/>
-        <text name="settingsIC_state_option03" text="Da"/>
-        <text name="settingsIC_keepAlive_title" text="Mantenere attivato il CI"/>
-        <text name="settingsIC_keepAlive_tooltip" text="InteractiveControl rimane attivo quando si lascia il veicolo."/>
-    </texts>
+    <elements>
+        <e k="actionIC_activate" v="IC: Attivo"/>
+        <e k="actionIC_allWheelDriveOff" v="IC: Tutte le ruote disattivate"/>
+        <e k="actionIC_allWheelDriveOn" v="IC: Tutte le ruote inserite"/>
+        <e k="actionIC_baler_automaticDropOff" v="IC: Pressa: Disabilitare la caduta automatica della balla"/>
+        <e k="actionIC_baler_automaticDropOn" v="IC: Pressa: Abilitare la caduta automatica della balla"/>
+        <e k="actionIC_baler_dropBale" v="IC: Pressa: Scaricare la balla"/>
+        <e k="actionIC_baler_toggleSize" v="IC: Cambiare la dimensione della balla (%dcm)"/>
+        <e k="actionIC_balerwrapper_automaticDropOff" v="IC: Fasciatore: Disabilitare la caduta automatica della balla"/>
+        <e k="actionIC_balerwrapper_automaticDropOn" v="IC: Fasciatore: Abilitare la caduta automatica della balla"/>
+        <e k="actionIC_balerwrapper_dropBale" v="IC: Fasciatore: Scaricare la balla"/>
+        <e k="actionIC_closeCover" v="IC: Chiudi copertina"/>
+        <e k="actionIC_closeDoor" v="IC: Chiudi porta"/>
+        <e k="actionIC_closeRoof" v="IC: Chiudi tetto"/>
+        <e k="actionIC_closeWindow" v="IC: Chiudi finestra"/>
+        <e k="actionIC_crabSteering_toggle" v="IC: modalità di sterzata"/>
+        <e k="actionIC_cruiseControl_toggle" v="IC: Alterna il cruise control"/>
+        <e k="actionIC_deactivate" v="IC: Disattiva"/>
+        <e k="actionIC_diffLockBackOff" v="IC: Blocco differenziale posteriore disattivato"/>
+        <e k="actionIC_diffLockBackOn" v="IC: blocco differenziale posteriore on"/>
+        <e k="actionIC_diffLockFrontOff" v="IC: blocco del differenziale anteriore disattivato"/>
+        <e k="actionIC_diffLockFrontOn" v="IC: Blocco del differenziale anteriore inserito"/>
+        <e k="actionIC_discharge" v="IC: Scarico"/>
+        <e k="actionIC_foldImplement" v="IC: Piega attrezzo"/>
+        <e k="actionIC_foldPipe" v="IC: Piegare tubo"/>
+        <e k="actionIC_foldVehicle" v="IC: Ripiegare veicolo"/>
+        <e k="actionIC_hazardLightsOff" v="IC: Spegnere le luci di emergenza"/>
+        <e k="actionIC_hazardLightsOn" v="IC: Accendere le luci di emergenza"/>
+        <e k="actionIC_highbeamlightsOff" v="IC: Spegnere le luci abbaglianti"/>
+        <e k="actionIC_highbeamlightsOn" v="IC: Accendere le luci abbaglianti"/>
+        <e k="actionIC_liftImplement" v="IC: Solleva attrezzo"/>
+        <e k="actionIC_lightsOff" v="IC: Disattive luci di svolta"/>
+        <e k="actionIC_lightsOn" v="IC: Attiva luci di svolta"/>
+        <e k="actionIC_lowerImplement" v="IC: Abbassa attrezzo"/>
+        <e k="actionIC_openCover" v="IC: Apri copertuna"/>
+        <e k="actionIC_openDoor" v="IC: Apri porta"/>
+        <e k="actionIC_openRoof" v="IC: Apri tetto"/>
+        <e k="actionIC_openWindow" v="IC: Apri finestra"/>
+        <e k="actionIC_parkingbrakeOff" v="IC: Rilasciare il freno a mano"/>
+        <e k="actionIC_parkingbrakeOn" v="IC: tirare il freno a mano"/>
+        <e k="actionIC_pipeLightsOff" v="IC: Spegnere la luce del tubo"/>
+        <e k="actionIC_pipeLightsOn" v="IC: Accendere la luce del tubo"/>
+        <e k="actionIC_pumpDirectionDrain" v="IC: Cambiare la direzione della pompa in: Vuoto"/>
+        <e k="actionIC_pumpDirectionFill" v="IC: Cambiare la direzione della pompa in: Riempimento"/>
+        <e k="actionIC_radioOff" v="IC: Radio off"/>
+        <e k="actionIC_radioOn" v="IC: Radio on"/>
+        <e k="actionIC_reverseDriving_toggle" v="IC: Cambiare la direzione di marcia"/>
+        <e k="actionIC_sa_activate" v="IC: Attivare la guida di corsia"/>
+        <e k="actionIC_sa_deactivate" v="IC: Disattivare la guida di corsia"/>
+        <e k="actionIC_sa_lines_activate" v="IC: Mostra le linee di assistenza allo sterzo"/>
+        <e k="actionIC_sa_lines_deactivate" v="IC: Nascondi le linee di assistenza allo sterzo"/>
+        <e k="actionIC_startMotor" v="IC: Start motore"/>
+        <e k="actionIC_stopMotor" v="IC: Stop motore"/>
+        <e k="actionIC_stop_discharge" v="IC: Interrompere lo scarico"/>
+        <e k="actionIC_turnLightsLeftOff" v="IC: Spegnere le luci di svolta a sinistra"/>
+        <e k="actionIC_turnLightsLeftOn" v="IC: Accendere le luci di svolta a sinistra"/>
+        <e k="actionIC_turnLightsRightOff" v="IC: Spegnere le luci di svolta a destra"/>
+        <e k="actionIC_turnLightsRightOn" v="IC: Accendere le luci di svolta a destra"/>
+        <e k="actionIC_turnOffImplement" v="IC: Ferma attrezzo"/>
+        <e k="actionIC_turnOnImplement" v="IC: Attiva attrezzo"/>
+        <e k="actionIC_turnPumpOff" v="IC: Spegnere la pompa"/>
+        <e k="actionIC_turnPumpOn" v="IC: Accendere la pompa"/>
+        <e k="actionIC_unfoldImplement" v="IC: Dispiega attrezzo"/>
+        <e k="actionIC_unfoldPipe" v="IC: Dispiegare tubo"/>
+        <e k="actionIC_unfoldVehicle" v="IC: Dispiegare veicolo"/>
+        <e k="actionIC_workLightsBackOff" v="IC: Spegnere i fari di lavoro posteriori"/>
+        <e k="actionIC_workLightsBackOn" v="IC: Accendere i fari di lavoro posteriori"/>
+        <e k="actionIC_workLightsFrontOff" v="IC: Spegnere i fari da lavoro anteriori"/>
+        <e k="actionIC_workLightsFrontOn" v="IC: Accendere i fari da lavoro anteriori"/>
+        <e k="action_activateIC" v="Attiva Interactive Control"/>
+        <e k="action_deactivateIC" v="Disattiva Interactive Control"/>
+        <e k="configuration_interactiveControl" v="Interactive Control"/>
+        <e k="input_IC_CLICK" v="IC: Controllo interattivo ClickPoint"/>
+        <e k="input_IC_TOGGLE_STATE" v="IC: Alterna il controllo interattivo"/>
+        <e k="settingsIC_clickPointHover_optionTime" v="%.1f s"/>
+        <e k="settingsIC_clickPointHover_optionTimeOff" v="Da"/>
+        <e k="settingsIC_clickPointHover_title" v="Attivazione IC Hover"/>
+        <e k="settingsIC_clickPointHover_tooltip" v="Commuta l&#39;InteractiveControl se si passa il mouse sul clickPoint per un certo tempo"/>
+        <e k="settingsIC_keepAlive_title" v="Mantenere attivato il CI"/>
+        <e k="settingsIC_keepAlive_tooltip" v="InteractiveControl rimane attivo quando si lascia il veicolo."/>
+        <e k="settingsIC_state_option01" v="Commutabile"/>
+        <e k="settingsIC_state_option02" v="Sempre attivo"/>
+        <e k="settingsIC_state_option03" v="Da"/>
+        <e k="settingsIC_state_title" v="Stato del CI"/>
+        <e k="settingsIC_state_tooltip" v="Attiva, disattiva o commuta InteractiveControl."/>
+        <e k="settingsIC_title" v="Interactive Control"/>
+    </elements>
 </l10n>

@@ -1,125 +1,93 @@
-<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <l10n>
-    <texts>
-        <!-- actions -->
-        <text name="action_activateIC" text="Activate Interactive Control"/>
-        <text name="action_deactivateIC" text="Dectivate Interactive Control"/>
+    <translationContributors></translationContributors>
+    <locale>en</locale>
 
-        <!-- interactive control actions -->
-        <text name="actionIC_activate" text="IC: Activate"/>
-        <text name="actionIC_deactivate" text="IC: Deactivate"/>
-
-        <text name="actionIC_startMotor" text="IC: Start motor"/>
-        <text name="actionIC_stopMotor" text="IC: Stop motor"/>
-
-        <text name="actionIC_liftImplement" text="IC: Lift implement"/>
-        <text name="actionIC_lowerImplement" text="IC: Lower implement"/>
-
-        <text name="actionIC_turnOnImplement" text="IC: Turn on implement"/>
-        <text name="actionIC_turnOffImplement" text="IC: Turn off implement"/>
-
-        <text name="actionIC_foldImplement" text="IC: Fold implement"/>
-        <text name="actionIC_unfoldImplement" text="IC: Unfold implement"/>
-
-        <text name="actionIC_foldVehicle" text="IC: Fold vehicle" />
-        <text name="actionIC_unfoldVehicle" text="IC: Unfold vehicle" />
-
-        <text name="actionIC_foldPipe" text="IC: Fold pipe" />
-        <text name="actionIC_unfoldPipe" text="IC: Unfold pipe" />
-
-        <text name="actionIC_openRoof" text="IC: Open roof"/>
-        <text name="actionIC_closeRoof" text="IC: Close roof"/>
-
-        <text name="actionIC_openDoor" text="IC: Open door"/>
-        <text name="actionIC_closeDoor" text="IC: Close door"/>
-
-        <text name="actionIC_openWindow" text="IC: Open window"/>
-        <text name="actionIC_closeWindow" text="IC: Close window"/>
-
-        <text name="actionIC_lightsOn" text="IC: Turn lights on"/>
-        <text name="actionIC_lightsOff" text="IC: Turn lights off"/>
-
-        <text name="actionIC_highbeamlightsOn" text="IC: Turn highbeamlights lights on"/>
-        <text name="actionIC_highbeamlightsOff" text="IC: Turn highbeamlights lights off"/>
-
-        <text name="actionIC_workLightsFrontOn" text="IC: Turn front worklights on"/>
-        <text name="actionIC_workLightsFrontOff" text="IC: Turn front worklights off"/>
-
-        <text name="actionIC_workLightsBackOn" text="IC: Turn back worklights on"/>
-        <text name="actionIC_workLightsBackOff" text="IC: Turn back worklights off"/>
-
-        <text name="actionIC_turnLightsLeftOn" text="IC: Turn left turnlights on"/>
-        <text name="actionIC_turnLightsLeftOff" text="IC: Turn left turnlights off"/>
-
-        <text name="actionIC_turnLightsRightOn" text="IC: Turn right turnlights on"/>
-        <text name="actionIC_turnLightsRightOff" text="IC: Turn right turnlights off"/>
-
-        <text name="actionIC_hazardLightsOn" text="IC: Turn hazardlights on"/>
-        <text name="actionIC_hazardLightsOff" text="IC: Turn hazardlights off"/>
-
-        <text name="actionIC_pipeLightsOn" text="IC: Turn pipelight on"/>
-        <text name="actionIC_pipeLightsOff" text="IC: Turn pipelight off"/>
-
-        <text name="actionIC_sa_activate" text="IC: Activate steering assist"/>
-        <text name="actionIC_sa_deactivate" text="IC: Deactivate steering assist"/>
-
-        <text name="actionIC_sa_lines_activate" text="IC: Show steering assist lines"/>
-        <text name="actionIC_sa_lines_deactivate" text="IC: Hide steering assist lines"/>
-
-        <text name="actionIC_cruiseControl_toggle" text="IC: Toggle cruise control"/>
-
-        <text name="actionIC_openCover" text="IC: Open cover"/>
-        <text name="actionIC_closeCover" text="IC: Close cover"/>
-
-        <text name="actionIC_discharge" text="IC: Discharge"/>
-        <text name="actionIC_stop_discharge" text="IC: Stop discharging"/>
-
-        <text name="actionIC_radioOn" text="IC: Radio on"/>
-        <text name="actionIC_radioOff" text="IC: Radio off"/>
-
-        <text name="actionIC_crabSteering_toggle" text="IC: toggle steering mode"/>
-
-        <text name="actionIC_reverseDriving_toggle" text="IC: Toggle reverse driving"/>
-        
-        <text name="actionIC_baler_toggleSize" text="IC: Change bale size (%dcm)"/>
-        <text name="actionIC_baler_dropBale" text="IC: Baler: Unload Bale"/>
-        <text name="actionIC_baler_automaticDropOn" text="IC: Baler: Enable automatic bale drop"/>
-        <text name="actionIC_baler_automaticDropOff" text="IC: Baler: Disable automatic bale drop"/>
-        
-        <text name="actionIC_balerwrapper_dropBale" text="IC: Bale Wrapper: Unload bale"/>
-        <text name="actionIC_balerwrapper_automaticDropOn" text="IC: Bale Wrapper: Enable automatic bale drop"/>
-        <text name="actionIC_balerwrapper_automaticDropOff" text="IC: Bale Wrapper: Disable automatic bale drop"/>
-
-        <text name="actionIC_parkingbrakeOn" text="IC: Parkingbrake on" />
-        <text name="actionIC_parkingbrakeOff" text="IC: Parkingbrake off" />
-
-        <text name="actionIC_diffLockFrontOn" text="IC: Differential lock front on" />
-        <text name="actionIC_diffLockFrontOff" text="IC: Differential lock front off" />
-
-        <text name="actionIC_allWheelDriveOn" text="IC: All-wheel mode on" />
-        <text name="actionIC_allWheelDriveOff" text="IC: All-wheel mode off" />
-
-        <text name="actionIC_diffLockBackOn" text="IC: Differential lock back on" />
-        <text name="actionIC_diffLockBackOff" text="IC: Differential lock back off" />
-
-        <text name="actionIC_turnPumpOn" text="IC: Turn on pump" />
-        <text name="actionIC_turnPumpOff" text="IC: Turn off pump" />
-
-        <text name="actionIC_pumpDirectionDrain" text="IC: Switch pump direction to: Drain" />
-        <text name="actionIC_pumpDirectionFill" text="IC: Switch pump direction to: Fill" />
-
-        <!-- inputs -->
-        <text name="input_IC_CLICK" text="IC: Interactive Control ClickPoint"/>
-        <text name="input_IC_TOGGLE_STATE" text="IC: Toggle Interactive Control"/>
-
-        <!-- settings -->
-        <text name="settingsIC_title" text="Interactive Control"/>
-        <text name="settingsIC_state_title" text="IC State"/>
-        <text name="settingsIC_state_tooltip" text="Switches InteractiveControl on, off, or switchable."/>
-        <text name="settingsIC_state_option01" text="Switchable"/>
-        <text name="settingsIC_state_option02" text="Always active"/>
-        <text name="settingsIC_state_option03" text="Off"/>
-        <text name="settingsIC_keepAlive_title" text="Keep IC Activated"/>
-        <text name="settingsIC_keepAlive_tooltip" text="InteractiveControl remains active when leaving the vehicle."/>
-    </texts>
+    <elements>
+        <e k="actionIC_activate" v="IC: Activate"/>
+        <e k="actionIC_deactivate" v="IC: Deactivate"/>
+        <e k="actionIC_startMotor" v="IC: Start motor"/>
+        <e k="actionIC_stopMotor" v="IC: Stop motor"/>
+        <e k="actionIC_liftImplement" v="IC: Lift implement"/>
+        <e k="actionIC_lowerImplement" v="IC: Lower implement"/>
+        <e k="actionIC_turnOnImplement" v="IC: Turn on implement"/>
+        <e k="actionIC_turnOffImplement" v="IC: Turn off implement"/>
+        <e k="actionIC_foldImplement" v="IC: Fold implement"/>
+        <e k="actionIC_unfoldImplement" v="IC: Unfold implement"/>
+        <e k="actionIC_foldVehicle" v="IC: Fold vehicle"/>
+        <e k="actionIC_unfoldVehicle" v="IC: Unfold vehicle"/>
+        <e k="actionIC_foldPipe" v="IC: Fold pipe"/>
+        <e k="actionIC_unfoldPipe" v="IC: Unfold pipe"/>
+        <e k="actionIC_openRoof" v="IC: Open roof"/>
+        <e k="actionIC_closeRoof" v="IC: Close roof"/>
+        <e k="actionIC_openDoor" v="IC: Open door"/>
+        <e k="actionIC_closeDoor" v="IC: Close door"/>
+        <e k="actionIC_openWindow" v="IC: Open window"/>
+        <e k="actionIC_closeWindow" v="IC: Close window"/>
+        <e k="actionIC_lightsOn" v="IC: Turn lights on"/>
+        <e k="actionIC_lightsOff" v="IC: Turn lights off"/>
+        <e k="actionIC_highbeamlightsOn" v="IC: Turn highbeamlights lights on"/>
+        <e k="actionIC_highbeamlightsOff" v="IC: Turn highbeamlights lights off"/>
+        <e k="actionIC_workLightsFrontOn" v="IC: Turn front worklights on"/>
+        <e k="actionIC_workLightsFrontOff" v="IC: Turn front worklights off"/>
+        <e k="actionIC_workLightsBackOn" v="IC: Turn back worklights on"/>
+        <e k="actionIC_workLightsBackOff" v="IC: Turn back worklights off"/>
+        <e k="actionIC_turnLightsLeftOn" v="IC: Turn left turnlights on"/>
+        <e k="actionIC_turnLightsLeftOff" v="IC: Turn left turnlights off"/>
+        <e k="actionIC_turnLightsRightOn" v="IC: Turn right turnlights on"/>
+        <e k="actionIC_turnLightsRightOff" v="IC: Turn right turnlights off"/>
+        <e k="actionIC_hazardLightsOn" v="IC: Turn hazardlights on"/>
+        <e k="actionIC_hazardLightsOff" v="IC: Turn hazardlights off"/>
+        <e k="actionIC_pipeLightsOn" v="IC: Turn pipelight on"/>
+        <e k="actionIC_pipeLightsOff" v="IC: Turn pipelight off"/>
+        <e k="actionIC_sa_activate" v="IC: Activate steering assist"/>
+        <e k="actionIC_sa_deactivate" v="IC: Deactivate steering assist"/>
+        <e k="actionIC_sa_lines_activate" v="IC: Show steering assist lines"/>
+        <e k="actionIC_sa_lines_deactivate" v="IC: Hide steering assist lines"/>
+        <e k="actionIC_cruiseControl_toggle" v="IC: Toggle cruise control"/>
+        <e k="actionIC_openCover" v="IC: Open cover"/>
+        <e k="actionIC_closeCover" v="IC: Close cover"/>
+        <e k="actionIC_discharge" v="IC: Discharge"/>
+        <e k="actionIC_stop_discharge" v="IC: Stop discharging"/>
+        <e k="actionIC_radioOn" v="IC: Radio on"/>
+        <e k="actionIC_radioOff" v="IC: Radio off"/>
+        <e k="actionIC_crabSteering_toggle" v="IC: toggle steering mode"/>
+        <e k="actionIC_reverseDriving_toggle" v="IC: Toggle reverse driving"/>
+        <e k="actionIC_baler_toggleSize" v="IC: Change bale size (%dcm)"/>
+        <e k="actionIC_baler_dropBale" v="IC: Baler: Unload Bale"/>
+        <e k="actionIC_baler_automaticDropOn" v="IC: Baler: Enable automatic bale drop"/>
+        <e k="actionIC_baler_automaticDropOff" v="IC: Baler: Disable automatic bale drop"/>
+        <e k="actionIC_balerwrapper_dropBale" v="IC: Bale Wrapper: Unload bale"/>
+        <e k="actionIC_balerwrapper_automaticDropOn" v="IC: Bale Wrapper: Enable automatic bale drop"/>
+        <e k="actionIC_balerwrapper_automaticDropOff" v="IC: Bale Wrapper: Disable automatic bale drop"/>
+        <e k="actionIC_parkingbrakeOn" v="IC: Parkingbrake on"/>
+        <e k="actionIC_parkingbrakeOff" v="IC: Parkingbrake off"/>
+        <e k="actionIC_diffLockFrontOn" v="IC: Differential lock front on"/>
+        <e k="actionIC_diffLockFrontOff" v="IC: Differential lock front off"/>
+        <e k="actionIC_allWheelDriveOn" v="IC: All-wheel mode on"/>
+        <e k="actionIC_allWheelDriveOff" v="IC: All-wheel mode off"/>
+        <e k="actionIC_diffLockBackOn" v="IC: Differential lock back on"/>
+        <e k="actionIC_diffLockBackOff" v="IC: Differential lock back off"/>
+        <e k="actionIC_turnPumpOn" v="IC: Turn on pump"/>
+        <e k="actionIC_turnPumpOff" v="IC: Turn off pump"/>
+        <e k="actionIC_pumpDirectionDrain" v="IC: Switch pump direction to: Drain"/>
+        <e k="actionIC_pumpDirectionFill" v="IC: Switch pump direction to: Fill"/>
+        <e k="action_activateIC" v="Activate Interactive Control"/>
+        <e k="action_deactivateIC" v="Dectivate Interactive Control"/>
+        <e k="configuration_interactiveControl" v="Interactive Control"/>
+        <e k="input_IC_CLICK" v="IC: Interactive Control ClickPoint"/>
+        <e k="input_IC_TOGGLE_STATE" v="IC: Toggle Interactive Control"/>
+        <e k="settingsIC_title" v="Interactive Control"/>
+        <e k="settingsIC_state_title" v="IC State"/>
+        <e k="settingsIC_state_tooltip" v="Switches InteractiveControl on, off, or switchable."/>
+        <e k="settingsIC_state_option01" v="Switchable"/>
+        <e k="settingsIC_state_option02" v="Always active"/>
+        <e k="settingsIC_state_option03" v="Off"/>
+        <e k="settingsIC_keepAlive_title" v="Keep IC Activated"/>
+        <e k="settingsIC_keepAlive_tooltip" v="InteractiveControl remains active when leaving the vehicle."/>
+        <e k="settingsIC_clickPointHover_optionTime" v="%.1f s"/>
+        <e k="settingsIC_clickPointHover_optionTimeOff" v="Off"/>
+        <e k="settingsIC_clickPointHover_title" v="IC Hover Activation"/>
+        <e k="settingsIC_clickPointHover_tooltip" v="Switch InteractiveControl if you hover on the clickPoint for a certain time"/>
+    </elements>
 </l10n>

@@ -1,130 +1,93 @@
-<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <l10n>
-    <texts>
-        <!-- actions -->
-        <text name="action_activateIC" text="Interactive Control aktivieren"/>
-        <text name="action_deactivateIC" text="Interactive Control deaktivieren"/>
+    <translationContributors></translationContributors>
+    <locale>de</locale>
 
-        <!-- interactive control actions -->
-        <text name="actionIC_activate" text="IC: Aktivieren"/>
-        <text name="actionIC_deactivate" text="IC: Deaktivieren"/>
-
-        <text name="actionIC_startMotor" text="IC: Motor starten"/>
-        <text name="actionIC_stopMotor" text="IC: Motor stoppen"/>
-
-        <text name="actionIC_liftImplement" text="IC: Anbaugerät heben"/>
-        <text name="actionIC_lowerImplement" text="IC: Anbaugerät senken"/>
-
-        <text name="actionIC_turnOnImplement" text="IC: Anbaugerät anschalten"/>
-        <text name="actionIC_turnOffImplement" text="IC: Anbaugerät abschalten"/>
-
-        <text name="actionIC_foldImplement" text="IC: Anbaugerät einklappen"/>
-        <text name="actionIC_unfoldImplement" text="IC: Anbaugerät ausklappen"/>
-
-        <text name="actionIC_foldVehicle" text="IC: Fahrzeug zuklappen" />
-        <text name="actionIC_unfoldVehicle" text="IC: Fahrzeug ausklappen" />
-
-        <text name="actionIC_foldPipe" text="IC: Rohr einklappen" />
-        <text name="actionIC_unfoldPipe" text="IC: Rohr ausklappen" />
-
-        <text name="actionIC_openRoof" text="IC: Dach öffnen"/>
-        <text name="actionIC_closeRoof" text="IC: Dach schließen"/>
-
-        <text name="actionIC_openDoor" text="IC: Tür öffnen"/>
-        <text name="actionIC_closeDoor" text="IC: Tür schließen"/>
-
-        <text name="actionIC_openWindow" text="IC: Fenster öffnen"/>
-        <text name="actionIC_closeWindow" text="IC: Fenster schließen"/>
-
-        <text name="actionIC_lightsOn" text="IC: Licht anschalten"/>
-        <text name="actionIC_lightsOff" text="IC: Licht ausschalten"/>
-
-        <text name="actionIC_highbeamlightsOn" text="IC: Fernlicht anschalten"/>
-        <text name="actionIC_highbeamlightsOff" text="IC: Fernlicht ausschalten"/>
-
-        <text name="actionIC_workLightsFrontOn" text="IC: Arbeitslicht vorne anschalten"/>
-        <text name="actionIC_workLightsFrontOff" text="IC: Arbeitslicht vorne ausschalten"/>
-
-        <text name="actionIC_workLightsBackOn" text="IC: Arbeitslicht hinten anschalten"/>
-        <text name="actionIC_workLightsBackOff" text="IC: Arbeitslicht hinten ausschalten"/>
-
-        <text name="actionIC_turnLightsLeftOn" text="IC: Blinker links anschalten"/>
-        <text name="actionIC_turnLightsLeftOff" text="IC: Blinker links ausschalten"/>
-
-        <text name="actionIC_turnLightsRightOn" text="IC: Blinker rechts anschalten"/>
-        <text name="actionIC_turnLightsRightOff" text="IC: Blinker rechts ausschalten"/>
-
-        <text name="actionIC_hazardLightsOn" text="IC: Warnblinker anschalten"/>
-        <text name="actionIC_hazardLightsOff" text="IC: Warnblinker ausschalten"/>
-
-        <text name="actionIC_pipeLightsOn" text="IC: Rohrbeleuchtung anschalten"/>
-        <text name="actionIC_pipeLightsOff" text="IC: Rohrbeleuchtung ausschalten"/>
-
-        <text name="actionIC_sa_activate" text="IC: Spurführung aktivieren"/>
-        <text name="actionIC_sa_deactivate" text="IC: Spurführung deaktivieren"/>
-
-        <text name="actionIC_sa_lines_activate" text="IC: Spurführungslinien anzeigen"/>
-        <text name="actionIC_sa_lines_deactivate" text="IC: Spurführungslinien ausblenden"/>
-
-        <text name="actionIC_cruiseControl_toggle" text="IC: Tempomat wechseln"/>
-
-        <text name="actionIC_openCover" text="IC: Abdeckung öffnen"/>
-        <text name="actionIC_closeCover" text="IC: Abdeckung schließen"/>
-
-        <text name="actionIC_discharge" text="IC: Abladen"/>
-        <text name="actionIC_stop_discharge" text="IC: Abladen beenden"/>
-
-        <text name="actionIC_radioOn" text="IC: Radio anschalten"/>
-        <text name="actionIC_radioOff" text="IC: Radio ausschalten"/>
-
-        <text name="actionIC_crabSteering_toggle" text="IC: Lenkmodus wechseln"/>
-
-        <text name="actionIC_reverseDriving_toggle" text="IC: Fahrtrichtung wechseln"/>
-
-        <text name="actionIC_baler_toggleSize" text="IC: Ballengröße ändern (%dcm)"/>
-        <text name="actionIC_baler_dropBale" text="IC: Ballenpresse: Ballen entladen"/>
-        <text name="actionIC_baler_automaticDropOn" text="IC: Ballenpresse: Autom. Ablage ein"/>
-        <text name="actionIC_baler_automaticDropOff" text="IC: Ballenpresse: Autom. Ablage aus"/>
-
-        <text name="actionIC_balerwrapper_dropBale" text="IC: Ballenwickler: Ballen entladen"/>
-        <text name="actionIC_balerwrapper_automaticDropOn" text="IC: Ballenwickler: Autom. Ablage ein"/>
-        <text name="actionIC_balerwrapper_automaticDropOff" text="IC: Ballenwickler: Autom. Ablage aus"/>
-
-        <text name="actionIC_parkingbrakeOn" text="IC: Handbremse anziehen" />
-        <text name="actionIC_parkingbrakeOff" text="IC: Handbremse lösen" />
-
-        <text name="actionIC_diffLockFrontOn" text="IC: Diffsperre vorne ein" />
-        <text name="actionIC_diffLockFrontOff" text="IC: Diffsperre vorne aus" />
-
-        <text name="actionIC_allWheelDriveOn" text="IC: Allrad ein" />
-        <text name="actionIC_allWheelDriveOff" text="IC: Allrad aus" />
-
-        <text name="actionIC_diffLockBackOn" text="IC: Diffsperre hinten ein" />
-        <text name="actionIC_diffLockBackOff" text="IC: Diffsperre hinten aus" />
-
-        <text name="actionIC_turnPumpOn" text="IC: Pumpe einschalten" />
-        <text name="actionIC_turnPumpOff" text="IC: Pumpe ausschalten" />
-
-        <text name="actionIC_pumpDirectionDrain" text="IC: Pumprichtung wechseln zu: Entleeren" />
-        <text name="actionIC_pumpDirectionFill" text="IC: Pumprichtung wechseln zu: Befüllen" />
-
-        <!-- inputs -->
-        <text name="input_IC_CLICK" text="IC: Interactive Control ClickPoint"/>
-        <text name="input_IC_TOGGLE_STATE" text="IC: Interactive Control umschalten"/>
-
-        <!-- settings -->
-        <text name="settingsIC_title" text="Interactive Control"/>
-        <text name="settingsIC_state_title" text="IC Status"/>
-        <text name="settingsIC_state_tooltip" text="Schaltet InteractiveControl ein, aus, oder schaltbar."/>
-        <text name="settingsIC_state_option01" text="Schaltbar"/>
-        <text name="settingsIC_state_option02" text="Immer aktiv"/>
-        <text name="settingsIC_state_option03" text="Aus"/>
-        <text name="settingsIC_keepAlive_title" text="IC Aktiviert lassen"/>
-        <text name="settingsIC_keepAlive_tooltip" text="InteractiveControl bleibt beim verlassen des Fahrzeugs aktiv."/>
-
-        <text name="settingsIC_clickPointHover_title" text="IC Hover Aktivierung"/>
-        <text name="settingsIC_clickPointHover_tooltip" text="InteractiveControl schalten, wenn man eine gewisse Zeit auf dem Clickpoint hovert"/>
-        <text name="settingsIC_clickPointHover_optionTimeOff" text="Aus"/>
-        <text name="settingsIC_clickPointHover_optionTime" text="%.1f s" tag="format"/>
-    </texts>
+    <elements>
+        <e k="actionIC_activate" v="IC: Aktivieren"/>
+        <e k="actionIC_allWheelDriveOff" v="IC: Allrad aus"/>
+        <e k="actionIC_allWheelDriveOn" v="IC: Allrad ein"/>
+        <e k="actionIC_baler_automaticDropOff" v="IC: Ballenpresse: Autom. Ablage aus"/>
+        <e k="actionIC_baler_automaticDropOn" v="IC: Ballenpresse: Autom. Ablage ein"/>
+        <e k="actionIC_baler_dropBale" v="IC: Ballenpresse: Ballen entladen"/>
+        <e k="actionIC_baler_toggleSize" v="IC: Ballengröße ändern (%dcm)"/>
+        <e k="actionIC_balerwrapper_automaticDropOff" v="IC: Ballenwickler: Autom. Ablage aus"/>
+        <e k="actionIC_balerwrapper_automaticDropOn" v="IC: Ballenwickler: Autom. Ablage ein"/>
+        <e k="actionIC_balerwrapper_dropBale" v="IC: Ballenwickler: Ballen entladen"/>
+        <e k="actionIC_closeCover" v="IC: Abdeckung schließen"/>
+        <e k="actionIC_closeDoor" v="IC: Tür schließen"/>
+        <e k="actionIC_closeRoof" v="IC: Dach schließen"/>
+        <e k="actionIC_closeWindow" v="IC: Fenster schließen"/>
+        <e k="actionIC_crabSteering_toggle" v="IC: Lenkmodus wechseln"/>
+        <e k="actionIC_cruiseControl_toggle" v="IC: Tempomat wechseln"/>
+        <e k="actionIC_deactivate" v="IC: Deaktivieren"/>
+        <e k="actionIC_diffLockBackOff" v="IC: Diffsperre hinten aus"/>
+        <e k="actionIC_diffLockBackOn" v="IC: Diffsperre hinten ein"/>
+        <e k="actionIC_diffLockFrontOff" v="IC: Diffsperre vorne aus"/>
+        <e k="actionIC_diffLockFrontOn" v="IC: Diffsperre vorne ein"/>
+        <e k="actionIC_discharge" v="IC: Abladen"/>
+        <e k="actionIC_foldImplement" v="IC: Anbaugerät einklappen"/>
+        <e k="actionIC_foldPipe" v="IC: Rohr einklappen"/>
+        <e k="actionIC_foldVehicle" v="IC: Fahrzeug zuklappen"/>
+        <e k="actionIC_hazardLightsOff" v="IC: Warnblinker ausschalten"/>
+        <e k="actionIC_hazardLightsOn" v="IC: Warnblinker anschalten"/>
+        <e k="actionIC_highbeamlightsOff" v="IC: Fernlicht ausschalten"/>
+        <e k="actionIC_highbeamlightsOn" v="IC: Fernlicht anschalten"/>
+        <e k="actionIC_liftImplement" v="IC: Anbaugerät heben"/>
+        <e k="actionIC_lightsOff" v="IC: Licht ausschalten"/>
+        <e k="actionIC_lightsOn" v="IC: Licht anschalten"/>
+        <e k="actionIC_lowerImplement" v="IC: Anbaugerät senken"/>
+        <e k="actionIC_openCover" v="IC: Abdeckung öffnen"/>
+        <e k="actionIC_openDoor" v="IC: Tür öffnen"/>
+        <e k="actionIC_openRoof" v="IC: Dach öffnen"/>
+        <e k="actionIC_openWindow" v="IC: Fenster öffnen"/>
+        <e k="actionIC_parkingbrakeOff" v="IC: Handbremse lösen"/>
+        <e k="actionIC_parkingbrakeOn" v="IC: Handbremse anziehen"/>
+        <e k="actionIC_pipeLightsOff" v="IC: Rohrbeleuchtung ausschalten"/>
+        <e k="actionIC_pipeLightsOn" v="IC: Rohrbeleuchtung anschalten"/>
+        <e k="actionIC_pumpDirectionDrain" v="IC: Pumprichtung wechseln zu: Entleeren"/>
+        <e k="actionIC_pumpDirectionFill" v="IC: Pumprichtung wechseln zu: Befüllen"/>
+        <e k="actionIC_radioOff" v="IC: Radio ausschalten"/>
+        <e k="actionIC_radioOn" v="IC: Radio anschalten"/>
+        <e k="actionIC_reverseDriving_toggle" v="IC: Fahrtrichtung wechseln"/>
+        <e k="actionIC_sa_activate" v="IC: Spurführung aktivieren"/>
+        <e k="actionIC_sa_deactivate" v="IC: Spurführung deaktivieren"/>
+        <e k="actionIC_sa_lines_activate" v="IC: Spurführungslinien anzeigen"/>
+        <e k="actionIC_sa_lines_deactivate" v="IC: Spurführungslinien ausblenden"/>
+        <e k="actionIC_startMotor" v="IC: Motor starten"/>
+        <e k="actionIC_stopMotor" v="IC: Motor stoppen"/>
+        <e k="actionIC_stop_discharge" v="IC: Abladen beenden"/>
+        <e k="actionIC_turnLightsLeftOff" v="IC: Blinker links ausschalten"/>
+        <e k="actionIC_turnLightsLeftOn" v="IC: Blinker links anschalten"/>
+        <e k="actionIC_turnLightsRightOff" v="IC: Blinker rechts ausschalten"/>
+        <e k="actionIC_turnLightsRightOn" v="IC: Blinker rechts anschalten"/>
+        <e k="actionIC_turnOffImplement" v="IC: Anbaugerät abschalten"/>
+        <e k="actionIC_turnOnImplement" v="IC: Anbaugerät anschalten"/>
+        <e k="actionIC_turnPumpOff" v="IC: Pumpe ausschalten"/>
+        <e k="actionIC_turnPumpOn" v="IC: Pumpe einschalten"/>
+        <e k="actionIC_unfoldImplement" v="IC: Anbaugerät ausklappen"/>
+        <e k="actionIC_unfoldPipe" v="IC: Rohr ausklappen"/>
+        <e k="actionIC_unfoldVehicle" v="IC: Fahrzeug ausklappen"/>
+        <e k="actionIC_workLightsBackOff" v="IC: Arbeitslicht hinten ausschalten"/>
+        <e k="actionIC_workLightsBackOn" v="IC: Arbeitslicht hinten anschalten"/>
+        <e k="actionIC_workLightsFrontOff" v="IC: Arbeitslicht vorne ausschalten"/>
+        <e k="actionIC_workLightsFrontOn" v="IC: Arbeitslicht vorne anschalten"/>
+        <e k="action_activateIC" v="Interactive Control aktivieren"/>
+        <e k="action_deactivateIC" v="Interactive Control deaktivieren"/>
+        <e k="configuration_interactiveControl" v="Interactive Control"/>
+        <e k="input_IC_CLICK" v="IC: Interactive Control ClickPoint"/>
+        <e k="input_IC_TOGGLE_STATE" v="IC: Interactive Control umschalten"/>
+        <e k="settingsIC_clickPointHover_optionTime" v="%.1f s"/>
+        <e k="settingsIC_clickPointHover_optionTimeOff" v="Aus"/>
+        <e k="settingsIC_clickPointHover_title" v="IC Hover Aktivierung"/>
+        <e k="settingsIC_clickPointHover_tooltip" v="InteractiveControl schalten, wenn man eine gewisse Zeit auf dem Clickpoint hovert"/>
+        <e k="settingsIC_keepAlive_title" v="IC Aktiviert lassen"/>
+        <e k="settingsIC_keepAlive_tooltip" v="InteractiveControl bleibt beim verlassen des Fahrzeugs aktiv."/>
+        <e k="settingsIC_state_option01" v="Schaltbar"/>
+        <e k="settingsIC_state_option02" v="Immer aktiv"/>
+        <e k="settingsIC_state_option03" v="Aus"/>
+        <e k="settingsIC_state_title" v="IC Status"/>
+        <e k="settingsIC_state_tooltip" v="Schaltet InteractiveControl ein, aus, oder schaltbar."/>
+        <e k="settingsIC_title" v="Interactive Control"/>
+    </elements>
 </l10n>

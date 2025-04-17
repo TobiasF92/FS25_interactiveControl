@@ -1,125 +1,93 @@
-<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <l10n>
-    <texts>
-        <!-- actions -->
-        <text name="action_activateIC" text="Aktivovat interaktivní ovládání"/>
-        <text name="action_deactivateIC" text="Deaktivovat interaktivní ovládání"/>
+    <translationContributors></translationContributors>
+    <locale>cz</locale>
 
-        <!-- interactive control actions -->
-        <text name="actionIC_activate" text="IC: Aktivovat"/>
-        <text name="actionIC_deactivate" text="IC: Deaktivovat"/>
-
-        <text name="actionIC_startMotor" text="IC: Spustit motor"/>
-        <text name="actionIC_stopMotor" text="IC: Zastavit motor"/>
-
-        <text name="actionIC_liftImplement" text="IC: Zvednout nástroj"/>
-        <text name="actionIC_lowerImplement" text="IC: Spustit nástroj"/>
-
-        <text name="actionIC_turnOnImplement" text="IC: Spustit nástroj"/>
-        <text name="actionIC_turnOffImplement" text="IC: Zastavit nástroj"/>
-
-        <text name="actionIC_foldImplement" text="IC: Složit nástroj"/>
-        <text name="actionIC_unfoldImplement" text="IC: Rozložit nástroj"/>
-
-        <text name="actionIC_foldVehicle" text="IC: Složit stroj" />
-        <text name="actionIC_unfoldVehicle" text="IC: Rozložit stroj" />
-
-        <text name="actionIC_foldPipe" text="IC: Složit odhazovou rouru" />
-        <text name="actionIC_unfoldPipe" text="IC: Rozložit odhazovou rouru" />
-
-        <text name="actionIC_openRoof" text="IC: Otevřít střechu"/>
-        <text name="actionIC_closeRoof" text="IC: Zavřít střechu"/>
-
-        <text name="actionIC_openDoor" text="IC: Otevřít dveře"/>
-        <text name="actionIC_closeDoor" text="IC: Zavřít dveře"/>
-
-        <text name="actionIC_openWindow" text="IC: Otevřít okno"/>
-        <text name="actionIC_closeWindow" text="IC: Zavřít okno"/>
-
-        <text name="actionIC_lightsOn" text="IC: Zapnout světla"/>
-        <text name="actionIC_lightsOff" text="IC: Vypnout světla"/>
-
-        <text name="actionIC_highbeamlightsOn" text="IC: Zapnout dálková světla"/>
-        <text name="actionIC_highbeamlightsOff" text="IC: Vypnout dálková světla"/>
-
-        <text name="actionIC_workLightsFrontOn" text="IC: Zapnout přední pracovní světla"/>
-        <text name="actionIC_workLightsFrontOff" text="IC: Vypnout přední pracovní světla"/>
-
-        <text name="actionIC_workLightsBackOn" text="IC: Zapnout zadní pracovní světla"/>
-        <text name="actionIC_workLightsBackOff" text="IC: Vypnout zadní pracovní světla"/>
-
-        <text name="actionIC_turnLightsLeftOn" text="IC: Zapnout levý blikač"/>
-        <text name="actionIC_turnLightsLeftOff" text="IC: Vypnout levý blikač"/>
-
-        <text name="actionIC_turnLightsRightOn" text="IC: Zapnout pravý blikač"/>
-        <text name="actionIC_turnLightsRightOff" text="IC: Vypnout pravý blikač"/>
-
-        <text name="actionIC_hazardLightsOn" text="IC: Zapnout výstražná světla"/>
-        <text name="actionIC_hazardLightsOff" text="IC: Vypnout výstražná světla"/>
-
-        <text name="actionIC_pipeLightsOn" text="IC: Zapnout vykládací světla"/>
-        <text name="actionIC_pipeLightsOff" text="IC: Vypnout vykládací světla"/>
-
-        <text name="actionIC_sa_activate" text="IC: Aktivace navádění do jízdních pruhů"/>
-        <text name="actionIC_sa_deactivate" text="IC: Deaktivace navádění do jízdních pruhů"/>
-        
-        <text name="actionIC_sa_lines_activate" text="IC: Zobrazit pomocné čáry řízení"/>
-        <text name="actionIC_sa_lines_deactivate" text="IC: Skrýt vedení posilovače řízení"/>
-
-        <text name="actionIC_cruiseControl_toggle" text="IC: Přepnout tempomat"/>
-
-        <text name="actionIC_openCover" text="IC: Otevřít kryt"/>
-        <text name="actionIC_closeCover" text="IC: Zavřít kryt"/>
-
-        <text name="actionIC_discharge" text="IC: Vykládání"/>
-        <text name="actionIC_stop_discharge" text="IC: Zastavení vykládky"/>
-
-        <text name="actionIC_radioOn" text="IC: Zapnout rádio"/>
-        <text name="actionIC_radioOff" text="IC: Vypnout rádio"/>
-
-        <text name="actionIC_crabSteering_toggle" text="IC: Přepnout režim řízení"/>
-
-        <text name="actionIC_reverseDriving_toggle" text="IC: Změna směru jízdy"/>
-        
-        <text name="actionIC_baler_toggleSize" text="IC: Změna velikosti balíku (%dcm)"/>
-        <text name="actionIC_baler_dropBale" text="IC: Lis: Vyložení balíku"/>
-        <text name="actionIC_baler_automaticDropOn" text="IC: Lis: Povolení automatického shozu balíku"/>
-        <text name="actionIC_baler_automaticDropOff" text="IC: Lis: Vypnutí automatického shozu balíku"/>
-        
-        <text name="actionIC_balerwrapper_dropBale" text="IC: balička balíků: Vyložení balíku"/>
-        <text name="actionIC_balerwrapper_automaticDropOn" text="IC: balička balíků: Povolení automatického shozu balíku"/>
-        <text name="actionIC_balerwrapper_automaticDropOff" text="IC: balička balíků: Vypnutí automatického shozu balíku"/>
-
-        <text name="actionIC_parkingbrakeOn" text="IC: Zatáhnout parkovací brzdu" />
-        <text name="actionIC_parkingbrakeOff" text="IC: Uvolnit parkovací brzdu" />
-
-        <text name="actionIC_diffLockFrontOn" text="IC: Zapnout přední uzávěrku diferenciálu" />
-        <text name="actionIC_diffLockFrontOff" text="IC: Vypnout přední uzávěrku diferenciálu" />
-
-        <text name="actionIC_allWheelDriveOn" text="IC: Zapnout pohon všech kol" />
-        <text name="actionIC_allWheelDriveOff" text="IC: Vypnout pohon všech kol" />
-
-        <text name="actionIC_diffLockBackOn" text="IC: Zapnout zadní uzávěrku diferenciálu" />
-        <text name="actionIC_diffLockBackOff" text="IC: Vypnout zadní uzávěrku diferenciálu" />
-
-        <text name="actionIC_turnPumpOn" text="IC: Zapnutí čerpadla" />
-        <text name="actionIC_turnPumpOff" text="IC: Vypnutí čerpadla" />
-
-        <text name="actionIC_pumpDirectionDrain" text="IC: Změňte směr čerpadla na: Vyprázdnit" />
-        <text name="actionIC_pumpDirectionFill" text="IC: Změňte směr čerpadla na: Plnění" />
-
-        <!-- inputs -->
-        <text name="input_IC_CLICK" text="IC: Interaktivní ovládání bod kliknutí"/>
-        <text name="input_IC_TOGGLE_STATE" text="IC: Přepnout Interaktivní ovládání"/>
-
-        <!-- settings -->
-        <text name="settingsIC_title" text="Interaktivní ovládání"/>
-        <text name="settingsIC_state_title" text="Stav IC"/>
-        <text name="settingsIC_state_tooltip" text="Zapíná, vypíná nebo přepíná funkci InteractiveControl."/>
-        <text name="settingsIC_state_option01" text="Přepínatelné"/>
-        <text name="settingsIC_state_option02" text="Vždy aktivní"/>
-        <text name="settingsIC_state_option03" text="Vypnuté"/>
-        <text name="settingsIC_keepAlive_title" text="Nechat IC aktivované"/>
-        <text name="settingsIC_keepAlive_tooltip" text="IC zůstane aktivní i při opuštění vozidla."/>
-    </texts>
+    <elements>
+        <e k="actionIC_activate" v="IC: Aktivovat"/>
+        <e k="actionIC_allWheelDriveOff" v="IC: Vypnout pohon všech kol"/>
+        <e k="actionIC_allWheelDriveOn" v="IC: Zapnout pohon všech kol"/>
+        <e k="actionIC_baler_automaticDropOff" v="IC: Lis: Vypnutí automatického shozu balíku"/>
+        <e k="actionIC_baler_automaticDropOn" v="IC: Lis: Povolení automatického shozu balíku"/>
+        <e k="actionIC_baler_dropBale" v="IC: Lis: Vyložení balíku"/>
+        <e k="actionIC_baler_toggleSize" v="IC: Změna velikosti balíku (%dcm)"/>
+        <e k="actionIC_balerwrapper_automaticDropOff" v="IC: balička balíků: Vypnutí automatického shozu balíku"/>
+        <e k="actionIC_balerwrapper_automaticDropOn" v="IC: balička balíků: Povolení automatického shozu balíku"/>
+        <e k="actionIC_balerwrapper_dropBale" v="IC: balička balíků: Vyložení balíku"/>
+        <e k="actionIC_closeCover" v="IC: Zavřít kryt"/>
+        <e k="actionIC_closeDoor" v="IC: Zavřít dveře"/>
+        <e k="actionIC_closeRoof" v="IC: Zavřít střechu"/>
+        <e k="actionIC_closeWindow" v="IC: Zavřít okno"/>
+        <e k="actionIC_crabSteering_toggle" v="IC: Přepnout režim řízení"/>
+        <e k="actionIC_cruiseControl_toggle" v="IC: Přepnout tempomat"/>
+        <e k="actionIC_deactivate" v="IC: Deaktivovat"/>
+        <e k="actionIC_diffLockBackOff" v="IC: Vypnout zadní uzávěrku diferenciálu"/>
+        <e k="actionIC_diffLockBackOn" v="IC: Zapnout zadní uzávěrku diferenciálu"/>
+        <e k="actionIC_diffLockFrontOff" v="IC: Vypnout přední uzávěrku diferenciálu"/>
+        <e k="actionIC_diffLockFrontOn" v="IC: Zapnout přední uzávěrku diferenciálu"/>
+        <e k="actionIC_discharge" v="IC: Vykládání"/>
+        <e k="actionIC_foldImplement" v="IC: Složit nástroj"/>
+        <e k="actionIC_foldPipe" v="IC: Složit odhazovou rouru"/>
+        <e k="actionIC_foldVehicle" v="IC: Složit stroj"/>
+        <e k="actionIC_hazardLightsOff" v="IC: Vypnout výstražná světla"/>
+        <e k="actionIC_hazardLightsOn" v="IC: Zapnout výstražná světla"/>
+        <e k="actionIC_highbeamlightsOff" v="IC: Vypnout dálková světla"/>
+        <e k="actionIC_highbeamlightsOn" v="IC: Zapnout dálková světla"/>
+        <e k="actionIC_liftImplement" v="IC: Zvednout nástroj"/>
+        <e k="actionIC_lightsOff" v="IC: Vypnout světla"/>
+        <e k="actionIC_lightsOn" v="IC: Zapnout světla"/>
+        <e k="actionIC_lowerImplement" v="IC: Spustit nástroj"/>
+        <e k="actionIC_openCover" v="IC: Otevřít kryt"/>
+        <e k="actionIC_openDoor" v="IC: Otevřít dveře"/>
+        <e k="actionIC_openRoof" v="IC: Otevřít střechu"/>
+        <e k="actionIC_openWindow" v="IC: Otevřít okno"/>
+        <e k="actionIC_parkingbrakeOff" v="IC: Uvolnit parkovací brzdu"/>
+        <e k="actionIC_parkingbrakeOn" v="IC: Zatáhnout parkovací brzdu"/>
+        <e k="actionIC_pipeLightsOff" v="IC: Vypnout vykládací světla"/>
+        <e k="actionIC_pipeLightsOn" v="IC: Zapnout vykládací světla"/>
+        <e k="actionIC_pumpDirectionDrain" v="IC: Změňte směr čerpadla na: Vyprázdnit"/>
+        <e k="actionIC_pumpDirectionFill" v="IC: Změňte směr čerpadla na: Plnění"/>
+        <e k="actionIC_radioOff" v="IC: Vypnout rádio"/>
+        <e k="actionIC_radioOn" v="IC: Zapnout rádio"/>
+        <e k="actionIC_reverseDriving_toggle" v="IC: Změna směru jízdy"/>
+        <e k="actionIC_sa_activate" v="IC: Aktivace navádění do jízdních pruhů"/>
+        <e k="actionIC_sa_deactivate" v="IC: Deaktivace navádění do jízdních pruhů"/>
+        <e k="actionIC_sa_lines_activate" v="IC: Zobrazit pomocné čáry řízení"/>
+        <e k="actionIC_sa_lines_deactivate" v="IC: Skrýt vedení posilovače řízení"/>
+        <e k="actionIC_startMotor" v="IC: Spustit motor"/>
+        <e k="actionIC_stopMotor" v="IC: Zastavit motor"/>
+        <e k="actionIC_stop_discharge" v="IC: Zastavení vykládky"/>
+        <e k="actionIC_turnLightsLeftOff" v="IC: Vypnout levý blikač"/>
+        <e k="actionIC_turnLightsLeftOn" v="IC: Zapnout levý blikač"/>
+        <e k="actionIC_turnLightsRightOff" v="IC: Vypnout pravý blikač"/>
+        <e k="actionIC_turnLightsRightOn" v="IC: Zapnout pravý blikač"/>
+        <e k="actionIC_turnOffImplement" v="IC: Zastavit nástroj"/>
+        <e k="actionIC_turnOnImplement" v="IC: Spustit nástroj"/>
+        <e k="actionIC_turnPumpOff" v="IC: Vypnutí čerpadla"/>
+        <e k="actionIC_turnPumpOn" v="IC: Zapnutí čerpadla"/>
+        <e k="actionIC_unfoldImplement" v="IC: Rozložit nástroj"/>
+        <e k="actionIC_unfoldPipe" v="IC: Rozložit odhazovou rouru"/>
+        <e k="actionIC_unfoldVehicle" v="IC: Rozložit stroj"/>
+        <e k="actionIC_workLightsBackOff" v="IC: Vypnout zadní pracovní světla"/>
+        <e k="actionIC_workLightsBackOn" v="IC: Zapnout zadní pracovní světla"/>
+        <e k="actionIC_workLightsFrontOff" v="IC: Vypnout přední pracovní světla"/>
+        <e k="actionIC_workLightsFrontOn" v="IC: Zapnout přední pracovní světla"/>
+        <e k="action_activateIC" v="Aktivovat interaktivní ovládání"/>
+        <e k="action_deactivateIC" v="Deaktivovat interaktivní ovládání"/>
+        <e k="configuration_interactiveControl" v="Interaktivní ovládání"/>
+        <e k="input_IC_CLICK" v="IC: Interaktivní ovládání bod kliknutí"/>
+        <e k="input_IC_TOGGLE_STATE" v="IC: Přepnout Interaktivní ovládání"/>
+        <e k="settingsIC_clickPointHover_optionTime" v="%.1f s"/>
+        <e k="settingsIC_clickPointHover_optionTimeOff" v="Vypnuté"/>
+        <e k="settingsIC_clickPointHover_title" v="Aktivace IC Hover"/>
+        <e k="settingsIC_clickPointHover_tooltip" v="Přepnutí InteractiveControl při najetí na clickPoint po určitou dobu"/>
+        <e k="settingsIC_keepAlive_title" v="Nechat IC aktivované"/>
+        <e k="settingsIC_keepAlive_tooltip" v="IC zůstane aktivní i při opuštění vozidla."/>
+        <e k="settingsIC_state_option01" v="Přepínatelné"/>
+        <e k="settingsIC_state_option02" v="Vždy aktivní"/>
+        <e k="settingsIC_state_option03" v="Vypnuté"/>
+        <e k="settingsIC_state_title" v="Stav IC"/>
+        <e k="settingsIC_state_tooltip" v="Zapíná, vypíná nebo přepíná funkci InteractiveControl."/>
+        <e k="settingsIC_title" v="Interaktivní ovládání"/>
+    </elements>
 </l10n>
