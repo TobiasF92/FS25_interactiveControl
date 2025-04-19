@@ -28,7 +28,6 @@ function InteractiveControl.initSpecialization()
 
     local schema = Vehicle.xmlSchema
     local interactiveControlPath = InteractiveControl.INTERACTIVE_CONTROL_XML_KEY
-    local interactiveControlConfigPath = InteractiveControl.INTERACTIVE_CONTROLS_CONFIG_XML_KEY
 
     schema:setXMLSpecializationType("InteractiveControl")
 
@@ -776,8 +775,7 @@ function InteractiveControl:getIsMovingToolActive(superFunc, movingTool)
 
     for _, interactiveController in pairs(spec.interactiveControllers) do
         ---@cast interactiveController InteractiveController
-        if interactiveController.getMovingToolIsInactive ~= nil
-            and interactiveController:getMovingToolIsInactive(movingTool) then
+        if interactiveController:hasDependingMovingTools() and interactiveController:getMovingToolIsInactive(movingTool) then
             return false
         end
     end
@@ -793,8 +791,7 @@ function InteractiveControl:getIsMovingPartActive(superFunc, movingPart)
 
     for _, interactiveController in pairs(spec.interactiveControllers) do
         ---@cast interactiveController InteractiveController
-        if interactiveController.getMovingPartIsInactive ~= nil
-            and interactiveController:getMovingPartIsInactive(movingPart) then
+        if interactiveController:hasDependingMovingParts() and interactiveController:getMovingPartIsInactive(movingPart) then
             return false
         end
     end
