@@ -405,7 +405,7 @@ end
 
 ---Sets IC active state
 ---@param state boolean
----@param noEventSend boolean
+---@param noEventSend? boolean
 function InteractiveControl:activateInteractiveControl(state, noEventSend)
     local spec = self.spec_interactiveControl
 
