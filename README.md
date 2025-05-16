@@ -7,7 +7,7 @@ With IC you have the possibility to interactively control many parts of several 
 
 ## Possibilities
 
-'Interactive Control' provides different possibilities to interact with your vehicles. You can use click icons that appear when you turn on IC or when you are nearby. Another way for interactive handling is a key binding event. The controls are able to be used as switch or to force a state.
+'Interactive Control' provides different possibilities to interact with your vehicles. You can use click icons that appear when you turn on IC or when you are nearby. Another way for interactive handling is a key binding event. The controls are able to use as switch or to force a state.
 All interactions are generally possible to use from the inside and the outside of a vehicle.
 
 Using the controls you can steer different things:
@@ -56,24 +56,24 @@ The documentation is not finished yet, but should be sufficient for experienced 
                     <!-- Add a function to your control, don't forget to add the requirements! -->
                     <!-- CONVERT INFO: some names of the functions changed -->
                     <function name="string">
-                        <!-- CONVERT INFO: index and indicies are not longer supported, use indices instead -->
+                        <!-- CONVERT INFO: index and indicies are no longer supported, use indices instead -->
                         <attacherJoint indices="1 2 .. n"/>
                     </function>
 
                     <!-- This control should not be functional all the time? Add a configuration restriction -->
                     <configurationsRestrictions>
-                        <!-- CONVERT INFO: index and indicies are not longer supported, use indices instead -->
+                        <!-- CONVERT INFO: index and indicies are no longer supported, use indices instead -->
                         <restriction indices="1 2 .. n" name="string"/>
                     </configurationsRestrictions>
 
                     <!-- You want to use some extra dashboards for your control? -->
                     <!-- There are three new valueTypes: ic_state (BOOLEAN) | ic_stateValue (FLOAT 0-1) | ic_action (in combination with 'raiseTime', 'activeTime', 'onICActivate', 'onICDeactivate')-->
-                    <dashboard activeTime="1" animName="string" baseColor="string" displayType="string" doInterpolation="false" emissiveScale="0.2" emitColor="string"font="DIGIT" fontThickness="1" groups="string" hasNormalMap="false" hiddenColor="string" idleValue="0" intensity="1" interpolationSpeed="0.005" maxRot="string" maxValueAnim="float" maxValueRot="float" maxValueSlider="float" minRot="string" minValueAnim="float" minValueRot="float" minValueSlider="float" node="node" numberColor="string" numbers="node" onICActivate="true" onICDeactivate="true" precision="1" raiseTime="1" rotAxis="float" textAlignment="RIGHT" textColor="string" textMask="00.0" textScaleX="1" textScaleY="1" textSize="0.03" valueType="string">
+                    <dashboard activeTime="1" animName="string" baseColor="string" displayType="string" doInterpolation="false" emissiveScale="0.2" emitColor="string" font="DIGIT" fontThickness="1" groups="string" hasNormalMap="false" hiddenColor="string" idleValue="0" intensity="1" interpolationSpeed="0.005" maxRot="string" maxValueAnim="float" maxValueRot="float" maxValueSlider="float" minRot="string" minValueAnim="float" minValueRot="float" minValueSlider="float" node="node" numberColor="string" numbers="node" onICActivate="true" onICDeactivate="true" precision="1" raiseTime="1" rotAxis="float" textAlignment="RIGHT" textColor="string" textMask="00.0" textScaleX="1" textScaleY="1" textSize="0.03" valueType="string">
                         <state rotation="x y z" scale="x y z" translation="x y z" value="1 2 .. n" visibility="boolean"/>
                     </dashboard>
 
                     <!-- You can change the active state of dashboards here.-->
-                    <!-- Keep in mind to set an value inactive in most entries, not all dashboards are working with the active state -->
+                    <!-- Keep in mind to set a value inactive in most entries, not all dashboards are working with the active state -->
                     <!-- Keep in mind that only vanilla dashboard types are supported! -->
                     <dependingDashboards animName="string" dashboardActive="true" dashboardInactive="true" dashboardValueActive="float" dashboardValueInactive="float" node="node" numbers="node"/>
 
@@ -108,8 +108,8 @@ The documentation is not finished yet, but should be sufficient for experienced 
 ```xml
 <animations>
     <animation>
-        <!-- You can block any interactive control using a animation value -->
-        <part interactiveControlIndex="integer" interactiveControlBlocked="boolean">
+        <!-- You can block any interactive control using an animation value -->
+        <part interactiveControlIndex="integer" interactiveControlBlocked="boolean"/>
     </animation>
 </animations>
 ```
@@ -117,56 +117,59 @@ The documentation is not finished yet, but should be sufficient for experienced 
 
 ### FunctionOverview:
 
-Function | Description | Requirements
--------- | -------- | --------
-MOTOR_START_STOPP | Toggle vehicle motor start and stop
-LIGHTS_TOGGLE | Toggle lights on and off
-LIGHTS_WORKBACK_TOGGLE | Toggle worklights back on and off
-LIGHTS_WORKFRONT_TOGGLE | Toggle worklights front on and off
-LIGHTS_HIGHBEAM_TOGGLE | Toggle highbeamlights on and off
-LIGHTS_TURNLIGHT_HAZARD_TOGGLE | Toggle hazard lights on and off
-LIGHTS_TURNLIGHT_LEFT_TOGGLE | Toggle turnlight left on and off
-LIGHTS_TURNLIGHT_RIGHT_TOGGLE | Toggle turnlight right on and off
-LIGHTS_BEACON_TOGGLE | Toggle beaconlight on and off
-LIGHTS_PIPE_TOGGLE | Toggle pipelight on and off |
-AUTOMATIC_STEERING_TOGGLE | Toggle automatic steering on and off
-AUTOMATIC_STEERING_LINES_TOGGLE | Show/hide automatic steering lines
-CRUISE_CONTROL_TOGGLE | Toggle cruise control on and off
-DRIVE_DIRECTION_TOGGLE | Toggle vehicle drive direction
-COVER_TOGGLE | Toggle cover state
-RADIO_TOGGLE | Toggle radio on/off
-RADIO_CHANNEL_NEXT | Next radio channel |
-RADIO_CHANNEL_PREVIOUS | Previous radio channel |
-RADIO_ITEM_NEXT | Next radio item |
-RADIO_ITEM_PREVIOUS | Previous radio item |
-REVERSEDRIVING_TOGGLE | Toggle vehicle reverse driving |
-ATTACHERJOINTS_LIFT_LOWER | Lift/lower first selected implement in indices | ".attacherJoint#indices"
-TURN_ON_OFF | Turn on/off vehicle
-ATTACHERJOINTS_TURN_ON_OFF | Turn on/off first selected implement in indices | ".attacherJoint#indices"
-FOLDING_TOGGLE | Fold/unfold vehicle
-ATTACHERJOINTS_FOLDING_TOGGLE | Fold/unfold first selected implement in indices | ".attacherJoint#indices"
-PIPE_FOLDING_TOGGLE | Fold/unfold pipe |
-DISCHARGE_TOGGLE | Toggle discharging on vehicle
-ATTACHERJOINTS_DISCHARGE_TOGGLE | Toggle discharging on selected attacherJoint if in 'indices' | ".attacherJoint#indices"
-CRABSTEERING_TOGGLE | Toggle crab steering mode to next mode
-VARIABLE_WORK_WIDTH_LEFT_INCREASE | Increase work width left |
-VARIABLE_WORK_WIDTH_LEFT_DECREASE | Decrease work width left |
-ATTACHERJOINTS_VARIABLE_WORK_WIDTH_LEFT_INCREASE | Increase work width left on selected attacherJoint if in 'indices' | ".attacherJoint#indices"
-ATTACHERJOINTS_VARIABLE_WORK_WIDTH_LEFT_DECREASE | Decrease work width left on selected attacherJoint if in 'indices' | ".attacherJoint#indices"
-VARIABLE_WORK_WIDTH_RIGHT_INCREASE | Increase work width right |
-VARIABLE_WORK_WIDTH_RIGHT_DECREASE | Decrease work width right |
-ATTACHERJOINTS_VARIABLE_WORK_WIDTH_RIGHT_INCREASE | Increase work width right on selected attacherJoint if in 'indices' | ".attacherJoint#indices"
-ATTACHERJOINTS_VARIABLE_WORK_WIDTH_RIGHT_DECREASE | Decrease work width right on selected attacherJoint if in 'indices' | ".attacherJoint#indices"
-VARIABLE_WORK_WIDTH_TOGGLE | Toggle work width |
-ATTACHERJOINTS_VARIABLE_WORK_WIDTH_TOGGLE | Toggle work width on selected attacherJoint if in 'indices' | ".attacherJoint#indices"
-ATTACHERJOINTS_ATTACH_DETACH | Attach or detach vehicle on attacherJoint if in 'indices' | ".attacherJoint#indices"
-BALER_TOGGLE_SIZE | Toggle bale size |
-BALER_DROP_BALE | Drop bale from baler
-BALER_TOGGLE_AUTOMATIC_DROP | Toggle automatic bale drop from baler
-BALEWRAPPER_DROP_BALE | Drop bale from bale wrapper
-BALEWRAPPER_TOGGLE_AUTOMATIC_DROP | Toggle automatic bale drop from bale wrapper
+| Function                                          | Description                                                         | Requirements             |
+|---------------------------------------------------|---------------------------------------------------------------------|--------------------------|
+| MOTOR_START_STOPP                                 | Toggle vehicle motor start and stop                                 |                          |
+| LIGHTS_TOGGLE                                     | Toggle lights on and off                                            |                          |
+| LIGHTS_WORKBACK_TOGGLE                            | Toggle worklights back on and off                                   |                          |
+| LIGHTS_WORKFRONT_TOGGLE                           | Toggle worklights front on and off                                  |                          |
+| LIGHTS_HIGHBEAM_TOGGLE                            | Toggle highbeamlights on and off                                    |                          |
+| LIGHTS_TURNLIGHT_HAZARD_TOGGLE                    | Toggle hazard lights on and off                                     |                          |
+| LIGHTS_TURNLIGHT_LEFT_TOGGLE                      | Toggle turnlight left on and off                                    |                          |
+| LIGHTS_TURNLIGHT_RIGHT_TOGGLE                     | Toggle turnlight right on and off                                   |                          |
+| LIGHTS_BEACON_TOGGLE                              | Toggle beaconlight on and off                                       |                          |
+| LIGHTS_PIPE_TOGGLE                                | Toggle pipelight on and off                                         |                          |
+| AUTOMATIC_STEERING_TOGGLE                         | Toggle automatic steering on and off                                |                          |
+| AUTOMATIC_STEERING_LINES_TOGGLE                   | Show/hide automatic steering lines                                  |                          |
+| CRUISE_CONTROL_TOGGLE                             | Toggle cruise control on and off                                    |                          |
+| DRIVE_DIRECTION_TOGGLE                            | Toggle vehicle drive direction                                      |                          |
+| COVER_TOGGLE                                      | Toggle cover state                                                  |                          |
+| RADIO_TOGGLE                                      | Toggle radio on/off                                                 |                          |
+| RADIO_CHANNEL_NEXT                                | Next radio channel                                                  |                          |
+| RADIO_CHANNEL_PREVIOUS                            | Previous radio channel                                              |                          |
+| RADIO_ITEM_NEXT                                   | Next radio item                                                     |                          |
+| RADIO_ITEM_PREVIOUS                               | Previous radio item                                                 |                          |
+| REVERSEDRIVING_TOGGLE                             | Toggle vehicle reverse driving                                      |                          |
+| ATTACHERJOINTS_LIFT_LOWER                         | Lift/lower first selected implement in indices                      | ".attacherJoint#indices" |
+| TURN_ON_OFF                                       | Turn on/off vehicle                                                 |                          |
+| ATTACHERJOINTS_TURN_ON_OFF                        | Turn on/off first selected implement in indices                     | ".attacherJoint#indices" |
+| FOLDING_TOGGLE                                    | Fold/unfold vehicle                                                 |                          |
+| ATTACHERJOINTS_FOLDING_TOGGLE                     | Fold/unfold first selected implement in indices                     | ".attacherJoint#indices" |
+| PIPE_FOLDING_TOGGLE                               | Fold/unfold pipe                                                    |                          |
+| DISCHARGE_TOGGLE                                  | Toggle discharging on vehicle                                       |                          |
+| ATTACHERJOINTS_DISCHARGE_TOGGLE                   | Toggle discharging on selected attacherJoint if in 'indices'        | ".attacherJoint#indices" |
+| CRABSTEERING_TOGGLE                               | Toggle crab steering mode to next mode                              |                          |
+| VARIABLE_WORK_WIDTH_LEFT_INCREASE                 | Increase work width left                                            |                          |
+| VARIABLE_WORK_WIDTH_LEFT_DECREASE                 | Decrease work width left                                            |                          |
+| ATTACHERJOINTS_VARIABLE_WORK_WIDTH_LEFT_INCREASE  | Increase work width left on selected attacherJoint if in 'indices'  | ".attacherJoint#indices" |
+| ATTACHERJOINTS_VARIABLE_WORK_WIDTH_LEFT_DECREASE  | Decrease work width left on selected attacherJoint if in 'indices'  | ".attacherJoint#indices" |
+| VARIABLE_WORK_WIDTH_RIGHT_INCREASE                | Increase work width right                                           |                          |
+| VARIABLE_WORK_WIDTH_RIGHT_DECREASE                | Decrease work width right                                           |                          |
+| ATTACHERJOINTS_VARIABLE_WORK_WIDTH_RIGHT_INCREASE | Increase work width right on selected attacherJoint if in 'indices' | ".attacherJoint#indices" |
+| ATTACHERJOINTS_VARIABLE_WORK_WIDTH_RIGHT_DECREASE | Decrease work width right on selected attacherJoint if in 'indices' | ".attacherJoint#indices" |
+| VARIABLE_WORK_WIDTH_TOGGLE                        | Toggle work width                                                   |                          |
+| ATTACHERJOINTS_VARIABLE_WORK_WIDTH_TOGGLE         | Toggle work width on selected attacherJoint if in 'indices'         | ".attacherJoint#indices" |
+| ATTACHERJOINTS_ATTACH_DETACH                      | Attach or detach vehicle on attacherJoint if in 'indices'           | ".attacherJoint#indices" |
+| BALER_TOGGLE_SIZE                                 | Toggle bale size                                                    |                          |
+| BALER_DROP_BALE                                   | Drop bale from baler                                                |                          |
+| BALER_TOGGLE_AUTOMATIC_DROP                       | Toggle automatic bale drop from baler                               |                          |
+| BALEWRAPPER_DROP_BALE                             | Drop bale from bale wrapper                                         |                          |
+| BALEWRAPPER_TOGGLE_AUTOMATIC_DROP                 | Toggle automatic bale drop from bale wrapper                        |                          |
+
 **External Mods**:
--/-|-/-|
+
+| -/- | -/- | -/- |
+|-----|-----|-----|
 
 
 ## Copyright
