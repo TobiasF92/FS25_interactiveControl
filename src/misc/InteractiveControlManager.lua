@@ -112,17 +112,16 @@ end
 ---Returns true if manager has active control, false otherwise
 ---@return boolean hasActiveController
 function InteractiveControlManager:isInteractiveControlActivated()
+    if g_localPlayer == nil then
+        return false
+    end
+
     local controlledVehicle = g_localPlayer:getCurrentVehicle()
-
-    if controlledVehicle == nil then
-        return self.playerInRange
+    if controlledVehicle ~= nil and controlledVehicle.isInteractiveControlActivated ~= nil then
+        return controlledVehicle:isInteractiveControlActivated()
     end
 
-    if controlledVehicle.isInteractiveControlActivated ~= nil then
-        return controlledVehicle:isInteractiveControlActivated() and self.playerInRange
-    end
-
-    return false
+    return self.playerInRange
 end
 
 ---Sets active interactiveController
@@ -205,11 +204,16 @@ end
 ---@param modifierName string modifier string
 ---@return number volume
 function InteractiveControlManager:getModifierFactor(soundManager, superFunc, sample, modifierName)
-    if modifierName == "volume" and self.mission.controlledVehicle ~= nil then
+    local controlledVehicle = nil
+    if g_localPlayer ~= nil then
+        controlledVehicle = g_localPlayer:getCurrentVehicle()
+    end
+
+    if modifierName == "volume" and controlledVehicle ~= nil then
         local volume = superFunc(soundManager, sample, modifierName)
 
-        if self.mission.controlledVehicle.getIndoorModifiedSoundFactor ~= nil then
-            volume = volume * self.mission.controlledVehicle:getIndoorModifiedSoundFactor()
+        if controlledVehicle.getIndoorModifiedSoundFactor ~= nil then
+            volume = volume * controlledVehicle:getIndoorModifiedSoundFactor()
         end
 
         return volume
@@ -275,4 +279,43 @@ function InteractiveControlManager:getHoverTime()
     end
 
     return InteractiveControlManager.SETTING_HOVER_TIME[clickPointHover]
+end
+
+----------------
+---Overwrites---
+----------------
+
+---Overwrite FS25_additionalGameSettings functions
+function InteractiveControlManager.overwrite_additionalGameSettings()
+    if not g_modIsLoaded["FS25_additionalGameSettings"] then
+        return
+    end
+
+    if FS25_additionalGameSettings == nil or FS25_additionalGameSettings.CrosshairSetting == nil then
+        return
+    end
+
+    ---Overwritten function: FS25_additionalGameSettings.CrosshairSetting.overwriteDefault
+    ---Injects the InteractiveControl is active state for crosshair rendering
+    ---@param setting CrosshairSetting AdditionalGameSettings
+    ---@param superFunc function original function
+    ---@param crosshair GuiElement Overlay
+    ---@param func function
+    local function inject_overwriteDefault(crosshairSetting, superFunc, crosshair, func)
+        log("inject_overwriteDefault")
+
+        if g_currentMission.interactiveControl == nil then
+            return superFunc(crosshairSetting, crosshair, func)
+        end
+
+        local render = crosshair.render
+        crosshair.render = function(...)
+            if g_currentMission.interactiveControl:isInteractiveControlActivated() or crosshairSetting.state == 0 and (func == nil or func()) then
+                render(...)
+            end
+        end
+    end
+
+    local crosshairSetting = FS25_additionalGameSettings.CrosshairSetting
+    crosshairSetting.overwriteDefault = Utils.overwrittenFunction(crosshairSetting.overwriteDefault, inject_overwriteDefault)
 end

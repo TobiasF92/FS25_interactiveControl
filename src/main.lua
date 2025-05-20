@@ -62,6 +62,8 @@ local function load(mission)
 
     mission.interactiveControl = modEnvironment
 
+    InteractiveControlManager.overwrite_additionalGameSettings()
+
     -- load settings
     if modEnvironment.settings ~= nil then
         AdditionalSettingsManager.loadFromXML(modEnvironment.settings)
