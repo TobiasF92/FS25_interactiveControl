@@ -23,8 +23,9 @@ A few vehicles are already equipped with IC
 For further informations: <a href="https://github.com/TobiasF92/FS25_interactiveControl/blob/main/README.md">README</a> on Github.
 
 Changelog (1.1.0.0):
-- Fixed indoor sound changing
 - Added support for "FS25_additionalGameSettings" crosshair disabling
+- Added direction of clickPoints is taken into account
+- Fixed indoor sound changing
 
         ]]>        </en>
         <de><![CDATA['Interactive Control' ist ein globaler Skript-Mod für den Landwirtschafts-Simulator 25. Während dieser Mod aktiv ist, sind Sie in der Lage, viele andere Mods zu verwenden, die Interactive Control unterstützen. Mit IC erhalten Sie die Möglichkeit, viele Teile von mehreren (vorbereiteten) Fahrzeugen interaktiv zu steuern.
@@ -42,8 +43,9 @@ Einige wenige Fahrzeuge sind bereits mit IC ausgestattet.
 Für mehr Informationen: <a href="https://github.com/TobiasF92/FS25_interactiveControl/blob/main/README.md">README</a> auf Github.
 
 Changelog (1.1.0.0):
-- Fixed indoor sound changing
 - Added support for "FS25_additionalGameSettings" crosshair disabling
+- Added direction of clickPoints is taken into account
+- Fixed indoor sound changing
 
         ]]>        </de>
     </description>

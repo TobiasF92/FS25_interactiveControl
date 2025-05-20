@@ -202,9 +202,11 @@ function InteractiveClickPoint:updateScreenPosition(mousePosX, mousePosY)
     local isOnScreen = sx > -1 and sx < 2 and sy > -1 and sy < 2 and sz <= 1
 
     if isOnScreen then
-        if self.alignToCamera then
-            local cameraNode = getCamera()
-            if entityExists(cameraNode) then
+        local cameraNode = getCamera()
+
+        if entityExists(cameraNode) then
+            if self.alignToCamera then
+                -- Align clickPoint node to camera
                 local xC, yC, zC = getWorldTranslation(cameraNode)
                 local dirX, dirY, dirZ = xC - x, yC - y, zC - z
 
@@ -215,9 +217,17 @@ function InteractiveClickPoint:updateScreenPosition(mousePosX, mousePosY)
                 end
 
                 I3DUtil.setWorldDirection(self.node, dirX, dirY, dirZ, 0, 1, 0)
+            else
+                -- Disable static clickPoint if not in camera direction view
+                local dirX, dirY, dirZ = localDirectionToWorld(self.node, 0, 0, 1)
+                local cameraDirectionX, cameraDirectionY, cameraDirectionZ = localDirectionToWorld(cameraNode, 0, 0, -1)
+
+                local dotProduct = MathUtil.dotProduct(cameraDirectionX, cameraDirectionY, cameraDirectionZ, dirX, dirY, dirZ)
+                if dotProduct < math.cos(math.rad(90)) then
+                    mousePosX = nil
+                    mousePosY = nil
+                end
             end
-        else
-            --Todo: block active if not in range
         end
 
         self:updateClickable(mousePosX, mousePosY)
