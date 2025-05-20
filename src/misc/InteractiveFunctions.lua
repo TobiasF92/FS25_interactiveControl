@@ -494,8 +494,11 @@ InteractiveFunctions.addFunction("COVER_TOGGLE", {
 ---@param target Vehicle
 ---@return boolean isEqual
 local function controlledIsEqualTarget(target)
-    local controlledVehicle = g_localPlayer:getCurrentVehicle()
+    if g_localPlayer == nil then
+        return false
+    end
 
+    local controlledVehicle = g_localPlayer:getCurrentVehicle()
     if controlledVehicle == nil then
         return false
     end
@@ -1315,14 +1318,14 @@ InteractiveFunctions.addFunction("BALER_TOGGLE_SIZE", {
         end
         local spec_baler = target.spec_baler
 
-        if spec_baler ~= nil then 
+        if spec_baler ~= nil then
             Baler.actionEventToggleSize(target)
         end
     end,
     forcedActionText = function(target, data, interactiveActor)
         local spec_baler = target.spec_baler
         local actionText = interactiveActor.interactiveController:getActionText(false)
-        
+
         if spec_baler ~= nil then
             local baleTypeDef = spec_baler.baleTypes[spec_baler.preSelectedBaleTypeIndex]
             local baleSize = 0
@@ -1388,7 +1391,7 @@ InteractiveFunctions.addFunction("BALER_TOGGLE_AUTOMATIC_DROP", {
         end
         local spec_baler = target.spec_baler
 
-        if spec_baler ~= nil then 
+        if spec_baler ~= nil then
             Baler.setBalerAutomaticDrop(target, not spec_baler.automaticDrop)
         end
     end,
@@ -1446,7 +1449,7 @@ InteractiveFunctions.addFunction("BALEWRAPPER_TOGGLE_AUTOMATIC_DROP", {
         end
         local spec_baleWrapper = target.spec_baleWrapper
 
-        if spec_baleWrapper ~= nil then 
+        if spec_baleWrapper ~= nil then
             BaleWrapper.setBaleWrapperAutomaticDrop(target, not spec_baleWrapper.automaticDrop)
         end
     end,
