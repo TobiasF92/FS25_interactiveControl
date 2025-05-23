@@ -25,13 +25,15 @@ InteractiveControlManager.SETTING_HOVER_2 = 3
 InteractiveControlManager.SETTING_HOVER_3 = 4
 InteractiveControlManager.SETTING_HOVER_4 = 5
 InteractiveControlManager.SETTING_HOVER_5 = 6
+InteractiveControlManager.SETTING_HOVER_6 = 7
 
 InteractiveControlManager.SETTING_HOVER_TIME = {
-    [InteractiveControlManager.SETTING_HOVER_1] = 0.5,
-    [InteractiveControlManager.SETTING_HOVER_2] = 1,
-    [InteractiveControlManager.SETTING_HOVER_3] = 2,
-    [InteractiveControlManager.SETTING_HOVER_4] = 3,
-    [InteractiveControlManager.SETTING_HOVER_5] = 5,
+    [InteractiveControlManager.SETTING_HOVER_1] = 0.25,
+    [InteractiveControlManager.SETTING_HOVER_2] = 0.5,
+    [InteractiveControlManager.SETTING_HOVER_3] = 1,
+    [InteractiveControlManager.SETTING_HOVER_4] = 2,
+    [InteractiveControlManager.SETTING_HOVER_5] = 3,
+    [InteractiveControlManager.SETTING_HOVER_6] = 5,
 }
 
 ---Create new instance of InteractiveControlManager
@@ -85,6 +87,7 @@ function InteractiveControlManager.new(mission, inputBinding, i18n, modName, mod
         i18n:getText("settingsIC_clickPointHover_optionTime", self.customEnvironment):format(InteractiveControlManager.SETTING_HOVER_TIME[InteractiveControlManager.SETTING_HOVER_3]),
         i18n:getText("settingsIC_clickPointHover_optionTime", self.customEnvironment):format(InteractiveControlManager.SETTING_HOVER_TIME[InteractiveControlManager.SETTING_HOVER_4]),
         i18n:getText("settingsIC_clickPointHover_optionTime", self.customEnvironment):format(InteractiveControlManager.SETTING_HOVER_TIME[InteractiveControlManager.SETTING_HOVER_5]),
+        i18n:getText("settingsIC_clickPointHover_optionTime", self.customEnvironment):format(InteractiveControlManager.SETTING_HOVER_TIME[InteractiveControlManager.SETTING_HOVER_6]),
     }
 
     title = i18n:getText("settingsIC_clickPointHover_title", self.customEnvironment)
