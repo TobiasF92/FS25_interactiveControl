@@ -67,7 +67,12 @@ function InteractiveController.registerXMLPaths(schema, basePath)
         if validatePathAgainstInputTypes(basePath, actorClass.INPUT_TYPES) then
             local keyName = actorClass.KEY_NAME or name
 
-            actorClass.registerXMLPaths(schema, ("%s.%s(?)"):format(basePath, keyName), basePath)
+            local actorBasePath = basePath
+            if actorClass.USE_ITERATION then
+                actorBasePath = ("%s.%s(?)"):format(basePath, keyName)
+            end
+
+            actorClass.registerXMLPaths(schema, actorBasePath, basePath)
         end
     end
 
@@ -76,7 +81,12 @@ function InteractiveController.registerXMLPaths(schema, basePath)
         if validatePathAgainstInputTypes(basePath, actionClass.INPUT_TYPES) then
             local keyName = actionClass.KEY_NAME or name
 
-            actionClass.registerXMLPaths(schema, ("%s.%s(?)"):format(basePath, keyName), basePath)
+            local actionBasePath = basePath
+            if actionClass.USE_ITERATION then
+                actionBasePath = ("%s.%s(?)"):format(basePath, keyName)
+            end
+
+            actionClass.registerXMLPaths(schema, actionBasePath, basePath)
         end
     end
 
@@ -162,35 +172,57 @@ function InteractiveController:loadFromXML(xmlFile, key, target, index)
     for name, class in pairs(InteractiveActor.TYPE_BY_NAMES) do
         local keyName = class.KEY_NAME or name
 
-        xmlFile:iterate(key .. "." .. keyName, function(_, actorKey)
+        if class.USE_ITERATION then
+            xmlFile:iterate(key .. "." .. keyName, function(_, actorKey)
+                local interactiveActor = class.new(self.modName, self.modDirectory)
+
+                if interactiveActor:loadFromXML(xmlFile, actorKey, target, self) then
+                    table.insert(self.interactiveActors, interactiveActor)
+                else
+                    interactiveActor:delete()
+                    Logging.xmlWarning(xmlFile, "Could not load interactiveActor for '%s'", actorKey)
+
+                    return false
+                end
+            end)
+        else
             local interactiveActor = class.new(self.modName, self.modDirectory)
 
-            if interactiveActor:loadFromXML(xmlFile, actorKey, target, self) then
+            if interactiveActor:loadFromXML(xmlFile, key, target, self) then
                 table.insert(self.interactiveActors, interactiveActor)
             else
                 interactiveActor:delete()
-                Logging.xmlWarning(xmlFile, "Could not load interactiveActor for '%s'", actorKey)
-
-                return false
+                Logging.xmlWarning(xmlFile, "Could not load interactiveActor for '%s'", key)
             end
-        end)
+        end
     end
 
     for name, class in pairs(InteractiveAction.TYPE_BY_NAMES) do
         local keyName = class.KEY_NAME or name
 
-        xmlFile:iterate(key .. "." .. keyName, function(_, actionKey)
+        if class.USE_ITERATION then
+            xmlFile:iterate(key .. "." .. keyName, function(_, actionKey)
+                local interactiveAction = class.new(self.modName, self.modDirectory)
+
+                if interactiveAction:loadFromXML(xmlFile, actionKey, target, self) then
+                    table.insert(self.interactiveActions, interactiveAction)
+                else
+                    interactiveAction:delete()
+                    Logging.xmlWarning(xmlFile, "Could not load interactiveAction for '%s'", actionKey)
+
+                    return false
+                end
+            end)
+        else
             local interactiveAction = class.new(self.modName, self.modDirectory)
 
-            if interactiveAction:loadFromXML(xmlFile, actionKey, target, self) then
+            if interactiveAction:loadFromXML(xmlFile, key, target, self) then
                 table.insert(self.interactiveActions, interactiveAction)
             else
                 interactiveAction:delete()
-                Logging.xmlWarning(xmlFile, "Could not load interactiveAction for '%s'", actionKey)
-
-                return false
+                Logging.xmlWarning(xmlFile, "Could not load interactiveAction for '%s'", key)
             end
-        end)
+        end
     end
 
     self.allowsSaving = self:isSavingAllowed()

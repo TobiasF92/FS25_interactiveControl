@@ -13,7 +13,7 @@ local interactiveActorObjectChange_mt = Class(InteractiveActorObjectChange, Inte
 
 -- Set input types to vehicle and placeable
 InteractiveActorObjectChange.INPUT_TYPES = { InteractiveController.INPUT_TYPES.VEHICLE, InteractiveController.INPUT_TYPES.PLACEABLE }
-InteractiveActorObjectChange.KEY_NAME = "objectChanges"
+InteractiveActorObjectChange.USE_ITERATION = false
 
 ---Register OBJECT_CHANGES interactive actor
 InteractiveActor.registerInteractiveActor("OBJECT_CHANGES", InteractiveActorObjectChange)
@@ -25,8 +25,7 @@ InteractiveActor.registerInteractiveActor("OBJECT_CHANGES", InteractiveActorObje
 function InteractiveActorObjectChange.registerXMLPaths(schema, basePath, controllerPath)
     InteractiveActorObjectChange:superClass().registerXMLPaths(schema, basePath, controllerPath)
 
-    ObjectChangeUtil.registerObjectChangeXMLPaths(schema, InteractiveControl.INTERACTIVE_CONTROL_XML_KEY)
-    ObjectChangeUtil.registerObjectChangeXMLPaths(schema, InteractiveControl.INTERACTIVE_CONTROLS_CONFIG_XML_KEY)
+    ObjectChangeUtil.registerObjectChangeXMLPaths(schema, basePath)
 end
 
 ---Creates new instance of InteractiveActorObjectChange
@@ -54,11 +53,11 @@ function InteractiveActorObjectChange:loadFromXML(xmlFile, key, target, interact
     self.changeObjects = {}
 
     if target:isa(Vehicle) then
-        ObjectChangeUtil.loadObjectChangeFromXML(xmlFile, key, self.changeObjects, target.components, self)
-        ObjectChangeUtil.setObjectChanges(self.changeObjects, false, self, target.setMovingToolDirty, true)
+        ObjectChangeUtil.loadObjectChangeFromXML(xmlFile, key, self.changeObjects, target.components, target)
+        ObjectChangeUtil.setObjectChanges(self.changeObjects, false, self.target, target.setMovingToolDirty, true)
     elseif target:isa(Placeable) then
-        ObjectChangeUtil.loadObjectChangeFromXML(xmlFile, key, self.changeObjects, target.components, nil)
-        ObjectChangeUtil.setObjectChanges(self.changeObjects, false, self)
+        ObjectChangeUtil.loadObjectChangeFromXML(xmlFile, key, self.changeObjects, target.components, target)
+        ObjectChangeUtil.setObjectChanges(self.changeObjects, false, self.target)
     end
 
     return true
@@ -74,8 +73,8 @@ function InteractiveActorObjectChange:updateState(stateValue, forced, noEventSen
     local state = stateValue > 0.5
 
     if self.target:isa(Vehicle) then
-        ObjectChangeUtil.setObjectChanges(self.changeObjects, state, self, self.setMovingToolDirty)
+        ObjectChangeUtil.setObjectChanges(self.changeObjects, state, self.target, self.setMovingToolDirty)
     elseif self.target:isa(Placeable) then
-        ObjectChangeUtil.setObjectChanges(self.changeObjects, state, self)
+        ObjectChangeUtil.setObjectChanges(self.changeObjects, state, self.target)
     end
 end
