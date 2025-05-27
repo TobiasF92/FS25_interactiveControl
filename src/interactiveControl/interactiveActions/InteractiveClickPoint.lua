@@ -139,7 +139,7 @@ function InteractiveClickPoint:update(isIndoor, isOutdoor, hasInput)
     end
 
     local lastMouseX, lastMouseY = g_inputBinding:getMousePosition()
-    self:updateScreenPosition(lastMouseX, lastMouseY)
+    self:updateScreenPosition(lastMouseX, lastMouseY, isIndoor, isOutdoor)
 
     local clickPointHoverTime = g_currentMission.interactiveControl:getHoverTime()
     if clickPointHoverTime <= 0 then
@@ -163,7 +163,7 @@ function InteractiveClickPoint:update(isIndoor, isOutdoor, hasInput)
     end
 end
 
----Returns true if is active, false otherwise
+---Returns true if is activatable, false otherwise
 ---@return boolean isActivatable
 function InteractiveClickPoint:isActivatable()
     -- check node visibility
@@ -192,7 +192,9 @@ end
 ---Updates screen position of clickPoint
 ---@param mousePosX number x position of mouse
 ---@param mousePosY number y position of mouse
-function InteractiveClickPoint:updateScreenPosition(mousePosX, mousePosY)
+---@param isIndoor boolean True if update is indoor
+---@param isOutdoor boolean True if update is outdoor
+function InteractiveClickPoint:updateScreenPosition(mousePosX, mousePosY, isIndoor, isOutdoor)
     local x, y, z = getWorldTranslation(self.node)
     local sx, sy, sz = project(x, y, z)
 
@@ -218,14 +220,16 @@ function InteractiveClickPoint:updateScreenPosition(mousePosX, mousePosY)
 
                 I3DUtil.setWorldDirection(self.node, dirX, dirY, dirZ, 0, 1, 0)
             else
-                -- Disable static clickPoint if not in camera direction view
-                local dirX, dirY, dirZ = localDirectionToWorld(self.node, 0, 0, 1)
-                local cameraDirectionX, cameraDirectionY, cameraDirectionZ = localDirectionToWorld(cameraNode, 0, 0, -1)
+                if isOutdoor then
+                    -- Disable static clickPoint if not in camera direction view
+                    local dirX, dirY, dirZ = localDirectionToWorld(self.node, 0, 0, 1)
+                    local cameraDirectionX, cameraDirectionY, cameraDirectionZ = localDirectionToWorld(cameraNode, 0, 0, -1)
 
-                local dotProduct = MathUtil.dotProduct(cameraDirectionX, cameraDirectionY, cameraDirectionZ, dirX, dirY, dirZ)
-                if dotProduct < math.cos(math.rad(90)) then
-                    mousePosX = nil
-                    mousePosY = nil
+                    local dotProduct = MathUtil.dotProduct(cameraDirectionX, cameraDirectionY, cameraDirectionZ, dirX, dirY, dirZ)
+                    if dotProduct < math.cos(math.rad(90)) then
+                        mousePosX = nil
+                        mousePosY = nil
+                    end
                 end
             end
         end
