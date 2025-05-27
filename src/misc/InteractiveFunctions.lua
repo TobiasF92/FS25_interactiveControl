@@ -115,6 +115,11 @@ function InteractiveFunctions.resolveToAttachedObject(vehicle, attacherJointInde
         return nil
     end
 
+    if implement.object.getIsSelected == nil then
+        Logging.warning("Warning: %s: Unable to resolve attacherJointIndex '%s' to valid attached vehicle!", vehicle:getFullName(), attacherJointIndex)
+        return nil
+    end
+
     return implement.object
 end
 
