@@ -129,10 +129,7 @@ function InteractiveControl:onLoad(savegame)
     local interactiveControlConfigurationId = Utils.getNoNil(self.configurations.interactiveControl, 1)
     local baseKey = string.format("vehicle.interactiveControl.interactiveControlConfigurations.interactiveControlConfiguration(%d).interactiveControls", interactiveControlConfigurationId - 1)
 
-    ObjectChangeUtil.updateObjectChanges(self.xmlFile, "vehicle.interactiveControl.interactiveControlConfigurations.interactiveControlConfiguration", interactiveControlConfigurationId, self.components, self)
-
     spec.state = false
-
     spec.interactiveControllers = {}
     -- spec.interactiveControlDependingDashboards = {}
 
