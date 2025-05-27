@@ -19,6 +19,8 @@ local interactiveBase_mt = Class(InteractiveBase)
 InteractiveBase.INPUT_TYPES = { InteractiveController.INPUT_TYPES.UNKNOWN }
 ---@type string|nil Key name of interactive base, default is nil
 InteractiveBase.KEY_NAME = nil
+---@type boolean Actor uses iterations
+InteractiveBase.USE_ITERATION = true
 
 ---Register XMLPaths to XMLSchema
 ---@param schema XMLSchema Instance of XMLSchema to register path to
