@@ -18,6 +18,8 @@ InteractiveClickPoint.KEY_NAME = "clickPoint"
 ---Register CLICK_POINT interactive action
 InteractiveAction.registerInteractiveAction("CLICK_POINT", InteractiveClickPoint)
 
+InteractiveClickPoint.DOT_PRODUCT_LIMIT = math.cos(math.rad(90))
+
 ---Register XMLPaths to XMLSchema
 ---@param schema XMLSchema Instance of XMLSchema to register path to
 ---@param basePath string Base path for path registrations
@@ -226,7 +228,7 @@ function InteractiveClickPoint:updateScreenPosition(mousePosX, mousePosY, isIndo
                     local cameraDirectionX, cameraDirectionY, cameraDirectionZ = localDirectionToWorld(cameraNode, 0, 0, -1)
 
                     local dotProduct = MathUtil.dotProduct(cameraDirectionX, cameraDirectionY, cameraDirectionZ, dirX, dirY, dirZ)
-                    if dotProduct < math.cos(math.rad(90)) then
+                    if dotProduct < InteractiveClickPoint.DOT_PRODUCT_LIMIT then
                         mousePosX = nil
                         mousePosY = nil
                     end

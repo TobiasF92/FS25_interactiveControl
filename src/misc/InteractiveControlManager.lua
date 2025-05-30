@@ -305,8 +305,6 @@ function InteractiveControlManager.overwrite_additionalGameSettings()
     ---@param crosshair GuiElement Overlay
     ---@param func function
     local function inject_overwriteDefault(crosshairSetting, superFunc, crosshair, func)
-        log("inject_overwriteDefault")
-
         if g_currentMission.interactiveControl == nil then
             return superFunc(crosshairSetting, crosshair, func)
         end
