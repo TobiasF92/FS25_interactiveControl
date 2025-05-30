@@ -27,6 +27,7 @@ Changelog (1.1.0.0):
 - Added direction of clickPoints is taken into account
 - Fixed indoor sound changing
 - Fixed objectChange of interactiveControl
+- Fixed DRIVE_DIRECTION_TOGGLE function
 
         ]]>        </en>
         <de><![CDATA['Interactive Control' ist ein globaler Skript-Mod für den Landwirtschafts-Simulator 25. Während dieser Mod aktiv ist, sind Sie in der Lage, viele andere Mods zu verwenden, die Interactive Control unterstützen. Mit IC erhalten Sie die Möglichkeit, viele Teile von mehreren (vorbereiteten) Fahrzeugen interaktiv zu steuern.
@@ -48,6 +49,7 @@ Changelog (1.1.0.0):
 - Added direction of clickPoints is taken into account
 - Fixed indoor sound changing
 - Fixed objectChange of interactiveControl
+- Fixed DRIVE_DIRECTION_TOGGLE function
 
         ]]>        </de>
     </description>

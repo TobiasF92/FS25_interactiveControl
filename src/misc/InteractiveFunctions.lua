@@ -33,7 +33,7 @@ function InteractiveFunctions.addFunction(functionIdStr, functionArgs)
     functionIdStr = functionIdStr:upper()
 
     if functionArgs.posFunc == nil then
-        Logging.warning("Warning: InteractiveFunction with ID: %s was not added! No function definied!", functionIdStr)
+        Logging.warning("Warning: InteractiveFunction with ID: %s was not added! No function defined!", functionIdStr)
         return false
     end
     if InteractiveFunctions.FUNCTION_ID[functionIdStr] ~= nil then
@@ -465,7 +465,7 @@ InteractiveFunctions.addFunction("DRIVE_DIRECTION_TOGGLE", {
             return
         end
 
-        MotorGearShiftEvent.sendEvent(target, MotorGearShiftEvent.TYPE_DIRECTION_CHANGE)
+        MotorGearShiftEvent.sendToServer(target, MotorGearShiftEvent.TYPE_DIRECTION_CHANGE)
     end,
     isBlockedFunc = function(target, data)
         if target.spec_motorized ~= nil then
