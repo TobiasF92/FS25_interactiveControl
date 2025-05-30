@@ -51,10 +51,11 @@
 
                     <xml key=".clickPoint(1)">
                         <entry type="string" key="#linkNode" value="doorLeft"/>
-                        <entry type="string" key="#translation" value="-0.228 -0.504 1.332"/>
-                        <entry type="string" key="#rotation" value="0 0 0"/>
+                        <entry type="string" key="#translation" value="-0.245 -0.504 1.332"/>
+                        <entry type="string" key="#rotation" value="0 80 0"/>
                         <entry type="float" key="#size" value="0.05"/>
                         <entry type="string" key="#type" value="OUTDOOR"/>
+                        <entry type="bool" key="#alignToCamera" value="false"/>
                     </xml>
 
                     <xml key=".animation(0)">

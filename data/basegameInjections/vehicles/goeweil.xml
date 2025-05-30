@@ -15,9 +15,10 @@
                     <xml key=".clickPoint(0)">
                         <entry type="string" key="#linkNode" value="controlPanel_vis"/>
                         <entry type="string" key="#translation" value="0.15 -0.26 -0.027"/>
-                        <entry type="string" key="#rotation" value="0 0 0"/>
+                        <entry type="string" key="#rotation" value="0 90 0"/>
                         <entry type="float" key="#size" value="0.05"/>
                         <entry type="string" key="#type" value="OUTDOOR"/>
+                        <entry type="bool" key="#alignToCamera" value="false"/>
                     </xml>
                     <xml key=".function(0)">
                         <entry type="string" key="#name" value="BALEWRAPPER_DROP_BALE"/>
@@ -30,9 +31,10 @@
                     <xml key=".clickPoint(0)">
                         <entry type="string" key="#linkNode" value="controlPanel_vis"/>
                         <entry type="string" key="#translation" value="0.15 -0.26 -0.375"/>
-                        <entry type="string" key="#rotation" value="0 0 0"/>
+                        <entry type="string" key="#rotation" value="0 90 0"/>
                         <entry type="float" key="#size" value="0.05"/>
                         <entry type="string" key="#type" value="OUTDOOR"/>
+                        <entry type="bool" key="#alignToCamera" value="false"/>
                     </xml>
                     <xml key=".function(0)">
                         <entry type="string" key="#name" value="BALER_DROP_BALE"/>
@@ -45,9 +47,10 @@
                     <xml key=".clickPoint(0)">
                         <entry type="string" key="#linkNode" value="controlPanel_vis"/>
                         <entry type="string" key="#translation" value="0.15 -0.26 -0.165"/>
-                        <entry type="string" key="#rotation" value="0 0 0"/>
+                        <entry type="string" key="#rotation" value="0 90 0"/>
                         <entry type="float" key="#size" value="0.05"/>
                         <entry type="string" key="#type" value="OUTDOOR"/>
+                        <entry type="bool" key="#alignToCamera" value="false"/>
                     </xml>
                     <xml key=".function(0)">
                         <entry type="string" key="#name" value="BALER_TOGGLE_SIZE"/>
@@ -60,9 +63,10 @@
                     <xml key=".clickPoint(0)">
                         <entry type="string" key="#linkNode" value="controlPanel_vis"/>
                         <entry type="string" key="#translation" value="0.15 0.02 -0.027"/>
-                        <entry type="string" key="#rotation" value="0 0 0"/>
+                        <entry type="string" key="#rotation" value="0 90 0"/>
                         <entry type="float" key="#size" value="0.05"/>
                         <entry type="string" key="#type" value="OUTDOOR"/>
+                        <entry type="bool" key="#alignToCamera" value="false"/>
                     </xml>
                     <xml key=".function(0)">
                         <entry type="string" key="#name" value="BALEWRAPPER_TOGGLE_AUTOMATIC_DROP"/>
@@ -75,9 +79,10 @@
                     <xml key=".clickPoint(0)">
                         <entry type="string" key="#linkNode" value="controlPanel_vis"/>
                         <entry type="string" key="#translation" value="0.15 0.02 -0.375"/>
-                        <entry type="string" key="#rotation" value="0 0 0"/>
+                        <entry type="string" key="#rotation" value="0 90 0"/>
                         <entry type="float" key="#size" value="0.05"/>
                         <entry type="string" key="#type" value="OUTDOOR"/>
+                        <entry type="bool" key="#alignToCamera" value="false"/>
                     </xml>
                     <xml key=".function(0)">
                         <entry type="string" key="#name" value="BALER_TOGGLE_AUTOMATIC_DROP"/>
