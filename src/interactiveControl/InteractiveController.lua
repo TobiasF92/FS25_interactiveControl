@@ -16,6 +16,7 @@ InteractiveController = {}
 
 local interactiveObject_mt = Class(InteractiveController)
 
+---@type number Threshold for stateValue updating
 InteractiveController.STATE_VALUE_THRESHOLD = 0.0001
 
 ---@enum InteractiveController.INPUT_TYPES Interactive object inputTypes
@@ -434,7 +435,7 @@ end
 ---@param connection number connection
 function InteractiveController:readStream(streamId, connection)
     local stateValue = streamReadFloat32(streamId)
-    self:setStateValue(stateValue, nil, true)
+    self:setStateValue(stateValue, nil, nil, true)
 end
 
 ---Called on server side on join
