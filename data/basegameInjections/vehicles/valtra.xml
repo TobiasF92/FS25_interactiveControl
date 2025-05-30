@@ -30,12 +30,6 @@
             </xml>
 
             <xml key=".interactiveControl.interactiveControlConfigurations.interactiveControlConfiguration(0).interactiveControls">
-                <!-- outdoorTrigger -->
-                <xml key=".outdoorTrigger">
-                    <entry type="string" key="#linkNode" value="0>"/>
-                    <entry type="string" key="#filename" value="SHARED_INTERACTIVE_TRIGGER"/>
-                </xml>
-
                 <!-- back window -->
                 <xml key=".interactiveControl(0)">
                     <entry type="string" key="#posText" value="$l10n_actionIC_closeWindow"/>
