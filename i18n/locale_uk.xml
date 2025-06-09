@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<l10n>
+    <translationContributors>Daniil_ua</translationContributors>
+    <locale>uk</locale>
+
+    <elements>
+        <e k="actionIC_activate" v="IC: Увімкнути"/>
+        <e k="actionIC_allWheelDriveOff" v="IC: Вимкнути повний привід"/>
+        <e k="actionIC_allWheelDriveOn" v="IC: Увімкнути повний привід"/>
+        <e k="actionIC_baler_automaticDropOff" v="IC: Прес-підбирач: Вимкнути автоматичне скидання рулону"/>
+        <e k="actionIC_baler_automaticDropOn" v="IC: Прес-підбирач: Увімкнути автоматичне скидання рулону"/>
+        <e k="actionIC_baler_dropBale" v="IC: Прес-підбирач: Вивантажити тюк"/>
+        <e k="actionIC_baler_toggleSize" v="IC: Зміна розміру рулону (%dcm)"/>
+        <e k="actionIC_balerwrapper_automaticDropOff" v="IC: Обмотувач тюків: Вимкнути автоматичне скидання тюка"/>
+        <e k="actionIC_balerwrapper_automaticDropOn" v="IC: Обмотувач тюків: Увімкнути автоматичне скидання тюка"/>
+        <e k="actionIC_balerwrapper_dropBale" v="IC: Обмотувальник тюків: Вивантажити тюк"/>
+        <e k="actionIC_closeCover" v="IC: Закрити кришку"/>
+        <e k="actionIC_closeDoor" v="IC: Закрити двері"/>
+        <e k="actionIC_closeRoof" v="IC: Закрити дах"/>
+        <e k="actionIC_closeWindow" v="IC: Закрити вікно"/>
+        <e k="actionIC_crabSteering_toggle" v="IC: Зміна режиму керування"/>
+        <e k="actionIC_cruiseControl_toggle" v="IC: Увімкнути круїз-контроль"/>
+        <e k="actionIC_deactivate" v="IC: Вимкнути"/>
+        <e k="actionIC_diffLockBackOff" v="IC: Вимкнути блокування заднього диференціала"/>
+        <e k="actionIC_diffLockBackOn" v="IC: Увімкнути блокування заднього диференціала"/>
+        <e k="actionIC_diffLockFrontOff" v="IC: Вимкнути блокування переднього диференціала"/>
+        <e k="actionIC_diffLockFrontOn" v="IC: Увімкнути блокування переднього диференціала"/>
+        <e k="actionIC_discharge" v="IC: Розвантаження"/>
+        <e k="actionIC_foldImplement" v="IC: Скласти обладнання"/>
+        <e k="actionIC_foldPipe" v="IC: Скласти трубу"/>
+        <e k="actionIC_foldVehicle" v="IC: Скласти ТС"/>
+        <e k="actionIC_hazardLightsOff" v="IC: Вимкнути аварійну сигналізацію"/>
+        <e k="actionIC_hazardLightsOn" v="IC: Увімкнути аварійну сигналізацію"/>
+        <e k="actionIC_highbeamlightsOff" v="IC: Вимкнути дальнє світло"/>
+        <e k="actionIC_highbeamlightsOn" v="IC: Увімкнути дальнє світло"/>
+        <e k="actionIC_liftImplement" v="IC: Підняти обладнання"/>
+        <e k="actionIC_lightsOff" v="IC: Вимкнути світло"/>
+        <e k="actionIC_lightsOn" v="IC: Увімкнути світло"/>
+        <e k="actionIC_lowerImplement" v="IC: Опустити обладнання"/>
+        <e k="actionIC_openCover" v="IC: Відкрити кришку"/>
+        <e k="actionIC_openDoor" v="IC: Відчинити двері"/>
+        <e k="actionIC_openRoof" v="IC: Відкрити дах"/>
+        <e k="actionIC_openWindow" v="IC: Відкрити вікно"/>
+        <e k="actionIC_parkingbrakeOff" v="IC: Відпустити ручне гальмо"/>
+        <e k="actionIC_parkingbrakeOn" v="IC: Задіяти ручне гальмо"/>
+        <e k="actionIC_pipeLightsOff" v="IC: Вимкнути вогні на трубі"/>
+        <e k="actionIC_pipeLightsOn" v="IC: Увімкнути вогні на трубі"/>
+        <e k="actionIC_pumpDirectionDrain" v="IC: Змінити напрямок перекачування на: Спорожнення"/>
+        <e k="actionIC_pumpDirectionFill" v="IC: Змінити напрямок перекачування на: Заповнення"/>
+        <e k="actionIC_radioOff" v="IC: Вимкнути радіо"/>
+        <e k="actionIC_radioOn" v="IC: Увімкнути радіо"/>
+        <e k="actionIC_reverseDriving_toggle" v="IC: Зміна напрямку руху"/>
+        <e k="actionIC_sa_activate" v="IC: Активувати ведення по смузі"/>
+        <e k="actionIC_sa_deactivate" v="IC: Деактивувати ведення по смузі"/>
+        <e k="actionIC_sa_lines_activate" v="IC: Показати лінії рульового підсилювача"/>
+        <e k="actionIC_sa_lines_deactivate" v="IC: Приховати лінії рульового підсилювача"/>
+        <e k="actionIC_startMotor" v="IC: Запустити двигун"/>
+        <e k="actionIC_stopMotor" v="IC: Заглушити двигун"/>
+        <e k="actionIC_stop_discharge" v="IC: Зупинити розвантаження"/>
+        <e k="actionIC_turnLightsLeftOff" v="IC: Вимкнути лівий поворотник"/>
+        <e k="actionIC_turnLightsLeftOn" v="IC: Увімкнути лівий поворотник"/>
+        <e k="actionIC_turnLightsRightOff" v="IC: Вимкнути правий поворотник"/>
+        <e k="actionIC_turnLightsRightOn" v="IC: Увімкнути правий поворотник"/>
+        <e k="actionIC_turnOffImplement" v="IC: Вимкнути обладнання"/>
+        <e k="actionIC_turnOnImplement" v="IC: Увімкнути обладнання"/>
+        <e k="actionIC_turnPumpOff" v="IC: Вимкнути насос"/>
+        <e k="actionIC_turnPumpOn" v="IC: Увімкнути насос"/>
+        <e k="actionIC_unfoldImplement" v="IC: Розгорнути обладнання"/>
+        <e k="actionIC_unfoldPipe" v="IC: Розгорнути трубу"/>
+        <e k="actionIC_unfoldVehicle" v="IC: Розгорнути ТЗ"/>
+        <e k="actionIC_workLightsBackOff" v="IC: Вимкнути задні робочі фари"/>
+        <e k="actionIC_workLightsBackOn" v="IC: Увімкнути задні робочі фари"/>
+        <e k="actionIC_workLightsFrontOff" v="IC: Вимкнути передні робочі фари"/>
+        <e k="actionIC_workLightsFrontOn" v="IC: Увімкнути передні робочі фари"/>
+        <e k="action_activateIC" v="Показати Інтерактивний Контроль"/>
+        <e k="action_deactivateIC" v="Приховати Інтерактивний Контроль"/>
+        <e k="configuration_interactiveControl" v="Інтерактивний контроль"/>
+        <e k="input_IC_CLICK" v="IC: Кнопка дії Інтерактивного Контролю"/>
+        <e k="input_IC_TOGGLE_STATE" v="IC: Показати/приховати Інтерактивний Контроль"/>
+        <e k="settingsIC_clickPointHover_optionTime" v="%.1f s"/>
+        <e k="settingsIC_clickPointHover_optionTimeOff" v="Вимкнений"/>
+        <e k="settingsIC_clickPointHover_title" v="Активація наведення курсору IC"/>
+        <e k="settingsIC_clickPointHover_tooltip" v="Перемикання інтерактивного елемента керування під час наведення на точку клацання протягом певного часу"/>
+        <e k="settingsIC_keepAlive_title" v="Тримати IC активованим"/>
+        <e k="settingsIC_keepAlive_tooltip" v="Інтерактивний контроль залишається активним при виході з транспорту."/>
+        <e k="settingsIC_state_option01" v="Перемикаємий"/>
+        <e k="settingsIC_state_option02" v="Завжди активний"/>
+        <e k="settingsIC_state_option03" v="Вимкнений"/>
+        <e k="settingsIC_state_title" v="IC Статус"/>
+        <e k="settingsIC_state_tooltip" v="Вмикає, вимикає або перемикає Інтерактивний контроль."/>
+        <e k="settingsIC_title" v="Інтерактивний контроль"/>
+    </elements>
+</l10n>
