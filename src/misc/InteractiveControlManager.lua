@@ -158,7 +158,7 @@ end
 
 ---Register action events
 ---@param inputButton InputAction Action input button
----@param isAnalog boolean Is action analog
+---@param isAnalog? boolean Is action analog
 function InteractiveControlManager:registerActionEvents(inputButton, isAnalog)
     inputButton = Utils.getNoNil(inputButton, InputAction.IC_CLICK)
     isAnalog = Utils.getNoNil(isAnalog, false)
