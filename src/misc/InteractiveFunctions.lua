@@ -26,18 +26,18 @@ InteractiveFunctions.FUNCTIONS = {}
 ---@param functionArgs table<function> functions to use posFunc, [negFunc, updateFunc, schemaFunc, loadFunc, isBlockedFunc]
 function InteractiveFunctions.addFunction(functionIdStr, functionArgs)
     if functionIdStr == nil or functionIdStr == "" then
-        Logging.warning("Warning: InteractiveFunction was not added! Invalid functionID!")
+        Logging.warning("InteractiveFunction was not added! Invalid functionID!")
         return false
     end
 
     functionIdStr = functionIdStr:upper()
 
     if functionArgs.posFunc == nil then
-        Logging.warning("Warning: InteractiveFunction with ID: %s was not added! No function defined!", functionIdStr)
+        Logging.warning("InteractiveFunction with ID: %s was not added! No function defined!", functionIdStr)
         return false
     end
     if InteractiveFunctions.FUNCTION_ID[functionIdStr] ~= nil then
-        Logging.warning("Warning: InteractiveFunction with ID: %s was not added! FunctionID already exists!", functionIdStr)
+        Logging.warning("InteractiveFunction with ID: %s was not added! FunctionID already exists!", functionIdStr)
         return false
     end
 
@@ -116,7 +116,7 @@ function InteractiveFunctions.resolveToAttachedObject(vehicle, attacherJointInde
     end
 
     if implement.object.getIsSelected == nil then
-        Logging.warning("Warning: %s: Unable to resolve attacherJointIndex '%s' to valid attached vehicle!", vehicle:getFullName(), attacherJointIndex)
+        Logging.warning("%s: Unable to resolve attacherJointIndex '%s' to valid attached vehicle!", vehicle:getFullName(), attacherJointIndex)
         return nil
     end
 
@@ -167,7 +167,7 @@ function InteractiveFunctions.getAttacherJointObjectToUse(data, vehicle, validat
     if #validAttacherJoints > 1 then
         -- return first selected joint pair
         for index, object in pairs(validAttacherJoints) do
-            if object:getIsSelected() then
+            if object.getIsSelected ~= nil and object:getIsSelected() then
                 data.currentAttacherIndex = index
                 data.currentAttachedObject = object
 
@@ -1305,7 +1305,7 @@ InteractiveFunctions.addFunction("ATTACHERJOINTS_ATTACH_DETACH", {
 
         -- attachable vehicle in range
         local attacherVehicleJointIndex = info.attacherVehicleJointDescIndex
-        if attacherVehicleJointIndex ~= nil then
+        if attacherVehicleJointIndex ~= nil and data.attacherJointIndices ~= nil then
             if table.hasElement(data.attacherJointIndices, attacherVehicleJointIndex) then
                 return info.attachable:isAttachAllowed(target:getActiveFarm(), info.attacherVehicle)
             end

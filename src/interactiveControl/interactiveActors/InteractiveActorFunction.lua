@@ -74,8 +74,8 @@ function InteractiveActorFunction:loadFromXML(xmlFile, key, target, interactiveC
     self.data = data
     self.loadData = {}
 
-    if data.loadFunc ~= nil then
-        data.loadFunc(xmlFile, key, self.loadData)
+    if data.loadFunc ~= nil and not data.loadFunc(xmlFile, key, self.loadData) then
+        return false
     end
 
     return true
