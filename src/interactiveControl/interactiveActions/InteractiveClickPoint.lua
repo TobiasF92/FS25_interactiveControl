@@ -19,6 +19,7 @@ InteractiveClickPoint.KEY_NAME = "clickPoint"
 InteractiveAction.registerInteractiveAction("CLICK_POINT", InteractiveClickPoint)
 
 InteractiveClickPoint.DOT_PRODUCT_LIMIT = math.cos(math.rad(90))
+InteractiveClickPoint.MIN_HOVER_TIMEOUT = 1500 -- ms
 
 ---Register XMLPaths to XMLSchema
 ---@param schema XMLSchema Instance of XMLSchema to register path to
@@ -241,8 +242,8 @@ function InteractiveClickPoint:updateScreenPosition(mousePosX, mousePosY, isIndo
 end
 
 ---Updates clickable state by mouse position
----@param mousePosX number x position of mouse
----@param mousePosY number y position of mouse
+---@param mousePosX? number x position of mouse
+---@param mousePosY? number y position of mouse
 function InteractiveClickPoint:updateClickable(mousePosX, mousePosY)
     if mousePosX ~= nil and mousePosY ~= nil then
         local halfSize = self.size / 2
@@ -253,7 +254,7 @@ function InteractiveClickPoint:updateClickable(mousePosX, mousePosY)
             local scale = getScale(self.clickIconNode)
             scale = math.abs(scale)
             if isMouseOver then
-                if (scale >= self.scaleMax) or (scale <= self.scaleMin) then
+                if scale >= self.scaleMax or scale <= self.scaleMin then
                     self.blinkSpeed = self.blinkSpeed * -1
                 end
                 scale = scale + self.blinkSpeed * self.blinkSpeedScale
@@ -298,7 +299,7 @@ end
 function InteractiveClickPoint:maxHoverTimeout()
     local clickPointHoverTime = g_currentMission.interactiveControl:getHoverTime()
 
-    return 2 * clickPointHoverTime * 1000
+    return math.max(2 * clickPointHoverTime * 1000, InteractiveClickPoint.MIN_HOVER_TIMEOUT)
 end
 
 ---Loads fixed iconType loading
