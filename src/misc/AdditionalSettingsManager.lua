@@ -4,7 +4,7 @@
 -- Purpose: Manager for additional mod settings
 --
 ---@author John Deere 6930 @VertexDezign
----@version 1.0.0.0
+---@version 1.0.1.0
 ------------------------------------------------------------------------------------------------------------------------
 
 ---@class AdditionalSettingsManager
@@ -127,7 +127,7 @@ function AdditionalSettingsManager:setSetting(name, value)
     local setting = self.settingsByName[name]
 
     if setting == nil then
-        Logging.warning("Warning: AdditionalSettingsManager.setSetting: Invalid setting name given!")
+        Logging.warning("AdditionalSettingsManager.setSetting: Invalid setting name given!")
         return
     end
 
@@ -146,7 +146,7 @@ function AdditionalSettingsManager:getSetting(name)
     local setting = self.settingsByName[name]
 
     if setting == nil then
-        Logging.warning("Warning: AdditionalSettingsManager.getSetting: Invalid setting name given!")
+        Logging.warning("AdditionalSettingsManager.getSetting: Invalid setting name given!")
         return
     end
 
@@ -164,12 +164,12 @@ end
 ---@param callbackTarget? Class callback target
 function AdditionalSettingsManager:addSetting(name, type, title, toolTip, initValue, options, callback, callbackTarget)
     if name == nil or name == "" then
-        Logging.error("Error: Could not add setting without name!")
+        Logging.error("Could not add setting without name!")
         return
     end
 
     if type == nil then
-        Logging.error("Error: Could not add setting without type!")
+        Logging.error("Could not add setting without type!")
         return
     end
 
