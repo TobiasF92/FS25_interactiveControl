@@ -39,7 +39,7 @@ InteractiveAction.TYPE_BY_NAMES = {}
 ---@param class InteractiveAction Action class
 function InteractiveAction.registerInteractiveAction(name, class)
     if InteractiveAction.TYPE_BY_NAMES[name] ~= nil then
-        Logging.error("Error: InteractiveAction '%s' already exists!", name)
+        Logging.error("InteractiveAction '%s' already exists!", name)
         return
     end
 

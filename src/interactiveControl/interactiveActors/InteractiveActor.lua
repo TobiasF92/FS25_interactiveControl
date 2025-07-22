@@ -19,7 +19,7 @@ InteractiveActor.TYPE_BY_NAMES = {}
 ---@param class InteractiveActor Actor class
 function InteractiveActor.registerInteractiveActor(name, class)
     if InteractiveActor.TYPE_BY_NAMES[name] ~= nil then
-        Logging.error("Error: InteractiveActor '%s' already exists!", name)
+        Logging.error("InteractiveActor '%s' already exists!", name)
         return
     end
 

@@ -496,7 +496,7 @@ function InteractiveController:setStateValue(stateValue, updateStates, forced, n
             self:updateState(stateValue, forced, noEventSend)
         end
 
-        self.hoverTimeOut = g_currentMission.time + self:maxHoverTimeout()
+        self:setHoverTimeout(self:maxHoverTimeout())
     end
 end
 
@@ -551,7 +551,7 @@ function InteractiveController:updateState(stateValue, forced, noEventSend)
 end
 
 ---Returns max hover time out collected from all actors and actions
----@return integer
+---@return number maxTimeout in ms
 function InteractiveController:maxHoverTimeout()
     local maxTimeout = 0
 
@@ -576,6 +576,12 @@ function InteractiveController:maxHoverTimeout()
     end
 
     return maxTimeout
+end
+
+---Sets hover timeout to controller
+---@param timeout number Timeout in ms
+function InteractiveController:setHoverTimeout(timeout)
+    self.hoverTimeOut = g_currentMission.time + timeout
 end
 
 ---Returns true if controller has hover timeout, false otherwise

@@ -90,6 +90,8 @@ function InteractiveControl.registerEventListeners(vehicleType)
     SpecializationUtil.registerEventListener(vehicleType, "onRegisterActionEvents", InteractiveControl)
     SpecializationUtil.registerEventListener(vehicleType, "onRegisterAnimationValueTypes", InteractiveControl)
     SpecializationUtil.registerEventListener(vehicleType, "onUpdateAnimation", InteractiveControl)
+    SpecializationUtil.registerEventListener(vehicleType, "onEnterVehicle", InteractiveControl)
+    SpecializationUtil.registerEventListener(vehicleType, "onLeaveVehicle", InteractiveControl)
 end
 
 function InteractiveControl.registerOverwrittenFunctions(vehicleType)
@@ -172,7 +174,8 @@ function InteractiveControl:onPostLoad(savegame)
         SpecializationUtil.removeEventListener(self, "onDraw", InteractiveControl)
         SpecializationUtil.removeEventListener(self, "onRegisterActionEvents", InteractiveControl)
         SpecializationUtil.removeEventListener(self, "onUpdateAnimation", InteractiveControl)
-
+        SpecializationUtil.removeEventListener(self, "onEnterVehicle", InteractiveControl)
+        SpecializationUtil.removeEventListener(self, "onLeaveVehicle", InteractiveControl)
         return
     end
 
@@ -592,6 +595,26 @@ function InteractiveControl:onUpdateAnimation(animationName)
     end
 
     spec.indoorSoundModifierFactor = self:getMaxIndoorSoundModifier()
+end
+
+---Called on entering vehicle
+function InteractiveControl:onEnterVehicle()
+    local spec = self.spec_interactiveControl
+
+    for _, interactiveController in pairs(spec.interactiveControllers) do
+        ---@cast interactiveController InteractiveController
+        interactiveController:setHoverTimeout(3000)
+    end
+end
+
+---Called on leaving vehicle
+function InteractiveControl:onLeaveVehicle()
+    local spec = self.spec_interactiveControl
+
+    for _, interactiveController in pairs(spec.interactiveControllers) do
+        ---@cast interactiveController InteractiveController
+        interactiveController:setHoverTimeout(3000)
+    end
 end
 
 -------------------------------------------------- Interactive Trigger -------------------------------------------------

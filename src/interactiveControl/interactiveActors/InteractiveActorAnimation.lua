@@ -18,6 +18,8 @@ InteractiveActorAnimation.KEY_NAME = "animation"
 ---Register VEHICLE_ANIMATION interactive actor
 InteractiveActor.registerInteractiveActor("VEHICLE_ANIMATION", InteractiveActorAnimation)
 
+InteractiveActorAnimation.MIN_HOVER_TIMEOUT = 1500 -- ms
+
 ---Register XMLPaths to XMLSchema
 ---@param schema XMLSchema Instance of XMLSchema to register path to
 ---@param basePath string Base path for path registrations
@@ -113,5 +115,6 @@ end
 ---Returns max hover timeout
 ---@return number maxHoverTimeout
 function InteractiveActorAnimation:maxHoverTimeout()
-    return self.target:getAnimationDuration(self.name)
+    local animationDuration = self.target:getAnimationDuration(self.name)
+    return math.max(animationDuration, InteractiveActorAnimation.MIN_HOVER_TIMEOUT)
 end
