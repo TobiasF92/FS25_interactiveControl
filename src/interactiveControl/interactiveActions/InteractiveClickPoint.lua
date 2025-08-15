@@ -228,6 +228,12 @@ function InteractiveClickPoint:updateScreenPosition(mousePosX, mousePosY, isIndo
                     local dirX, dirY, dirZ = localDirectionToWorld(self.node, 0, 0, 1)
                     local cameraDirectionX, cameraDirectionY, cameraDirectionZ = localDirectionToWorld(cameraNode, 0, 0, -1)
 
+                    if self.invertZ then
+                        dirX = -dirX
+                        dirY = -dirY
+                        dirZ = -dirZ
+                    end
+
                     local dotProduct = MathUtil.dotProduct(cameraDirectionX, cameraDirectionY, cameraDirectionZ, dirX, dirY, dirZ)
                     if dotProduct > InteractiveClickPoint.DOT_PRODUCT_LIMIT then
                         mousePosX = nil
