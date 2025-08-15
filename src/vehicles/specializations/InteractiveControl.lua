@@ -448,7 +448,7 @@ end
 function InteractiveControl:getInteractiveControllerByIndex(index)
     local spec = self.spec_interactiveControl
 
-    if index == nil or spec.interactiveControllers[index] == nil then
+    if index == nil then
         return nil
     end
 
@@ -760,18 +760,31 @@ function InteractiveControl:onRegisterAnimationValueTypes()
                 return false
             end
 
+            value.xmlKey = xmlKey
             return true
         end,
         -- get
         function(value)
             ---@type InteractiveController
             local interactiveController = self:getInteractiveControllerByIndex(value.index)
+
+            if interactiveController == nil then
+                Logging.xmlWarning(self.xmlFile, "Could not find interactive control with index '%d' in '%s'", value.index, value.xmlKey)
+                return nil
+            end
+
             return interactiveController:isExternallyBlocked()
         end,
         -- set
         function(value, ...)
             ---@type InteractiveController
             local interactiveController = self:getInteractiveControllerByIndex(value.index)
+
+            if interactiveController == nil then
+                Logging.xmlWarning(self.xmlFile, "Could not find interactive control with index '%d' in '%s'", value.index, value.xmlKey)
+                return
+            end
+
             interactiveController:blockExternally(...)
         end
     )
