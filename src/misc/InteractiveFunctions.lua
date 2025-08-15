@@ -19,11 +19,12 @@ local function getNextId()
     return lastId
 end
 
+---@type table<string, table> Table of function data by name
 InteractiveFunctions.FUNCTIONS = {}
 
 ---Adds a new function which can be used as InteractiveFunction
 ---@param functionIdStr string unique function name
----@param functionArgs table<function> functions to use posFunc, [negFunc, updateFunc, schemaFunc, loadFunc, isBlockedFunc]
+---@param functionArgs table<function> functions to use [posFunc, negFunc?, updateFunc?, schemaFunc?, loadFunc?, isBlockedFunc?]
 function InteractiveFunctions.addFunction(functionIdStr, functionArgs)
     if functionIdStr == nil or functionIdStr == "" then
         Logging.warning("InteractiveFunction was not added! Invalid functionID!")
@@ -43,24 +44,18 @@ function InteractiveFunctions.addFunction(functionIdStr, functionArgs)
 
     InteractiveFunctions.FUNCTION_ID[functionIdStr] = getNextId()
 
-    local entry = {}
+    local entry = table.clone(functionArgs)
+
     entry.name = functionIdStr
     entry.functionId = InteractiveFunctions.FUNCTION_ID[functionIdStr]
-
-    entry.posFunc = functionArgs.posFunc
-    entry.negFunc = functionArgs.negFunc or functionArgs.posFunc
-    entry.updateFunc = functionArgs.updateFunc
-    entry.schemaFunc = functionArgs.schemaFunc
-    entry.loadFunc = functionArgs.loadFunc
-    entry.isBlockedFunc = functionArgs.isBlockedFunc
-    entry.forcedActionText = functionArgs.forcedActionText
+    entry.negFunc = Utils.getNoNil(entry.negFunc, functionArgs.posFunc)
 
     InteractiveFunctions.FUNCTIONS[entry.functionId] = entry
 
     return true
 end
 
----Returns knwon function data for given function name
+---Returns known function data for given function name
 ---@param functionName string function name to get data
 ---@return table|nil functionData
 function InteractiveFunctions.getFunctionData(functionName)
@@ -1453,6 +1448,7 @@ InteractiveFunctions.addFunction("BALEWRAPPER_DROP_BALE", {
                 local isFullyUnfolded = spec_foldableSteps.stateIndex == spec_foldableSteps.maxState
                 return isFullyUnfolded and wrapperCanUnload
             end
+
             return wrapperCanUnload
         end
         return true
