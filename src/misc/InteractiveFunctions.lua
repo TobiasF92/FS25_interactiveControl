@@ -1235,6 +1235,7 @@ InteractiveFunctions.addFunction("ATTACHERJOINTS_VARIABLE_WORK_WIDTH_TOGGLE", {
 })
 
 ---FUNCTION_ATTACHERJOINTS_ATTACH_DETACH
+InteractiveFunctions.ATTACH_DETACH_UPDATE_COUNT = 50 -- calls
 InteractiveFunctions.addFunction("ATTACHERJOINTS_ATTACH_DETACH", {
     posFunc = function(target, data, noEventSend)
         if noEventSend then
@@ -1267,15 +1268,25 @@ InteractiveFunctions.addFunction("ATTACHERJOINTS_ATTACH_DETACH", {
         end
     end,
     updateFunc = function(target, data)
+        data.currentUpdateIndex = data.currentUpdateIndex + 1
+
+        if data.currentUpdateIndex > InteractiveFunctions.ATTACH_DETACH_UPDATE_COUNT then
+            data.currentUpdateIndex = 1
+
+            if target:isOutdoorActive() then
+                AttacherJoints.updateVehiclesInAttachRange(target, AttacherJoints.MAX_ATTACH_DISTANCE_SQ, AttacherJoints.MAX_ATTACH_ANGLE, true)
+            end
+        end
+
         local detachableObject = data.currentAttachedObject
         if detachableObject ~= nil then
             return true
         end
 
-        local info = target.spec_attacherJoints.attachableInfo
-        if info.attachable ~= nil and info.attacherVehicleJointDescIndex ~= nil then
-            if table.hasElement(data.attacherJointIndices, info.attacherVehicleJointDescIndex) then
-                if info.attachable:isAttachAllowed(target:getActiveFarm(), info.attacherVehicle) then
+        local attacherVehicle, attacherVehicleJointDescIndex, attachable, attachableJointDescIndex = target:getAttachableInfo()
+        if attachable ~= nil and attacherVehicleJointDescIndex ~= nil then
+            if table.hasElement(data.attacherJointIndices, attacherVehicleJointDescIndex) then
+                if attachable:isAttachAllowed(target:getActiveFarm(), attacherVehicle) then
                     return false
                 end
             end
@@ -1285,6 +1296,8 @@ InteractiveFunctions.addFunction("ATTACHERJOINTS_ATTACH_DETACH", {
     end,
     schemaFunc = InteractiveFunctions.attacherJointsSchema,
     loadFunc = function(xmlFile, key, data)
+        data.currentUpdateIndex = 1
+
         return InteractiveFunctions.attacherJointsLoad(xmlFile, key, data, "ATTACHERJOINTS_ATTACH_DETACH")
     end,
     isBlockedFunc = function(target, data)
@@ -1292,9 +1305,10 @@ InteractiveFunctions.addFunction("ATTACHERJOINTS_ATTACH_DETACH", {
             return false
         end
 
-        local info = target.spec_attacherJoints.attachableInfo
+        local attacherVehicle, attacherVehicleJointDescIndex, attachable, attachableJointDescIndex = target:getAttachableInfo()
+
         -- no attachable vehicle in range
-        if info.attachable == nil then
+        if attachable == nil then
             -- is there a detachable vehicle?
             local _, detachableObject = InteractiveFunctions.getAttacherJointObjectToUse(data, target, function(object)
                 return object.isDetachAllowed ~= nil and object:isDetachAllowed()
@@ -1304,10 +1318,9 @@ InteractiveFunctions.addFunction("ATTACHERJOINTS_ATTACH_DETACH", {
         end
 
         -- attachable vehicle in range
-        local attacherVehicleJointIndex = info.attacherVehicleJointDescIndex
-        if attacherVehicleJointIndex ~= nil and data.attacherJointIndices ~= nil then
-            if table.hasElement(data.attacherJointIndices, attacherVehicleJointIndex) then
-                return info.attachable:isAttachAllowed(target:getActiveFarm(), info.attacherVehicle)
+        if attacherVehicleJointDescIndex ~= nil and data.attacherJointIndices ~= nil then
+            if table.hasElement(data.attacherJointIndices, attacherVehicleJointDescIndex) then
+                return attachable:isAttachAllowed(target:getActiveFarm(), attacherVehicle)
             end
         end
 
