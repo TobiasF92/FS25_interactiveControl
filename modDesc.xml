@@ -22,9 +22,13 @@ A few vehicles are already equipped with IC
 
 For further informations: <a href="https://github.com/TobiasF92/FS25_interactiveControl/blob/main/README.md">README</a> on Github.
 
-Changelog (NEXT):
+Changelog (1.2.0.0):
 - Added translations for Ukrainian
 - Various error/warning feedbacks
+- Fixed/Improved hover timeouts
+- Fixed InteractiveFunction loading
+- Fixed invalid vehicle state on loading error
+- Fixed ATTACHERJOINTS_ATTACH_DETACH outdoor updating
 
 Changelog (1.1.0.0):
 - Added support for "FS25_additionalGameSettings" crosshair disabling
@@ -49,9 +53,13 @@ Einige wenige Fahrzeuge sind bereits mit IC ausgestattet.
 
 Für mehr Informationen: <a href="https://github.com/TobiasF92/FS25_interactiveControl/blob/main/README.md">README</a> auf Github.
 
-Changelog (NEXT):
+Changelog (1.2.0.0):
 - Added translations for Ukrainian
-- Various error/warning feedbacks
+- Added various error/warning feedbacks
+- Fixed/Improved hover timeouts
+- Fixed InteractiveFunction loading
+- Fixed invalid vehicle state on loading error
+- Fixed ATTACHERJOINTS_ATTACH_DETACH outdoor updating
 
 Changelog (1.1.0.0):
 - Added support for "FS25_additionalGameSettings" crosshair disabling
