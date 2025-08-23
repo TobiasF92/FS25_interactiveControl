@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<l10n>
+    <translationContributors></translationContributors>
+    <locale>tr</locale>
+
+    <elements>
+        <e k="actionIC_activate" v="IC: Aktifleştir"/>
+        <e k="actionIC_deactivate" v="IC: Devre Dışı Bırak"/>
+        <e k="actionIC_startMotor" v="IC: Motoru Başlat"/>
+        <e k="actionIC_stopMotor" v="IC: Motoru Durdur"/>
+        <e k="actionIC_liftImplement" v="IC: Ekipmanı Kaldır"/>
+        <e k="actionIC_lowerImplement" v="IC: Ekipmanı İndir"/>
+        <e k="actionIC_turnOnImplement" v="IC: Ekipmanı Aç"/>
+        <e k="actionIC_turnOffImplement" v="IC: Ekipmanı Kapat"/>
+        <e k="actionIC_foldImplement" v="IC: Ekipmanı Katla"/>
+        <e k="actionIC_unfoldImplement" v="IC: Ekipmanı Aç"/>
+        <e k="actionIC_foldVehicle" v="IC: Aracı Katla"/>
+        <e k="actionIC_unfoldVehicle" v="IC: Aracı Aç"/>
+        <e k="actionIC_foldPipe" v="IC: Boruyu Katla"/>
+        <e k="actionIC_unfoldPipe" v="IC: Boruyu Aç"/>
+        <e k="actionIC_openRoof" v="IC: Tavanı Aç"/>
+        <e k="actionIC_closeRoof" v="IC: Tavanı Kapat"/>
+        <e k="actionIC_openDoor" v="IC: Kapıyı Aç"/>
+        <e k="actionIC_closeDoor" v="IC: Kapıyı Kapat"/>
+        <e k="actionIC_openWindow" v="IC: Pencereyi Aç"/>
+        <e k="actionIC_closeWindow" v="IC: Pencereyi Kapat"/>
+        <e k="actionIC_lightsOn" v="IC: Işıkları Aç"/>
+        <e k="actionIC_lightsOff" v="IC: Işıkları Kapat"/>
+        <e k="actionIC_highbeamlightsOn" v="IC: Uzun Farları Aç"/>
+        <e k="actionIC_highbeamlightsOff" v="IC: Uzun Farları Kapat"/>
+        <e k="actionIC_workLightsFrontOn" v="IC: Ön Çalışma Işıklarını Aç"/>
+        <e k="actionIC_workLightsFrontOff" v="IC: Ön Çalışma Işıklarını Kapat"/>
+        <e k="actionIC_workLightsBackOn" v="IC: Arka Çalışma Işıklarını Aç"/>
+        <e k="actionIC_workLightsBackOff" v="IC: Arka Çalışma Işıklarını Kapat"/>
+        <e k="actionIC_turnLightsLeftOn" v="IC: Sol Sinyalleri Aç"/>
+        <e k="actionIC_turnLightsLeftOff" v="IC: Sol Sinyalleri Kapat"/>
+        <e k="actionIC_turnLightsRightOn" v="IC: Sağ Sinyalleri Aç"/>
+        <e k="actionIC_turnLightsRightOff" v="IC: Sağ Sinyalleri Kapat"/>
+        <e k="actionIC_hazardLightsOn" v="IC: Dörtlüleri Aç"/>
+        <e k="actionIC_hazardLightsOff" v="IC: Dörtlüleri Kapat"/>
+        <e k="actionIC_pipeLightsOn" v="IC: Boru Işığını Aç"/>
+        <e k="actionIC_pipeLightsOff" v="IC: Boru Işığını Kapat"/>
+        <e k="actionIC_sa_activate" v="IC: Direksiyon Asistanını Aktifleştir"/>
+        <e k="actionIC_sa_deactivate" v="IC: Direksiyon Asistanını Devre Dışı Bırak"/>
+        <e k="actionIC_sa_lines_activate" v="IC: Direksiyon Asistanı Çizgilerini Göster"/>
+        <e k="actionIC_sa_lines_deactivate" v="IC: Direksiyon Asistanı Çizgilerini Gizle"/>
+        <e k="actionIC_cruiseControl_toggle" v="IC: Hız Sabitleyiciyi Aç/Kapat"/>
+        <e k="actionIC_openCover" v="IC: Kapağı Aç"/>
+        <e k="actionIC_closeCover" v="IC: Kapağı Kapat"/>
+        <e k="actionIC_discharge" v="IC: Boşalt"/>
+        <e k="actionIC_stop_discharge" v="IC: Boşaltmayı Durdur"/>
+        <e k="actionIC_radioOn" v="IC: Radyoyu Aç"/>
+        <e k="actionIC_radioOff" v="IC: Radyoyu Kapat"/>
+        <e k="actionIC_crabSteering_toggle" v="IC: Direksiyon Modunu Değiştir"/>
+        <e k="actionIC_reverseDriving_toggle" v="IC: Geri Sürüşü Aç/Kapat"/>
+        <e k="actionIC_baler_toggleSize" v="IC: Balya Boyutunu Değiştir (%dcm)"/>
+        <e k="actionIC_baler_dropBale" v="IC: Balya: Balya Bırak"/>
+        <e k="actionIC_baler_automaticDropOn" v="IC: Balya: Otomatik Balya Bırakmayı Aç"/>
+        <e k="actionIC_baler_automaticDropOff" v="IC: Balya: Otomatik Balya Bırakmayı Kapat"/>
+        <e k="actionIC_balerwrapper_dropBale" v="IC: Bale Sarıcı: Balya Bırak"/>
+        <e k="actionIC_balerwrapper_automaticDropOn" v="IC: Bale Sarıcı: Otomatik Balya Bırakmayı Aç"/>
+        <e k="actionIC_balerwrapper_automaticDropOff" v="IC: Bale Sarıcı: Otomatik Balya Bırakmayı Kapat"/>
+        <e k="actionIC_parkingbrakeOn" v="IC: El Frenini Çek"/>
+        <e k="actionIC_parkingbrakeOff" v="IC: El Frenini İndir"/>
+        <e k="actionIC_diffLockFrontOn" v="IC: Ön Diferansiyel Kilidini Aç"/>
+        <e k="actionIC_diffLockFrontOff" v="IC: Ön Diferansiyel Kilidini Kapat"/>
+        <e k="actionIC_allWheelDriveOn" v="IC: Dört Çeker Modunu Aç"/>
+        <e k="actionIC_allWheelDriveOff" v="IC: Dört Çeker Modunu Kapat"/>
+        <e k="actionIC_diffLockBackOn" v="IC: Arka Diferansiyel Kilidini Aç"/>
+        <e k="actionIC_diffLockBackOff" v="IC: Arka Diferansiyel Kilidini Kapat"/>
+        <e k="actionIC_turnPumpOn" v="IC: Pompayı Aç"/>
+        <e k="actionIC_turnPumpOff" v="IC: Pompayı Kapat"/>
+        <e k="actionIC_pumpDirectionDrain" v="IC: Pompa Yönünü Değiştir: Boşalt"/>
+        <e k="actionIC_pumpDirectionFill" v="IC: Pompa Yönünü Değiştir: Doldur"/>
+        <e k="action_activateIC" v="Interactive Control'u Aktifleştir"/>
+        <e k="action_deactivateIC" v="Interactive Control'u Devre Dışı Bırak"/>
+        <e k="configuration_interactiveControl" v="Interactive Control"/>
+        <e k="input_IC_CLICK" v="IC: Interactive Control TıklamaNoktası"/>
+        <e k="input_IC_TOGGLE_STATE" v="IC: Interactive Control'u Aç/Kapat"/>
+        <e k="settingsIC_title" v="Interactive Control"/>
+        <e k="settingsIC_state_title" v="IC Durumu"/>
+        <e k="settingsIC_state_tooltip" v="InteractiveControl'u açar, kapatır veya değiştirilebilir yapar."/>
+        <e k="settingsIC_state_option01" v="Değiştirilebilir"/>
+        <e k="settingsIC_state_option02" v="Her zaman aktif"/>
+        <e k="settingsIC_state_option03" v="Kapalı"/>
+        <e k="settingsIC_keepAlive_title" v="IC Aktif Kalsın"/>
+        <e k="settingsIC_keepAlive_tooltip" v="InteractiveControl araçtan ayrıldığınızda aktif kalır."/>
+        <e k="settingsIC_clickPointHover_optionTime" v="%.1f sn"/>
+        <e k="settingsIC_clickPointHover_optionTimeOff" v="Kapalı"/>
+        <e k="settingsIC_clickPointHover_title" v="IC Hover Aktivasyonu"/>
+        <e k="settingsIC_clickPointHover_tooltip" v="Belirli bir süre TıklamaNoktası üzerinde durursanız InteractiveControl'u değiştirir"/>
+    </elements>
+</l10n>
