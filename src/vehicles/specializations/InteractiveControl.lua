@@ -16,8 +16,8 @@ InteractiveControl.PLAYER_UPDATE_TIME_OFFSET = 1500  -- ms
 InteractiveControl.CONTROLLER_TEXT_DIRTY_TIME = 1000 -- ms
 InteractiveControl.SOUND_FALLBACK = 1.0
 
-InteractiveControl.INTERACTIVE_CONTROLS_CONFIG_XML_KEY = "vehicle.interactiveControl.interactiveControlConfigurations.interactiveControlConfiguration(?)"
-InteractiveControl.INTERACTIVE_CONTROL_XML_KEY = InteractiveControl.INTERACTIVE_CONTROLS_CONFIG_XML_KEY .. ".interactiveControls.interactiveControl(?)"
+InteractiveControl.INTERACTIVE_CONTROL_BASE_XML_KEY = "vehicle.interactiveControl"
+InteractiveControl.INTERACTIVE_CONTROL_BASE_CONFIG_XML_KEY = "vehicle.interactiveControl.interactiveControlConfigurations.interactiveControlConfiguration(?)"
 
 function InteractiveControl.prerequisitesPresent(specializations)
     return true
@@ -27,22 +27,26 @@ function InteractiveControl.initSpecialization()
     g_vehicleConfigurationManager:addConfigurationType("interactiveControl", g_i18n:getText("configuration_interactiveControl"), "interactiveControl", VehicleConfigurationItem)
 
     local schema = Vehicle.xmlSchema
-    local interactiveControlPath = InteractiveControl.INTERACTIVE_CONTROL_XML_KEY
-
     schema:setXMLSpecializationType("InteractiveControl")
 
     InteractiveClickPoint.registerClickIconXMLPaths(schema, "vehicle.interactiveControl.registers")
-    InteractiveController.registerXMLPaths(schema, interactiveControlPath)
 
-    local outdoorTriggerPath = InteractiveControl.INTERACTIVE_CONTROLS_CONFIG_XML_KEY .. ".interactiveControls.outdoorTrigger"
-    schema:register(XMLValueType.NODE_INDEX, outdoorTriggerPath .. "#node", "Outdoor trigger node")
-    schema:register(XMLValueType.NODE_INDEX, outdoorTriggerPath .. "#linkNode", "Outdoor trigger shared link node")
-    schema:register(XMLValueType.STRING, outdoorTriggerPath .. "#filename", "Outdoor trigger filename")
-    schema:register(XMLValueType.VECTOR_ROT, outdoorTriggerPath .. "#rotation", "Outdoor trigger rotation")
-    schema:register(XMLValueType.VECTOR_TRANS, outdoorTriggerPath .. "#translation", "Outdoor trigger translation")
-    schema:register(XMLValueType.FLOAT, outdoorTriggerPath .. "#width", "Outdoor trigger width", 5)
-    schema:register(XMLValueType.FLOAT, outdoorTriggerPath .. "#height", "Outdoor trigger height", 3)
-    schema:register(XMLValueType.FLOAT, outdoorTriggerPath .. "#length", "Outdoor trigger length", 8)
+    for _, basePath in ipairs({
+        InteractiveControl.INTERACTIVE_CONTROL_BASE_XML_KEY,
+        InteractiveControl.INTERACTIVE_CONTROL_BASE_CONFIG_XML_KEY
+    }) do
+        InteractiveController.registerXMLPaths(schema, basePath .. ".interactiveControls.interactiveControl(?)")
+
+        local outdoorTriggerPath = basePath .. ".interactiveControls.outdoorTrigger"
+        schema:register(XMLValueType.NODE_INDEX, outdoorTriggerPath .. "#node", "Outdoor trigger node")
+        schema:register(XMLValueType.NODE_INDEX, outdoorTriggerPath .. "#linkNode", "Outdoor trigger shared link node")
+        schema:register(XMLValueType.STRING, outdoorTriggerPath .. "#filename", "Outdoor trigger filename")
+        schema:register(XMLValueType.VECTOR_ROT, outdoorTriggerPath .. "#rotation", "Outdoor trigger rotation")
+        schema:register(XMLValueType.VECTOR_TRANS, outdoorTriggerPath .. "#translation", "Outdoor trigger translation")
+        schema:register(XMLValueType.FLOAT, outdoorTriggerPath .. "#width", "Outdoor trigger width", 5)
+        schema:register(XMLValueType.FLOAT, outdoorTriggerPath .. "#height", "Outdoor trigger height", 3)
+        schema:register(XMLValueType.FLOAT, outdoorTriggerPath .. "#length", "Outdoor trigger length", 8)
+    end
 
     -- register animatedVehicle interactiveControl blocked animation value
     schema:addDelayedRegistrationFunc("AnimatedVehicle:part", function(cSchema, cKey)
@@ -128,31 +132,35 @@ function InteractiveControl:onLoad(savegame)
 
     InteractiveClickPoint.loadClickIconTypeFromXML(self.xmlFile, "vehicle.interactiveControl.registers", self.customEnvironment)
 
-    local interactiveControlConfigurationId = Utils.getNoNil(self.configurations.interactiveControl, 1)
-    local baseKey = string.format("vehicle.interactiveControl.interactiveControlConfigurations.interactiveControlConfiguration(%d).interactiveControls", interactiveControlConfigurationId - 1)
-
     spec.state = false
     spec.interactiveControllers = {}
+    spec.interactiveTrigger = {}
     -- spec.interactiveControlDependingDashboards = {}
 
-    self.xmlFile:iterate(baseKey .. ".interactiveControl", function(_, interactiveControlKey)
-        local interactiveController = InteractiveController.new(g_currentMission.interactiveControl.modName, g_currentMission.interactiveControl.modDirectory)
+    local interactiveControlConfigurationId = Utils.getNoNil(self.configurations.interactiveControl, 1)
 
-        if interactiveController:loadFromXML(self.xmlFile, interactiveControlKey, self, #spec.interactiveControllers + 1)
-            and interactiveController.index <= InteractiveControl.NUM_MAX_CONTROLS then
-            table.insert(spec.interactiveControllers, interactiveController)
+    for _, baseKey in ipairs({
+        "vehicle.interactiveControl.interactiveControls",
+        string.format("vehicle.interactiveControl.interactiveControlConfigurations.interactiveControlConfiguration(%d).interactiveControls", interactiveControlConfigurationId - 1)
+    }) do
+        self.xmlFile:iterate(baseKey .. ".interactiveControl", function(_, interactiveControlKey)
+            local interactiveController = InteractiveController.new(g_currentMission.interactiveControl.modName, g_currentMission.interactiveControl.modDirectory)
 
-            -- for _, dependingDashboard in ipairs(interactiveController.dependingDashboards) do
-            --     spec.interactiveControlDependingDashboards[dependingDashboard.identifier] = dependingDashboard
-            -- end
-        else
-            interactiveController:delete()
-            Logging.xmlWarning(self.xmlFile, "Could not load InteractiveController for '%s'", interactiveControlKey)
-        end
-    end)
+            if interactiveController:loadFromXML(self.xmlFile, interactiveControlKey, self, #spec.interactiveControllers + 1)
+                and interactiveController.index <= InteractiveControl.NUM_MAX_CONTROLS then
+                table.insert(spec.interactiveControllers, interactiveController)
 
-    spec.interactiveTrigger = {}
-    self:loadInteractiveTriggerFromXML(self.xmlFile, baseKey .. ".outdoorTrigger")
+                -- for _, dependingDashboard in ipairs(interactiveController.dependingDashboards) do
+                --     spec.interactiveControlDependingDashboards[dependingDashboard.identifier] = dependingDashboard
+                -- end
+            else
+                interactiveController:delete()
+                Logging.xmlWarning(self.xmlFile, "Could not load InteractiveController for '%s'", interactiveControlKey)
+            end
+        end)
+
+        self:loadInteractiveTriggerFromXML(self.xmlFile, baseKey .. ".outdoorTrigger")
+    end
     spec.isPlayerInRange = false
 
     spec.maxUpdateTime = 0
@@ -627,6 +635,11 @@ end
 ---@param key string XML key to load from
 function InteractiveControl:loadInteractiveTriggerFromXML(xmlFile, key)
     local spec = self.spec_interactiveControl
+
+    if spec.interactiveTrigger.node ~= nil then
+        return
+    end
+
     local triggerNode = xmlFile:getValue(key .. "#node", nil, self.components, self.i3dMappings)
 
     if triggerNode ~= nil then
