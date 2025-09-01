@@ -39,7 +39,7 @@ The documentation is not finished yet, but should be sufficient for experienced 
                 <outdoorTrigger node="node" linkNode="node" filename="SHARED_INTERACTIVE_TRIGGER" rotation="x y z" translation="x y z" width="5" height="3" length="8"/>
 
                 <!-- Add a new Interactive Control -->
-                <interactiveControl negText="$l10n_actionIC_deactivate" posText="$l10n_actionIC_activate">
+                <interactiveControl negText="$l10n_actionIC_deactivate" posText="$l10n_actionIC_activate" analog="false" analogSpeed="0.04" allowsSaving="true" enabled="true">
                     <!-- Add a clickPoint to toggle the event -->
                     <!-- Possible iconTypes: -->
                     <!-- CROSS, IGNITIONKEY, CRUISE_CONTROL, GPS, TURN_ON, ATTACHERJOINTS_LOWER, ATTACHERJOINTS_LIFT, ATTACHERJOINT, LIGHT_HIGH, LIGHT, TURNLIGHT_LEFT, TURNLIGHT_RIGHT, BEACON_LIGHT, ARROW -->
