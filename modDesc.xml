@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<modDesc descVersion="100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs25/modDesc.xsd">
+<modDesc descVersion="101" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs25/modDesc.xsd">
     <author>Vertex Dezign</author>
-    <version>1.3.0.0beta1</version>
+    <version>1.2.0.1</version>
 
     <title>
         <en>Interactive Control</en>
@@ -22,12 +22,11 @@ A few vehicles are already equipped with IC
 
 For further informations: <a href="https://github.com/TobiasF92/FS25_interactiveControl/blob/master/README.md">README</a> on Github.
 
-Changelog (1.3.0.0):
-- Added interactiveControls loading without configurations
-
-Changelog (1.2.0.0):
+Changelog (1.2.0.1):
 - Added translations for Ukrainian, Turkish
-- Various error/warning feedbacks
+- Added various error/warning feedbacks
+- Added interactiveControls loading without configurations
+- Added daimlerTrucKPack vehicles
 - Fixed/Improved hover timeouts
 - Fixed InteractiveFunction loading
 - Fixed invalid vehicle state on loading error
@@ -56,12 +55,11 @@ Einige wenige Fahrzeuge sind bereits mit IC ausgestattet.
 
 Für mehr Informationen: <a href="https://github.com/TobiasF92/FS25_interactiveControl/blob/master/README.md">README</a> auf Github.
 
-Changelog (1.3.0.0):
-- Added interactiveControls loading without configurations
-
-Changelog (1.2.0.0):
+Changelog (1.2.0.1):
 - Added translations for Ukrainian, Turkish
 - Added various error/warning feedbacks
+- Added interactiveControls loading without configurations
+- Added daimlerTrucKPack vehicles
 - Fixed/Improved hover timeouts
 - Fixed InteractiveFunction loading
 - Fixed invalid vehicle state on loading error
