@@ -26,7 +26,7 @@ Changelog (1.2.0.1):
 - Added translations for Ukrainian, Turkish
 - Added various error/warning feedbacks
 - Added interactiveControls loading without configurations
-- Added daimlerTrucKPack vehicles
+- Added daimlerTrucKPack vehicles (on some vehicles)
 - Fixed/Improved hover timeouts
 - Fixed InteractiveFunction loading
 - Fixed invalid vehicle state on loading error
@@ -56,22 +56,22 @@ Einige wenige Fahrzeuge sind bereits mit IC ausgestattet.
 Für mehr Informationen: <a href="https://github.com/TobiasF92/FS25_interactiveControl/blob/master/README.md">README</a> auf Github.
 
 Changelog (1.2.0.1):
-- Added translations for Ukrainian, Turkish
-- Added various error/warning feedbacks
-- Added interactiveControls loading without configurations
-- Added daimlerTrucKPack vehicles
-- Fixed/Improved hover timeouts
-- Fixed InteractiveFunction loading
-- Fixed invalid vehicle state on loading error
-- Fixed ATTACHERJOINTS_ATTACH_DETACH outdoor updating
+- Übersetzungen Ukrainisch, Türkisch hinzugefügt
+- Verschiedene Fehlermeldungen hinzugefügt/optimiert
+- Hinzugefügt InteractiveControls auch ohne Konfigurations geladen werden können
+- Unterstützung für Mercedes-Benz Trucks Pack hinzugefügt (bei einigen Fahrzeugen)
+- Hover Zeiten verbessert/behoben
+- Ladevorgang für interactive Funktionen behoben
+- Ungültiger Fahrzeug-Error Status behoben
+- ATTACHERJOINTS_ATTACH_DETACH Aktualisierung im Außenbereich behoben
 
 Changelog (1.1.0.0):
-- Added support for "FS25_additionalGameSettings" crosshair disabling
-- Added direction of clickPoints is taken into account
-- Fixed indoor sound changing
-- Fixed objectChange of interactiveControl
-- Fixed DRIVE_DIRECTION_TOGGLE function
-- Fixed synchronization bug of interactive functions on server joining (e.g. Beaconlights are activated after joining multiplayer game)
+- Unterstützung für "FS25_additionalGameSettings" hinzugefügt
+- Relevanz der ClickPoint Ausrichtung im Außenbereich hinzugefügt
+- Sound Anpassung innen/außen behoben
+- 'objectChange' von interactiveControl behoben
+- DRIVE_DIRECTION_TOGGLE Funktion behoben
+- Multiplayer Synchronisationsbug beim Beitreten behoben (z.B. Rundumleuten waren angeschaltet, nach dem Multiplayer Spiel beitreten)
 
         ]]>        </de>
     </description>
