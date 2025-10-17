@@ -58,7 +58,7 @@ Für mehr Informationen: <a href="https://github.com/TobiasF92/FS25_interactiveC
 Changelog (1.2.0.1):
 - Übersetzungen Ukrainisch, Türkisch hinzugefügt
 - Verschiedene Fehlermeldungen hinzugefügt/optimiert
-- Hinzugefügt InteractiveControls auch ohne Konfigurations geladen werden können
+- Hinzugefügt, dass InteractiveControls auch ohne Konfigurations geladen werden können
 - Unterstützung für Mercedes-Benz Trucks Pack hinzugefügt (bei einigen Fahrzeugen)
 - Hover Zeiten verbessert/behoben
 - Ladevorgang für interactive Funktionen behoben

@@ -686,6 +686,17 @@
 
                     <entry type="float" key=".soundModifier#indoorFactor" value="2.0"/>
                     <entry type="float" key=".soundModifier#delayedSoundAnimationTime" value="0.1"/>
+
+                    <xml key=".objectChange(0)">
+                        <entry type="string" key="#node" value="mirrorLeftTop"/>
+                        <entry type="string" key="#parentNodeActive" value="0>0|6|0|0|7|0"/>
+                        <entry type="string" key="#parentNodeInactive" value="0>0|6|0|0|7|0"/>
+                    </xml>
+                    <xml key=".objectChange(1)">
+                        <entry type="string" key="#node" value="mirrorLeftBottom"/>
+                        <entry type="string" key="#parentNodeActive" value="0>0|6|0|0|7|0"/>
+                        <entry type="string" key="#parentNodeInactive" value="0>0|6|0|0|7|0"/>
+                    </xml>
                 </xml>
                 <!-- door right -->
                 <xml key=".interactiveControl(1)">
@@ -716,6 +727,22 @@
 
                     <entry type="float" key=".soundModifier#indoorFactor" value="2.0"/>
                     <entry type="float" key=".soundModifier#delayedSoundAnimationTime" value="0.1"/>
+
+                    <xml key=".objectChange(0)">
+                        <entry type="string" key="#node" value="mirrorRightTop"/>
+                        <entry type="string" key="#parentNodeActive" value="0>0|6|0|0|7|1"/>
+                        <entry type="string" key="#parentNodeInactive" value="0>0|6|0|0|7|1"/>
+                    </xml>
+                    <xml key=".objectChange(1)">
+                        <entry type="string" key="#node" value="mirrorRightBottom"/>
+                        <entry type="string" key="#parentNodeActive" value="0>0|6|0|0|7|1"/>
+                        <entry type="string" key="#parentNodeInactive" value="0>0|6|0|0|7|1"/>
+                    </xml>
+                    <xml key=".objectChange(2)">
+                        <entry type="string" key="#node" value="mirrorRightTopFront"/>
+                        <entry type="string" key="#parentNodeActive" value="0>0|6|0|0|7|1"/>
+                        <entry type="string" key="#parentNodeInactive" value="0>0|6|0|0|7|1"/>
+                    </xml>
                 </xml>
             </xml>
         </xml>
@@ -786,6 +813,17 @@
 
                     <entry type="float" key=".soundModifier#indoorFactor" value="2.0"/>
                     <entry type="float" key=".soundModifier#delayedSoundAnimationTime" value="0.1"/>
+
+                    <xml key=".objectChange(0)">
+                        <entry type="string" key="#node" value="mirrorLeftTop"/>
+                        <entry type="string" key="#parentNodeActive" value="0>0|4|0|3|5|0"/>
+                        <entry type="string" key="#parentNodeInactive" value="0>0|4|0|3|5|0"/>
+                    </xml>
+                    <xml key=".objectChange(1)">
+                        <entry type="string" key="#node" value="mirrorLeftBottom"/>
+                        <entry type="string" key="#parentNodeActive" value="0>0|4|0|3|5|0"/>
+                        <entry type="string" key="#parentNodeInactive" value="0>0|4|0|3|5|0"/>
+                    </xml>
                 </xml>
                 <!-- door right -->
                 <xml key=".interactiveControl(1)">
@@ -816,6 +854,22 @@
 
                     <entry type="float" key=".soundModifier#indoorFactor" value="2.0"/>
                     <entry type="float" key=".soundModifier#delayedSoundAnimationTime" value="0.1"/>
+
+                    <xml key=".objectChange(0)">
+                        <entry type="string" key="#node" value="mirrorRightBottom"/>
+                        <entry type="string" key="#parentNodeActive" value="0>0|4|0|3|5|1"/>
+                        <entry type="string" key="#parentNodeInactive" value="0>0|4|0|3|5|1"/>
+                    </xml>
+                    <xml key=".objectChange(1)">
+                        <entry type="string" key="#node" value="mirrorRightDoor"/>
+                        <entry type="string" key="#parentNodeActive" value="0>0|4|0|3|5|1"/>
+                        <entry type="string" key="#parentNodeInactive" value="0>0|4|0|3|5|1"/>
+                    </xml>
+                    <xml key=".objectChange(2)">
+                        <entry type="string" key="#node" value="mirrorRightTop"/>
+                        <entry type="string" key="#parentNodeActive" value="0>0|4|0|3|5|1"/>
+                        <entry type="string" key="#parentNodeInactive" value="0>0|4|0|3|5|1"/>
+                    </xml>
                 </xml>
             </xml>
         </xml>
@@ -886,6 +940,17 @@
 
                     <entry type="float" key=".soundModifier#indoorFactor" value="2.0"/>
                     <entry type="float" key=".soundModifier#delayedSoundAnimationTime" value="0.1"/>
+
+                    <xml key=".objectChange(0)">
+                        <entry type="string" key="#node" value="mirrorLeftTop"/>
+                        <entry type="string" key="#parentNodeActive" value="0>0|6|0|0|3|5|0"/>
+                        <entry type="string" key="#parentNodeInactive" value="0>0|6|0|0|3|5|0"/>
+                    </xml>
+                    <xml key=".objectChange(1)">
+                        <entry type="string" key="#node" value="mirrorLeftBottom"/>
+                        <entry type="string" key="#parentNodeActive" value="0>0|6|0|0|3|5|0"/>
+                        <entry type="string" key="#parentNodeInactive" value="0>0|6|0|0|3|5|0"/>
+                    </xml>
                 </xml>
                 <!-- door right -->
                 <xml key=".interactiveControl(1)">
@@ -916,6 +981,22 @@
 
                     <entry type="float" key=".soundModifier#indoorFactor" value="2.0"/>
                     <entry type="float" key=".soundModifier#delayedSoundAnimationTime" value="0.1"/>
+
+                    <xml key=".objectChange(0)">
+                        <entry type="string" key="#node" value="mirrorRightBottom"/>
+                        <entry type="string" key="#parentNodeActive" value="0>0|6|0|0|3|5|1"/>
+                        <entry type="string" key="#parentNodeInactive" value="0>0|6|0|0|3|5|1"/>
+                    </xml>
+                    <xml key=".objectChange(1)">
+                        <entry type="string" key="#node" value="mirrorRightDoor"/>
+                        <entry type="string" key="#parentNodeActive" value="0>0|6|0|0|3|5|1"/>
+                        <entry type="string" key="#parentNodeInactive" value="0>0|6|0|0|3|5|1"/>
+                    </xml>
+                    <xml key=".objectChange(2)">
+                        <entry type="string" key="#node" value="mirrorRightTop"/>
+                        <entry type="string" key="#parentNodeActive" value="0>0|6|0|0|3|5|1"/>
+                        <entry type="string" key="#parentNodeInactive" value="0>0|6|0|0|3|5|1"/>
+                    </xml>
                 </xml>
             </xml>
         </xml>
