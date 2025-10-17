@@ -31,6 +31,15 @@ The documentation is not finished yet, but should be sufficient for experienced 
 ### XML
 ```xml
 <interactiveControl>
+    <!-- Loading without configurations -->
+    <interactiveControls>
+        <!-- The outdoor trigger -->
+        <outdoorTrigger ... />
+
+        <!-- Add a new Interactive Control -->
+        <interactiveControl ... />
+    </interactiveControls>
+
     <interactiveControlConfigurations>
         <!-- If needed, you can define different configurations -->
         <interactiveControlConfiguration>
