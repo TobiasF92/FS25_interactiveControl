@@ -97,8 +97,13 @@ The documentation is not finished yet, but should be sufficient for experienced 
                     <!-- CONVERT INFO: blocking now happens by use of minLimit and maxLimit of depending control-->
                     <dependingInteractiveControl index="int" minLimit="0.0" maxLimit="1.0"/>
 
-                    <!-- Modify sound here, 'indoorFactor' is the sound percentage factor if control is active -->
-                    <!-- Set 'delayedSoundAnimationTime' if the sound should be changed on specific animation time (first animation or 'name') -->
+                    <!-- Modify sound here, sounds are being modified by volume aswell as lowpassGain -->
+                    <!-- The modifier only affects outdoor sounds. Indoor sounds are not modified -->
+                    <!-- If you want to exlude a specific sound, use attribute 'excludeFromICSoundModifier'  -->
+                    <!-- 'indoorFactor' is the sound percentage factor if control is active -->
+                    <!-- 'delayedSoundAnimationTime' is the factor (0.0 - 1.0, not seconds) at which animation time the sound reaches the full outdoor sound level, default '0.5' -->
+                    <!-- Use '1.0' to let the sound follow the animation over its whole duration, or a small value to switch as soon as it starts moving -->
+                    <!-- 'name': name of the target animation or alternatively first animation -->
                     <soundModifier indoorFactor="float" delayedSoundAnimationTime="float" name="string"/>
 
                     <objectChange centerOfMassActive="x y z" centerOfMassInactive="x y z" compoundChildActive="boolean" compoundChildInactive="boolean" interpolation="false" interpolationTime="1" massActive="float" massInactive="float" node="node" parentNodeActive="node" parentNodeInactive="node" rigidBodyTypeActive="string" rigidBodyTypeInactive="string" rotationActive="x y z" rotationInactive="x y z" scaleActive="x y z" scaleInactive="x y z" shaderParameter="string" shaderParameterActive="x y z w" shaderParameterInactive="x y z w" sharedShaderParameter="false" translationActive="x y z" translationInactive="x y z" visibilityActive="boolean" visibilityInactive="boolean"/>
@@ -123,6 +128,39 @@ The documentation is not finished yet, but should be sufficient for experienced 
     </animation>
 </animations>
 ```
+
+
+### Sound modifier
+
+The `<soundModifier>` of an interactive control simulates opening of a door or window: While the 
+animation of the door is playing, the volume and lowpassGain of the outdoor sounds are being modified 
+like they would in real life. If you close the door, the outdoor sounds become quieter and more muffled.
+Similarly, when a door is opened, the outdoor sounds then become louder and clearer.
+
+`indoorFactor` controls the loudness and clarity of the outdoor sounds, when the door is open.
+'delayedSoundAnimationTime' is the factor (0.0 - 1.0, not seconds) at which animation time the sound reaches the full outdoor sound level.
+Use '1.0' to let the sound follow the animation over its whole duration, or a small value to switch as soon as it starts moving.
+
+The modifier only modifies outdoor sounds, like engine, exhaust, gearbox etc.
+Indoor sounds (turn light, interior engine sound, wipers etc.) are not modified.
+
+Besides the volume, the modifier interpolates the `lowpassGain` of an affected sample towards its own
+authored `outdoor` value, so with a fully opened door the outdoor sounds sound like they would in the outdoor camera.
+
+If a sample is classified as an outdoor sound but should not be modified, it can be excluded in the 
+vehicle's sound XML: Use the attribute `excludeFromICSoundModifier` (default `false`) to exclude a sample
+from the modifier as a whole, for both the volume and the `lowpassGain` handling:
+
+```xml
+<motor template="engineLarge" file="sounds/engine.gls" excludeFromICSoundModifier="true">
+    <volume indoor="0.8" outdoor="1.0"/>
+</motor>
+```
+
+This excludes the sample from the modifier.
+
+This works on any sound sample, not only on `<motor>`, and it can also be set on a shared
+`<soundTemplate>` to opt out every sample that inherits from it.
 
 
 ### FunctionOverview:

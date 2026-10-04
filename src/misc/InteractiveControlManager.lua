@@ -200,29 +200,116 @@ end
 
 -------------------------------------------------- Overwrite Callbacks -------------------------------------------------
 
+---Returns true if the sample is an outdoor originating sound, false otherwise
+---@param sample table sound sample
+---@return boolean isOutdoorSample Sample is an outdoor originating sound
+function InteractiveControlManager.getIsOutdoorSample(sample)
+    if sample == nil or sample.icExcludeFromSoundModifier then
+        return false
+    end
+
+    local indoorAttributes = sample.indoorAttributes
+    local outdoorAttributes = sample.outdoorAttributes
+
+    if indoorAttributes == nil or outdoorAttributes == nil then
+        return false
+    end
+
+    return outdoorAttributes.volume > indoorAttributes.volume
+end
+
+---Sets the sound modifier volume offset on a sample
+---The offset is the additive counterpart to the volume modifier: samples authored silent in the cab
+---('<volume indoor="0.0"/>') stay silent under any multiplication, so an offset is the only way to
+---fade them in when a door or window is opened.
+---@param sample table sound sample
+---@param offset number volume offset
+function InteractiveControlManager.setSampleVolumeOffset(sample, offset)
+    local offsets = sample.offsets
+
+    if offsets == nil then
+        return
+    end
+
+    if not sample.icOwnsSoundOffsets then
+        if offset == 0 then
+            return
+        end
+
+        sample.offsets = {
+            ["volume"] = offsets.volume,
+            ["pitch"] = offsets.pitch,
+            ["lowpassGain"] = offsets.lowpassGain
+        }
+        sample.icOwnsSoundOffsets = true
+        offsets = sample.offsets
+    end
+
+    offsets.volume = offset
+end
+
 ---Returns modifier factor
 ---@param soundManager SoundManager instance of SoundManager
 ---@param superFunc function original function
 ---@param sample table sound sample
 ---@param modifierName string modifier string
----@return number volume
+---@return number modifierFactor factor of modifier
 function InteractiveControlManager:getModifierFactor(soundManager, superFunc, sample, modifierName)
+    local modifierFactor = superFunc(soundManager, sample, modifierName)
+
+    local isVolume = modifierName == "volume"
+
+    if not isVolume and modifierName ~= "lowpassGain" then
+        return modifierFactor
+    end
+
     local controlledVehicle = nil
     if g_localPlayer ~= nil then
         controlledVehicle = g_localPlayer:getCurrentVehicle()
     end
 
-    if modifierName == "volume" and controlledVehicle ~= nil then
-        local volume = superFunc(soundManager, sample, modifierName)
+    local isModified = controlledVehicle ~= nil
+        and controlledVehicle.getIndoorModifiedSoundFactor ~= nil
+        and InteractiveControlManager.getIsOutdoorSample(sample)
 
-        if controlledVehicle.getIndoorModifiedSoundFactor ~= nil then
-            volume = volume * controlledVehicle:getIndoorModifiedSoundFactor()
+    if not isModified then
+        if isVolume then
+            InteractiveControlManager.setSampleVolumeOffset(sample, 0)
         end
 
-        return volume
-    else
-        return superFunc(soundManager, sample, modifierName)
+        return modifierFactor
     end
+
+    local indoorSoundFactor = controlledVehicle:getIndoorModifiedSoundFactor()
+    local indoorAttributes = sample.indoorAttributes
+    local outdoorAttributes = sample.outdoorAttributes
+    local openness = math.clamp(indoorSoundFactor - InteractiveControl.SOUND_FALLBACK, 0, 1)
+
+    if isVolume then
+        if indoorAttributes.volume > 0 then
+            InteractiveControlManager.setSampleVolumeOffset(sample, 0)
+
+            return modifierFactor * indoorSoundFactor
+        end
+
+        -- Samples authored '<volume indoor="0.0"/>' cannot be lifted by a multiplication, so they are faded in additively up to their authored outdoor volume.
+        local fadeFactor = soundManager:getCurrentFadeFactor(sample)
+        local offset = openness * outdoorAttributes.volume * fadeFactor * sample.volumeScale
+
+        InteractiveControlManager.setSampleVolumeOffset(sample, offset)
+
+        return modifierFactor
+    end
+
+    -- lowpassGain: interpolating towards the sample's own authored outdoor gain lifts the indoor muffling without any tuned constant.
+    local indoorGain = indoorAttributes.lowpassGain
+    local outdoorGain = outdoorAttributes.lowpassGain
+
+    if indoorGain == nil or outdoorGain == nil or indoorGain <= 0 then
+        return modifierFactor
+    end
+
+    return modifierFactor * MathUtil.lerp(1, outdoorGain / indoorGain, openness)
 end
 
 -------------------------------------------------------- Various -------------------------------------------------------

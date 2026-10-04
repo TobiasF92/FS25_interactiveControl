@@ -105,7 +105,7 @@ function InteractiveController.registerXMLPaths(schema, basePath)
 
     -- register sound modifier
     schema:register(XMLValueType.FLOAT, basePath .. ".soundModifier#indoorFactor", "Indoor sound modifier factor for active interactive control")
-    schema:register(XMLValueType.FLOAT, basePath .. ".soundModifier#delayedSoundAnimationTime", "Delayed sound animation time")
+    schema:register(XMLValueType.FLOAT, basePath .. ".soundModifier#delayedSoundAnimationTime", "Animation time at which the sound modifier reaches the full outdoor sound level", 0.5)
     schema:register(XMLValueType.STRING, basePath .. ".soundModifier#name", "Animation name, if not set, first animation will be used")
 end
 
@@ -262,7 +262,7 @@ function InteractiveController:loadFromXML(xmlFile, key, target, index)
     -- load sound modifier
     self.soundModifier = {
         indoorFactor = xmlFile:getValue(key .. ".soundModifier#indoorFactor"),
-        delayedSoundAnimationTime = xmlFile:getValue(key .. ".soundModifier#delayedSoundAnimationTime"),
+        delayedSoundAnimationTime = xmlFile:getValue(key .. ".soundModifier#delayedSoundAnimationTime", 0.5),
         name = xmlFile:getValue(key .. ".soundModifier#name"),
         currentFactor = InteractiveControl.SOUND_FALLBACK
     }
@@ -715,16 +715,22 @@ function InteractiveController:updateAnimation(animationName)
         return
     end
 
-    soundModifier.delayedSoundAnimationTime = 0.5
+    local duration = soundModifier.delayedSoundAnimationTime
 
     local currentFactor = InteractiveControl.SOUND_FALLBACK
     for _, actor in ipairs(self.interactiveActors) do
         if actor:isa(InteractiveActorAnimation) then
             if soundModifier.name == actor.name then
-                if soundModifier.delayedSoundAnimationTime ~= nil then
-                    local alpha = math.clamp(animTime, 0, soundModifier.delayedSoundAnimationTime) / soundModifier.delayedSoundAnimationTime
-                    currentFactor = MathUtil.lerp(InteractiveControl.SOUND_FALLBACK, soundModifier.indoorFactor, alpha)
+                -- Catch duration of 0 that would reult in a division by zero
+                local alpha = 1
+
+                if duration > 0 then
+                    alpha = math.clamp(animTime, 0, duration) / duration
+                elseif animTime <= 0 then
+                    alpha = 0
                 end
+
+                currentFactor = MathUtil.lerp(InteractiveControl.SOUND_FALLBACK, soundModifier.indoorFactor, alpha)
 
                 break
             end

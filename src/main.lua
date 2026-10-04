@@ -109,6 +109,34 @@ local function getModifierFactor(soundManager, superFunc, sample, modifierName)
     return superFunc(soundManager, sample, modifierName)
 end
 
+---Appended function: SoundManager.registerGenericSampleXMLPaths
+---Registers the optional 'excludeFromICSoundModifier' sound sample opt-out
+---@param schema XMLSchema Instance of XMLSchema
+---@param soundPath string Base xml path of the sound sample
+local function registerGenericSampleXMLPaths(schema, soundPath)
+    schema:register(XMLValueType.BOOL, soundPath .. "#excludeFromICSoundModifier", "Excludes the sound sample from the Interactive Control sound modifier", false)
+end
+
+---Overwritten function: SoundManager.loadSampleAttributesFromXML
+---Loads the optional 'excludeFromICSoundModifier="true"' opt-out into the sample
+---@param soundManager table soundManager table
+---@param superFunc function original function
+---@param sample table sample table
+---@param xmlFile any xml file handle
+---@param key string xml key to load from
+---@param baseDir string base directory
+---@param defaultLoops integer default number of loops
+---@param requiresFile boolean sample requires a file
+---@return boolean loaded True if loading succeeded, false otherwise
+local function loadSampleAttributesFromXML(soundManager, superFunc, sample, xmlFile, key, baseDir, defaultLoops, requiresFile)
+    local loaded = superFunc(soundManager, sample, xmlFile, key, baseDir, defaultLoops, requiresFile)
+
+    local excluded = getXMLBool(xmlFile, key .. "#excludeFromICSoundModifier")
+    sample.icExcludeFromSoundModifier = Utils.getNoNil(excluded, sample.icExcludeFromSoundModifier or false)
+
+    return loaded
+end
+
 ---Overwritten function: Dashboard.defaultDashboardStateFunc
 ---Injects InteractiveControl dashboard overwriting
 ---@param vehicle Vehicle Instance of vehicle
@@ -235,6 +263,8 @@ local function init()
 
     TypeManager.validateTypes = Utils.prependedFunction(TypeManager.validateTypes, validateTypes)
     SoundManager.getModifierFactor = Utils.overwrittenFunction(SoundManager.getModifierFactor, getModifierFactor)
+    SoundManager.registerGenericSampleXMLPaths = Utils.appendedFunction(SoundManager.registerGenericSampleXMLPaths, registerGenericSampleXMLPaths)
+    SoundManager.loadSampleAttributesFromXML = Utils.overwrittenFunction(SoundManager.loadSampleAttributesFromXML, loadSampleAttributesFromXML)
     Dashboard.defaultDashboardStateFunc = Utils.overwrittenFunction(Dashboard.defaultDashboardStateFunc, defaultDashboardStateFunc)
 
     -- XMLInjectionsManager
