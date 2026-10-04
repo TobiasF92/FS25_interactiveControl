@@ -75,6 +75,12 @@ function InteractiveActorAnimation:loadFromXML(xmlFile, key, target, interactive
     self.speedScale = xmlFile:getValue(key .. "#speedScale", 1.0)
     self.initTime = xmlFile:getValue(key .. "#initTime")
 
+    -- disable resetOnStart for analog animations
+    if interactiveController:isAnalog() then
+        local animation = self.target:getAnimationByName(self.name)
+        animation.resetOnStart = false
+    end
+
     return true
 end
 
@@ -83,16 +89,31 @@ end
 function InteractiveActorAnimation:postLoad(savegame)
     InteractiveActorAnimation:superClass().postLoad(self, savegame)
 
-    -- update actor animation to initial time
-    if not self.interactiveController.loadedDirty and self.initTime ~= nil then
-        local animTime = self.target:getAnimationTime(self.name)
-        local direction = animTime > self.initTime and -1 or 1
-
-        self.target:playAnimation(self.name, direction, animTime, true)
-        self.target:setAnimationStopTime(self.name, self.initTime)
+    local interactiveController = self.interactiveController
+    local target = self.target
+    if interactiveController == nil or target == nil then
+        return
     end
 
-    AnimatedVehicle.updateAnimationByName(self.target, self.name, 9999999, true)
+    if interactiveController.loadedDirty then
+        -- update actor animation to current stateValue
+        if interactiveController:isAnalog() then
+            target:setAnimationTime(self.name, 1, true, false)
+            target:setAnimationStopTime(self.name, interactiveController.stateValue)
+            target:playAnimation(self.name, -1, 1, true, false)
+        end
+    else
+        -- update actor animation to initial time
+        if self.initTime ~= nil then
+            local animTime = target:getAnimationTime(self.name)
+            local direction = animTime > self.initTime and -1 or 1
+
+            target:playAnimation(self.name, direction, animTime, true)
+            target:setAnimationStopTime(self.name, self.initTime)
+        end
+    end
+
+    AnimatedVehicle.updateAnimationByName(target, self.name, 9999999, true)
 end
 
 ---Updates interactive actor by stateValue

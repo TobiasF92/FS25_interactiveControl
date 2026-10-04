@@ -27,6 +27,7 @@ Changelog (1.3.0.0):
 - Added fading of outdoor sound samples when using the soundModifier and a door or window is opened
 - Added 'excludeFromICSoundModifier' attribute to exclude single sound samples from the soundModifier
 - Fixed an issue where the value of 'delayedSoundAnimationTime' was not applied correctly
+- Fixed analog animations not being set to the correct state when loading a savegame
 
 Changelog (1.2.0.2):
 - Added translation for Espanol
@@ -73,6 +74,7 @@ Changelog (1.3.0.0):
 - Einblenden von Außengeräusch-Samples bei Verwendung des soundModifiers hinzugefügt, wenn eine Tür oder ein Fenster geöffnet wird
 - Attribut 'excludeFromICSoundModifier' hinzugefügt, um einzelne Sound-Samples vom soundModifier auszuschließen
 - Problem behoben, dass der Wert von 'delayedSoundAnimationTime' nicht korrekt übernommen wurde
+- Problem behoben, dass analoge Animationen beim Laden eines Spielstandes nicht auf den korrekten Zustand gesetzt wurden
 
 Changelog (1.2.0.1):
 - Übersetzungen Ukrainisch, Türkisch hinzugefügt
