@@ -98,7 +98,7 @@ end
 ---@param forced? boolean Forced update if is true
 ---@param noEventSend? boolean Don't send an event
 function InteractiveActorFunction:updateState(stateValue, forced, noEventSend)
-    InteractiveActorFunction:superClass().updateState(stateValue, forced, noEventSend)
+    InteractiveActorFunction:superClass().updateState(self, stateValue, forced, noEventSend)
 
     if self.data == nil then
         return

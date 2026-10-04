@@ -600,6 +600,7 @@ function InteractiveController:updateActiveAction()
     for _, action in ipairs(self.interactiveActions) do
         if action:isExecutable() then
             --Todo: add priority?
+            --Todo: add multi button functionality
             self.activeAction = action
             break
         end

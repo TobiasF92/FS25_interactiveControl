@@ -37,6 +37,13 @@ InteractiveControlManager.SETTING_HOVER_TIME = {
 }
 
 ---Create new instance of InteractiveControlManager
+---@param mission FSBaseMission Instance of FSBaseMission
+---@param inputBinding InputBinding Instance of InputBinding
+---@param i18n I18N Instance of I18N
+---@param modName string mod name
+---@param modDirectory string mod directory
+---@param customMt? metatable custom metatable
+---@return InteractiveControlManager
 function InteractiveControlManager.new(mission, inputBinding, i18n, modName, modDirectory, customMt)
     local self = setmetatable({}, customMt or interactiveControlManager_mt)
 
@@ -70,14 +77,23 @@ function InteractiveControlManager.new(mission, inputBinding, i18n, modName, mod
         i18n:getText("settingsIC_state_option03", self.customEnvironment),
     }
 
-    title = i18n:getText("settingsIC_state_title", self.customEnvironment)
-    local tooltip = i18n:getText("settingsIC_state_tooltip", self.customEnvironment)
-    self.settings:addSetting("IC_STATE", AdditionalSettingsManager.TYPE_MULTIBOX, title, tooltip, InteractiveControlManager.SETTING_STATE_TOGGLE, options)
+    self.settings:addSetting(
+        "IC_STATE",
+        AdditionalSettingsManager.TYPE_MULTIBOX,
+        i18n:getText("settingsIC_state_title", self.customEnvironment),
+        i18n:getText("settingsIC_state_tooltip", self.customEnvironment),
+        InteractiveControlManager.SETTING_STATE_TOGGLE,
+        options
+    )
 
     -- KeepAlive setting
-    title = i18n:getText("settingsIC_keepAlive_title", self.customEnvironment)
-    tooltip = i18n:getText("settingsIC_keepAlive_tooltip", self.customEnvironment)
-    self.settings:addSetting("IC_KEEP_ALIVE", AdditionalSettingsManager.TYPE_BINARY, title, tooltip, false)
+    self.settings:addSetting(
+        "IC_KEEP_ALIVE",
+        AdditionalSettingsManager.TYPE_BINARY,
+        i18n:getText("settingsIC_keepAlive_title", self.customEnvironment),
+        i18n:getText("settingsIC_keepAlive_tooltip", self.customEnvironment),
+        false
+    )
 
     -- ClickPointHover setting, no loop to avoid unordered list
     options = {
@@ -90,9 +106,14 @@ function InteractiveControlManager.new(mission, inputBinding, i18n, modName, mod
         i18n:getText("settingsIC_clickPointHover_optionTime", self.customEnvironment):format(InteractiveControlManager.SETTING_HOVER_TIME[InteractiveControlManager.SETTING_HOVER_6]),
     }
 
-    title = i18n:getText("settingsIC_clickPointHover_title", self.customEnvironment)
-    tooltip = i18n:getText("settingsIC_clickPointHover_tooltip", self.customEnvironment)
-    self.settings:addSetting("IC_CLICK_POINT_HOVER", AdditionalSettingsManager.TYPE_MULTIBOX, title, tooltip, InteractiveControlManager.SETTING_HOVER_OFF, options)
+    self.settings:addSetting(
+        "IC_CLICK_POINT_HOVER",
+        AdditionalSettingsManager.TYPE_MULTIBOX,
+        i18n:getText("settingsIC_clickPointHover_title", self.customEnvironment),
+        i18n:getText("settingsIC_clickPointHover_tooltip", self.customEnvironment),
+        InteractiveControlManager.SETTING_HOVER_OFF,
+        options
+    )
 
     return self
 end
@@ -371,9 +392,7 @@ function InteractiveControlManager:getHoverTime()
     return InteractiveControlManager.SETTING_HOVER_TIME[clickPointHover]
 end
 
-----------------
----Overwrites---
-----------------
+------------------------------------------------ External Mod Overwrites -----------------------------------------------
 
 ---Overwrite FS25_additionalGameSettings functions
 function InteractiveControlManager.overwrite_additionalGameSettings()

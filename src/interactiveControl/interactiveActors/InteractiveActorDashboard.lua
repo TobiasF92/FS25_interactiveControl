@@ -151,7 +151,7 @@ end
 ---@param forced? boolean Forced update if is true
 ---@param noEventSend? boolean Don't send an event
 function InteractiveActorDashboard:updateState(stateValue, forced, noEventSend)
-    InteractiveActorDashboard:superClass().updateState(stateValue, forced, noEventSend)
+    InteractiveActorDashboard:superClass().updateState(self, stateValue, forced, noEventSend)
 
     -- update dashboards
     self.target:setDashboardsDirty()

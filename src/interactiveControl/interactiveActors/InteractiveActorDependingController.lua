@@ -70,7 +70,7 @@ end
 ---Called after load
 ---@param savegame any
 function InteractiveActorDependingController:postLoad(savegame)
-    InteractiveActorDependingController:superClass().postLoad(savegame)
+    InteractiveActorDependingController:superClass().postLoad(self, savegame)
 
     self.dependingInteractiveController = self.target:getInteractiveControllerByIndex(self.index)
 

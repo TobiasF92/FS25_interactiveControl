@@ -122,17 +122,17 @@ end
 ---@param isOutdoor boolean True if update is outdoor
 ---@param hasInput boolean True if target has input
 function InteractiveAction:update(isIndoor, isOutdoor, hasInput)
-    local activateable = self:isActivatable()
+    local isActivatable = self:isActivatable()
 
-    if activateable then
+    if isActivatable then
         local indoor = isIndoor and self.target:isInteractiveControlActivated() and hasInput and self:isIndoorActive()
         local outdoor = isOutdoor and not hasInput and self:isOutdoorActive()
 
-        activateable = indoor or outdoor
+        isActivatable = indoor or outdoor
     end
 
-    if activateable ~= self:isActivated() then
-        self:setActivated(activateable)
+    if isActivatable ~= self:isActivated() then
+        self:setActivated(isActivatable)
     end
 end
 
@@ -151,7 +151,7 @@ function InteractiveAction:isActivated()
     return self.activated
 end
 
----Returns true if is activateable, false otherwise
+---Returns true if is activatable, false otherwise
 ---@return boolean isActivatable
 function InteractiveAction:isActivatable()
     -- check foldAnim time

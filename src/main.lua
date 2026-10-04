@@ -131,8 +131,7 @@ end
 local function loadSampleAttributesFromXML(soundManager, superFunc, sample, xmlFile, key, baseDir, defaultLoops, requiresFile)
     local loaded = superFunc(soundManager, sample, xmlFile, key, baseDir, defaultLoops, requiresFile)
 
-    local excluded = getXMLBool(xmlFile, key .. "#excludeFromICSoundModifier")
-    sample.icExcludeFromSoundModifier = Utils.getNoNil(excluded, sample.icExcludeFromSoundModifier or false)
+    sample.icExcludeFromSoundModifier = Utils.getNoNil(getXMLBool(xmlFile, key .. "#excludeFromICSoundModifier"), false)
 
     return loaded
 end
@@ -273,10 +272,6 @@ local function init()
     VehicleSystem.consoleCommandReloadVehicle = Utils.prependedFunction(VehicleSystem.consoleCommandReloadVehicle, consoleCommandReloadVehicle)
 
     -- AdditionalSettingsManager
-    local modEnvMeta = getmetatable(_G)
-    local env = modEnvMeta.__index
-    InGameMenuSettingsFrame = env.InGameMenuSettingsFrame
-
     InGameMenuSettingsFrame.onFrameOpen = Utils.appendedFunction(InGameMenuSettingsFrame.onFrameOpen, initGui)
     InGameMenuSettingsFrame.updateGeneralSettings = Utils.appendedFunction(InGameMenuSettingsFrame.updateGeneralSettings, updateGui)
     GameSettings.saveToXMLFile = Utils.appendedFunction(GameSettings.saveToXMLFile, saveSettingsToXML)

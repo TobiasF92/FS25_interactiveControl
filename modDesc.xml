@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<modDesc descVersion="111" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs25/modDesc.xsd">
+<modDesc descVersion="114" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs25/modDesc.xsd">
     <author>Vertex Dezign</author>
     <version>1.3.0.0</version>
 
@@ -24,7 +24,7 @@ For further informations: <a href="https://github.com/TobiasF92/FS25_interactive
 
 Changelog (1.3.0.0):
 - Added new handling of indoor and outdoor sounds when using the soundModifier
-- Added fading of outdoor sound samples when using the soundModifier and a door or window is opened 
+- Added fading of outdoor sound samples when using the soundModifier and a door or window is opened
 - Added 'excludeFromICSoundModifier' attribute to exclude single sound samples from the soundModifier
 - Fixed an issue where the value of 'delayedSoundAnimationTime' was not applied correctly
 
@@ -52,7 +52,7 @@ Changelog (1.1.0.0):
 - Fixed DRIVE_DIRECTION_TOGGLE function
 - Fixed synchronization bug of interactive functions on server joining (e.g. Beaconlights are activated after joining multiplayer game)
 
-        ]]>        </en>
+        ]]></en>
         <de><![CDATA['Interactive Control' ist ein globaler Skript-Mod für den Landwirtschafts-Simulator 25. Während dieser Mod aktiv ist, sind Sie in der Lage, viele andere Mods zu verwenden, die Interactive Control unterstützen. Mit IC erhalten Sie die Möglichkeit, viele Teile von mehreren (vorbereiteten) Fahrzeugen interaktiv zu steuern.
 
 'IC' bietet verschiedene Möglichkeiten, mit Ihren Fahrzeugen zu interagieren. Sie können Klicksymbole verwenden, die erscheinen, wenn Sie IC einschalten oder wenn Sie in der Nähe sind. Eine weitere Möglichkeit zur interaktiven Bedienung ist über einen Tastendruck möglich. Die Steuerelemente können als Schalter oder zum Erzwingen eines Zustands verwendet werden. Alle Interaktionen sind generell sowohl innherhalb als auch außerhalb eines Fahrzeugs möglich.
@@ -92,7 +92,7 @@ Changelog (1.1.0.0):
 - DRIVE_DIRECTION_TOGGLE Funktion behoben
 - Multiplayer Synchronisationsbug beim Beitreten behoben (z.B. Rundumleuten waren angeschaltet, nach dem Multiplayer Spiel beitreten)
 
-        ]]>        </de>
+        ]]></de>
     </description>
 
     <iconFilename>icon_interactiveControl.png</iconFilename>
@@ -105,8 +105,8 @@ Changelog (1.1.0.0):
     </extraSourceFiles>
 
     <actions>
-        <action name="IC_CLICK" category="ONFOOT VEHICLE" axisType="HALF"/>
-        <action name="IC_TOGGLE_STATE" category="VEHICLE" axisType="HALF"/>
+        <action name="IC_CLICK"        category="ONFOOT VEHICLE" axisType="HALF"/>
+        <action name="IC_TOGGLE_STATE" category="VEHICLE"        axisType="HALF"/>
     </actions>
 
     <inputBinding>

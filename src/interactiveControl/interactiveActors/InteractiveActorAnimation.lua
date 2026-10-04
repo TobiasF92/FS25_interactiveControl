@@ -81,7 +81,7 @@ end
 ---Called after load
 ---@param savegame any
 function InteractiveActorAnimation:postLoad(savegame)
-    InteractiveActorAnimation:superClass().postLoad(savegame)
+    InteractiveActorAnimation:superClass().postLoad(self, savegame)
 
     -- update actor animation to initial time
     if not self.interactiveController.loadedDirty and self.initTime ~= nil then
@@ -100,7 +100,7 @@ end
 ---@param forced? boolean Forced update if is true
 ---@param noEventSend? boolean Don't send an event
 function InteractiveActorAnimation:updateState(stateValue, forced, noEventSend)
-    InteractiveActorAnimation:superClass().updateState(stateValue, forced, noEventSend)
+    InteractiveActorAnimation:superClass().updateState(self, stateValue, forced, noEventSend)
 
     if self.interactiveController:isAnalog() then
         self.target:setAnimationTime(self.name, stateValue)

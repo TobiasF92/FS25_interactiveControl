@@ -68,7 +68,7 @@ end
 ---@param forced? boolean Forced update if is true
 ---@param noEventSend? boolean Don't send an event
 function InteractiveActorObjectChange:updateState(stateValue, forced, noEventSend)
-    InteractiveActorObjectChange:superClass().updateState(stateValue, forced, noEventSend)
+    InteractiveActorObjectChange:superClass().updateState(self, stateValue, forced, noEventSend)
 
     local state = stateValue > 0.5
 
