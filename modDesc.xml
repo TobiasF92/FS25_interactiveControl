@@ -26,6 +26,7 @@ Changelog (1.3.0.0):
 - Added new handling of indoor and outdoor sounds when using the soundModifier
 - Added fading of outdoor sound samples when using the soundModifier and a door or window is opened
 - Added 'excludeFromICSoundModifier' attribute to exclude single sound samples from the soundModifier
+- Added LIGHTS_TYPES_TOGGLE function to toggle specific lightTypes of a vehicle
 - Fixed an issue where the value of 'delayedSoundAnimationTime' was not applied correctly
 - Fixed analog animations not being set to the correct state when loading a savegame
 
@@ -73,6 +74,7 @@ Changelog (1.3.0.0):
 - Neue Handhabung von Innen- und Außengeräuschen bei Verwendung des soundModifiers hinzugefügt
 - Einblenden von Außengeräusch-Samples bei Verwendung des soundModifiers hinzugefügt, wenn eine Tür oder ein Fenster geöffnet wird
 - Attribut 'excludeFromICSoundModifier' hinzugefügt, um einzelne Sound-Samples vom soundModifier auszuschließen
+- LIGHTS_TYPES_TOGGLE Funktion hinzugefügt, um bestimmte Lichttypen eines Fahrzeugs umzuschalten
 - Problem behoben, dass der Wert von 'delayedSoundAnimationTime' nicht korrekt übernommen wurde
 - Problem behoben, dass analoge Animationen beim Laden eines Spielstandes nicht auf den korrekten Zustand gesetzt wurden
 

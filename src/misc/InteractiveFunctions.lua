@@ -241,7 +241,7 @@ InteractiveFunctions.addFunction("LIGHTS_WORKBACK_TOGGLE", {
 
         if target.getCanToggleLight ~= nil and target.setLightsTypesMask ~= nil then
             if target:getCanToggleLight() then
-                local lightsTypesMask = bitXOR(target.spec_lights.lightsTypesMask, 2 ^ Lights.LIGHT_TYPE_WORK_BACK)
+                local lightsTypesMask = bit32.bxor(target.spec_lights.lightsTypesMask, 2 ^ Lights.LIGHT_TYPE_WORK_BACK)
                 target:setLightsTypesMask(lightsTypesMask, true, noEventSend)
             end
         end
@@ -257,7 +257,7 @@ InteractiveFunctions.addFunction("LIGHTS_WORKFRONT_TOGGLE", {
 
         if target.getCanToggleLight ~= nil and target.setLightsTypesMask ~= nil then
             if target:getCanToggleLight() then
-                local lightsTypesMask = bitXOR(target.spec_lights.lightsTypesMask, 2 ^ Lights.LIGHT_TYPE_WORK_FRONT)
+                local lightsTypesMask = bit32.bxor(target.spec_lights.lightsTypesMask, 2 ^ Lights.LIGHT_TYPE_WORK_FRONT)
                 target:setLightsTypesMask(lightsTypesMask, true, noEventSend)
             end
         end
@@ -273,7 +273,7 @@ InteractiveFunctions.addFunction("LIGHTS_HIGHBEAM_TOGGLE", {
 
         if target.getCanToggleLight ~= nil and target.setLightsTypesMask ~= nil then
             if target:getCanToggleLight() then
-                local lightsTypesMask = bitXOR(target.spec_lights.lightsTypesMask, 2 ^ Lights.LIGHT_TYPE_HIGHBEAM)
+                local lightsTypesMask = bit32.bxor(target.spec_lights.lightsTypesMask, 2 ^ Lights.LIGHT_TYPE_HIGHBEAM)
                 target:setLightsTypesMask(lightsTypesMask, true, noEventSend)
             end
         end
@@ -387,11 +387,48 @@ InteractiveFunctions.addFunction("LIGHTS_PIPE_TOGGLE", {
         if target.getCanToggleLight ~= nil and target.setLightsTypesMask ~= nil then
             if target:getCanToggleLight() then
                 -- lighttype for pipe lights is "4"
-                local lightsTypesMask = bitXOR(target.spec_lights.lightsTypesMask, 2 ^ 4)
+                local lightsTypesMask = bit32.bxor(target.spec_lights.lightsTypesMask, 2 ^ 4)
                 target:setLightsTypesMask(lightsTypesMask, true, noEventSend)
             end
         end
     end
+})
+
+---LIGHTS_TYPES_TOGGLE
+InteractiveFunctions.addFunction("LIGHTS_TYPES_TOGGLE", {
+    posFunc = function(target, data, noEventSend)
+        if noEventSend then
+            return
+        end
+
+        if target.setLightsTypesMask ~= nil and target.getCanToggleLight ~= nil and target:getCanToggleLight() then
+            local lightsTypesMask = bit32.bxor(target.spec_lights.lightsTypesMask, data.lightsTypesMask)
+            target:setLightsTypesMask(lightsTypesMask, true, noEventSend)
+        end
+    end,
+    updateFunc = function(target, data)
+        if target.spec_lights ~= nil then
+            return bit32.band(target.spec_lights.lightsTypesMask, data.lightsTypesMask) ~= 0
+        end
+        return nil
+    end,
+    schemaFunc = function(schema, path)
+        schema:register(XMLValueType.VECTOR_N, path .. ".lights#lightTypes", "Light types to be controlled")
+    end,
+    loadFunc = function(xmlFile, key, data)
+        local lightTypes = xmlFile:getValue(key .. ".lights#lightTypes", nil, true)
+        data.lightsTypesMask = 0
+        for _, lightType in pairs(lightTypes) do
+            data.lightsTypesMask = bit32.bor(data.lightsTypesMask, 2 ^ lightType)
+        end
+
+        if data.lightsTypesMask == nil or data.lightsTypesMask == 0 then
+            Logging.xmlWarning(xmlFile, "Failed to load light types, ignoring control\nSet value '%s.lights#lightTypes' to use function: 'LIGHTS_TYPES_TOGGLE'", key)
+            return false
+        end
+
+        return true
+    end,
 })
 
 ---FUNCTION_AUTOMATIC_STEERING_TOGGLE
