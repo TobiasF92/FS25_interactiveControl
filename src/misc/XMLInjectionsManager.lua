@@ -154,8 +154,17 @@ end
 ---Prepended function of initInheritance, checks for parent xmlFilename
 ---@param xmlFile XMLFile Instance of XMLFile
 function XMLInjectionsManager:checkParentXMLData(xmlFile)
+    -- skip files without valid xml handle, e.g. a file that could not be created
+    if xmlFile.handle == nil or xmlFile.handle == 0 then
+        return
+    end
+
     -- check for parent file
     local rootName = xmlFile:getRootName()
+    if rootName == nil or rootName == "" then
+        return
+    end
+
     local parentFilename = xmlFile:getString(rootName .. ".parentFile#xmlFilename")
 
     if parentFilename ~= nil then
